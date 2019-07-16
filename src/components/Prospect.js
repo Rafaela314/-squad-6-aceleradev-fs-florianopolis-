@@ -2,10 +2,13 @@ import React from 'react';
 
 const Prospect = ({prospect}) => {
     return(
-        <div>
-            <p>{prospect.id}</p>
-            <p>{prospect.title}</p>
-        </div>
+        <tr key={prospect.id}>
+            <td>{prospect.id}</td>
+            <td>{prospect.name}</td>
+            <td>{prospect.position}</td>
+            <td>{prospect.salary}</td>
+            <td>{prospect.isclient}</td>
+        </tr>
         
     );
 }
