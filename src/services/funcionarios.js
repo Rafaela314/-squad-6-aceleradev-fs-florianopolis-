@@ -5,7 +5,7 @@ const getAll = () =>
     fetch(`${API_PATH}`)
     .then(res => res.json())
     .then(json => console.log(json))
-    //.then(data => data.prospects)
+    .then(prospects => prospects.results)
     .catch(error => {
         console.log('Error fetching and parsing data', error);
       });
