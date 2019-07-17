@@ -6,7 +6,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 //import { getAll } from "./services/funcionarios";
 import SideBar from "./components/Sidebar";
 import Loginform from "./components/Loginform";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./components/Dashboard/Dashboard";
 import Notifications from "./components/Notifications";
 import Register from "./components/Register";
 import Upload from "./components/Upload";
@@ -19,38 +19,38 @@ class App extends React.Component {
     this.state = {
       prospects: [
         {
-          "id": 1,
-          "name": "Carlos Santos",
-          "position": "gerente de vendas INSS",
-          "salary": 23.000,
-          "isclient": "yes"
+          id: 1,
+          name: "Carlos Santos",
+          position: "gerente de vendas INSS",
+          salary: 23.0,
+          isclient: "yes"
         },
         {
-          "id": 2,
-          "name": "Sabrina Oliveira",
-          "position": "recepcionista TFJ",
-          "salary": 21.000,
-          "isclient": "no"
+          id: 2,
+          name: "Sabrina Oliveira",
+          position: "recepcionista TFJ",
+          salary: 21.0,
+          isclient: "no"
         },
         {
-          "id": 3,
-          "name": "Sarah Lima",
-          "position": "Inspetora PF",
-          "salary": 19.000,
-          "isclient": "no"
+          id: 3,
+          name: "Sarah Lima",
+          position: "Inspetora PF",
+          salary: 19.0,
+          isclient: "no"
         },
         {
-          "id": 4,
-          "name": "Marcos Schuler",
-          "position": "caixa BB",
-          "salary": 20.000,
-          "isclient": "yes"
-        }]
-    }
+          id: 4,
+          name: "Marcos Schuler",
+          position: "caixa BB",
+          salary: 20.0,
+          isclient: "yes"
+        }
+      ]
+    };
   }
 
   render() {
-
     return (
       <div className="App">
         <SideBar />
@@ -60,8 +60,13 @@ class App extends React.Component {
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/notifications" component={Notifications} />
             <Route exact path="/register" component={Register} />
-            <Route exact path="/upload" render={(props) => (<Upload {...props} prospects={this.state.prospects}/>
-            )} />
+            <Route
+              exact
+              path="/upload"
+              render={props => (
+                <Upload {...props} prospects={this.state.prospects} />
+              )}
+            />
             <Redirect to="/login" />
           </Switch>
         </div>
@@ -69,7 +74,5 @@ class App extends React.Component {
     );
   }
 }
-
-  
 
 export default App;

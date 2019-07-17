@@ -1,9 +1,10 @@
 import React from "react";
-import { slide as Menu } from 'react-burger-menu';
+// import { slide as Menu } from 'react-burger-menu';
 
 export default props => {
   return (
-    <Menu>
+    // <Menu>
+    <div>
       <a className="menu-item" href="/dashboard">
         Dashboard
       </a>
@@ -16,6 +17,8 @@ export default props => {
       <a className="menu-item" href="/notifications">
         Notifications
       </a>
-    </Menu>
+    </div>
+
+    // </Menu>
   );
 };
