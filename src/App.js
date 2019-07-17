@@ -43,6 +43,7 @@ class App extends React.Component {
           isclient: "no"
         },
         {
+<<<<<<< HEAD
           "id": 4,
           "name": "Marcos Schuler",
           "position": "caixa BB",
@@ -54,6 +55,16 @@ class App extends React.Component {
 
     this.drawerToggleClickHandler = this.drawerToggleClickHandler.bind(this);
     this.backdropClickHandler = this.backdropClickHandler.bind(this);
+=======
+          id: 4,
+          name: "Marcos Schuler",
+          position: "caixa BB",
+          salary: 20.0,
+          isclient: "yes"
+        }
+      ]
+    };
+>>>>>>> ba30471fbdbf7d85b3c7909f0682c0c3209cc7a0
   }
 
   drawerToggleClickHandler = () => {
@@ -68,6 +79,7 @@ class App extends React.Component {
   };
 
   render() {
+<<<<<<< HEAD
     let sideDrawer;
     let backdrop;
 
@@ -76,6 +88,8 @@ class App extends React.Component {
       backdrop = <Backdrop click={this.backdropClickHandler} />
     }
 
+=======
+>>>>>>> ba30471fbdbf7d85b3c7909f0682c0c3209cc7a0
     return (
       <div className="App" style= {{height: '100%'}}>
         <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
