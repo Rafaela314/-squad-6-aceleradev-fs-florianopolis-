@@ -27,11 +27,7 @@ const Th = styled.th`
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-<<<<<<< HEAD
   background-color:  #6BD2C9;
-=======
-  background-color: #44c4e7;
->>>>>>> ba30471fbdbf7d85b3c7909f0682c0c3209cc7a0
   font-size: 18px;
   color: white;
   font-weight: 700;
@@ -74,7 +70,6 @@ class Upload extends Component {
             c.title.toLowerCase().includes(query.toLowerCase())
           );
 
-<<<<<<< HEAD
         return(
             <Main>
                 {JSON.stringify(this.state)}
@@ -97,31 +92,6 @@ class Upload extends Component {
             </Main>
         );
     }
-=======
-    return (
-      <Main>
-        {JSON.stringify(this.state)}
-        <div>
-          <input
-            type="text"
-            placeholder="Search Contacts"
-            value={query}
-            onChange={event => this.updateQuery(event.target.value)}
-          />
-        </div>
-
-        <Table>
-          <tbody>
-            <tr>{this.renderTableHeader()}</tr>
-            {newList.map((item, index) => (
-              <Prospect key={index} prospect={item} />
-            ))}
-          </tbody>
-        </Table>
-      </Main>
-    );
-  }
->>>>>>> ba30471fbdbf7d85b3c7909f0682c0c3209cc7a0
 }
 
 export default Upload;
