@@ -9,6 +9,8 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Notifications from "./components/Notifications";
 import Register from "./components/Register";
 import Upload from "./components/Upload";
+import SideDrawer from "./components/SideDrawer/SideDrawer";
+
 import "./App.css";
 
 class App extends React.Component {
@@ -52,7 +54,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <SideBar />
+        <SideDrawer />
         <div className="container">
           <Switch>
             <Route exact path="/login" component={Loginform} />
