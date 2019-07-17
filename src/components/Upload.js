@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import Prospect from './Prospect';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import Prospect from "./Prospect";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Main = styled.div`
@@ -9,17 +9,17 @@ const Main = styled.div`
 `;
 
 const Table = styled.table`
-    text-align: center;
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    border: 3px solid #ddd;
-    width: 100%;
-    tbody:before {
-        content: "-";
-        display: block;
-        line-height: 0.6em;
-        color:transparent;
-    }
+  text-align: center;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  border: 3px solid #ddd;
+  width: 100%;
+  tbody:before {
+    content: "-";
+    display: block;
+    line-height: 0.6em;
+    color: transparent;
+  }
 `;
 
 const Th = styled.th`
@@ -40,34 +40,35 @@ const Tr = styled.tr`
 `;
 
 class Upload extends Component {
-    static propTypes = {
-        prospects: PropTypes.array.isRequired,
-      }
-        state = {
-            query:''
-        }
-    updateQuery = (query) => {
-        this.setState(() => ({
-          query: query.trim()
-        }))
-    }
+  static propTypes = {
+    prospects: PropTypes.array.isRequired
+  };
+  state = {
+    query: ""
+  };
+  updateQuery = query => {
+    this.setState(() => ({
+      query: query.trim()
+    }));
+  };
 
-    renderTableHeader() {
-        let header = Object.keys(this.props.prospects[0])
-        return header.map((key, index) => {
-           return <Th key={index}>{key.toUpperCase()}</Th>
-        })
-     }
+  renderTableHeader() {
+    let header = Object.keys(this.props.prospects[0]);
+    return header.map((key, index) => {
+      return <Th key={index}>{key.toUpperCase()}</Th>;
+    });
+  }
 
-    render() {
-        const { query } = this.state
-        const { prospects } = this.props
+  render() {
+    const { query } = this.state;
+    const { prospects } = this.props;
 
-        const newList = query === ''
-      ? prospects
-      : prospects.filter((c) => (
-          c.title.toLowerCase().includes(query.toLowerCase())
-        ))
+    const newList =
+      query === ""
+        ? prospects
+        : prospects.filter(c =>
+            c.title.toLowerCase().includes(query.toLowerCase())
+          );
 
         return(
             <Main>
@@ -91,7 +92,6 @@ class Upload extends Component {
             </Main>
         );
     }
-
 }
 
 export default Upload;

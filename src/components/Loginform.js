@@ -33,7 +33,7 @@ const Inputfield = styled.input`
 
 const Inputbutton = styled.input`
   cursor: pointer;
-  background: #44c4e7;
+  background: #6BD2C9;
   width: 100%;
   padding: 10px 15px;
   border: 0;
