@@ -1,5 +1,17 @@
 import React from "react";
-import { getAll } from "../services/funcionarios";
+import { getAll } from "../../services/funcionarios";
+
+import styled from "styled-components";
+
+// import { Jumbotron, Container, Row, Col } from "reactstrap";
+
+import PieData from "./Charts/PieData";
+import LineData from "./Charts/LineData";
+
+const ChartsWrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`;
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -17,9 +29,20 @@ class Dashboard extends React.Component {
 
   render() {
     console.log(this.props);
+    console.log(this.state);
     return (
       <div>
         <h1>Dashboard</h1>
+        <ChartsWrapper>
+          <PieData />
+          <PieData />
+          <PieData />
+        </ChartsWrapper>
+        <ChartsWrapper>
+          <LineData />
+          <LineData />
+        </ChartsWrapper>
+
         <ol className="books-grid">
           {this.props.prospects &&
             this.props.prospects.map(p => <p>{this.props.title}</p>)}
