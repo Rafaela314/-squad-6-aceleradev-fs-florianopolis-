@@ -14,7 +14,7 @@ const Table = styled.table`
     border-collapse: collapse;
     border: 3px solid #ddd;
     width: 100%;
-    tbody:before{
+    tbody:before {
         content: "-";
         display: block;
         line-height: 0.6em;
@@ -23,14 +23,20 @@ const Table = styled.table`
 `;
 
 const Th = styled.th`
+  border: 1px solid black;
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  background-color:  #44c4e7;
+  background-color:  #6BD2C9;
   font-size: 18px;
   color: white;
   font-weight: 700;
   opacity: 0.65;
+`;
+
+const Tr = styled.tr`
+  border-bottom: 2px solid black;
+  
 `;
 
 class Upload extends Component {
@@ -78,7 +84,7 @@ class Upload extends Component {
                 
                 <Table>
                     <tbody>
-                        <tr>{this.renderTableHeader()}</tr>
+                        <Tr>{this.renderTableHeader()}</Tr>
                         {newList.map((item, index) => <Prospect key={index} prospect={item} />)}
                     </tbody>
                 </Table>
