@@ -66,13 +66,13 @@ class App extends React.Component {
   };
 
   render() {
-    let sideDrawer;
-    let backdrop;
+    // let sideDrawer;
+    // let backdrop;
 
-    if (this.state.drawerIsOpen) {
-      sideDrawer = <SideDrawer />
-      backdrop = <Backdrop click={this.backdropClickHandler} />
-    }
+    // if (this.state.drawerIsOpen) {
+    //   sideDrawer = <SideDrawer />
+    //   backdrop = <Backdrop click={this.backdropClickHandler} />
+    // }
 
     return (
       <div className="App">

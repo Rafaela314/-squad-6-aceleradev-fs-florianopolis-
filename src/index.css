@@ -30,6 +30,10 @@ body {
   padding-left: 50px;
 }
 
+h1 {
+  text-align: center;
+}
+
 .marginBody {
   margin-left: 100px;
 }
