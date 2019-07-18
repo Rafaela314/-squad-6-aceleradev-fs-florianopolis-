@@ -19,6 +19,54 @@ code {
     monospace;
 }
 
+/* group charts */
 .recharts-wrapper {
   display: inline-block;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+body {
+  transition: margin-left 0.5s;
+  padding-left: 50px;
+}
+
+.marginBody {
+  margin-left: 100px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+h1 {
+  padding: 40px 0 0;
+}
+
+/* TABLE from notifications page */
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: auto;
+}
+
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+th {
+  background-color: #44c4e7;
+  color: white;
+  text-align: left;
+  padding: 8px;
 }

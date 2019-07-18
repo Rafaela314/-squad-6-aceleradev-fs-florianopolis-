@@ -2,6 +2,7 @@ import React from "react";
 import { getAll } from "../../services/funcionarios";
 
 import styled from "styled-components";
+import Button from "react-bootstrap/Button";
 
 // import { Jumbotron, Container, Row, Col } from "reactstrap";
 

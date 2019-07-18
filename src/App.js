@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Redirect, Route, Switch } from "react-router-dom";
 
 //import components
@@ -10,9 +9,8 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Notifications from "./components/Notifications";
 import Register from "./components/Register";
 import Upload from "./components/Upload";
-import Toolbar from "./components/Toolbar";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
-import Backdrop from "./components/Backdrop/Backdrop";
+
 import "./App.css";
 
 class App extends React.Component {
@@ -77,11 +75,8 @@ class App extends React.Component {
     }
 
     return (
-      <div className="App" style= {{height: '100%'}}>
-        <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
-        
-        {sideDrawer}
-        {backdrop}
+      <div className="App">
+        <SideDrawer />
         <div className="container">
           <Switch>
             <Route exact path="/login" component={Loginform} />
