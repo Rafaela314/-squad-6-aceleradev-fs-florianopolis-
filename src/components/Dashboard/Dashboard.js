@@ -2,9 +2,6 @@ import React from "react";
 import { getAll } from "../../services/funcionarios";
 
 import styled from "styled-components";
-import Button from "react-bootstrap/Button";
-
-// import { Jumbotron, Container, Row, Col } from "reactstrap";
 
 import PieData from "./Charts/PieData";
 import LineData from "./Charts/LineData";
@@ -12,6 +9,9 @@ import LineData from "./Charts/LineData";
 const ChartsWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
+  @media only screen and (max-width: 800px) {
+    display: inline-block;
+  }
 `;
 
 class Dashboard extends React.Component {

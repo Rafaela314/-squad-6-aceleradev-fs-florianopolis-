@@ -8,37 +8,32 @@ const Notifications = () => (
       <tr>
         <th>nome</th>
         <th>email</th>
-        <th>type</th>
-        <th>hora</th>
-        <th>data</th>
+        <th>ID</th>
+        <th>DELETE</th>
       </tr>
       <tr>
         <td>Peter</td>
         <td>Griffin@gmail.com</td>
-        <td>email</td>
-        <td>12:30</td>
-        <td>12/01/2019</td>
+        <td>1</td>
+        <td>icon</td>
       </tr>
       <tr>
         <td>Louis</td>
         <td>Louis@gmail.com</td>
-        <td>email</td>
-        <td>12:30</td>
-        <td>12/01/2019</td>
+        <td>2</td>
+        <td>icon</td>
       </tr>
       <tr>
         <td>Anna</td>
         <td>Banana@gmail.com</td>
-        <td>email</td>
-        <td>12:30</td>
-        <td>12/01/2019</td>
+        <td>3</td>
+        <td>icon</td>
       </tr>
       <tr>
         <td>Joana</td>
         <td>lima@gmail.com</td>
-        <td>email</td>
-        <td>12:30</td>
-        <td>12/01/2019</td>
+        <td>4</td>
+        <td>icon</td>
       </tr>
     </table>
   </div>

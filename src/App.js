@@ -10,6 +10,7 @@ import Notifications from "./components/Notifications";
 import Register from "./components/Register";
 import Upload from "./components/Upload";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
+import List from "./components/List";
 
 import "./App.css";
 
@@ -41,13 +42,14 @@ class App extends React.Component {
           isclient: "no"
         },
         {
-          "id": 4,
-          "name": "Marcos Schuler",
-          "position": "caixa BB",
-          "salary": 20.000,
-          "isclient": "yes"
-        }],
-        drawerIsOpen: false
+          id: 4,
+          name: "Marcos Schuler",
+          position: "caixa BB",
+          salary: 20.0,
+          isclient: "yes"
+        }
+      ],
+      drawerIsOpen: false
     };
 
     this.drawerToggleClickHandler = this.drawerToggleClickHandler.bind(this);
@@ -55,14 +57,13 @@ class App extends React.Component {
   }
 
   drawerToggleClickHandler = () => {
-    this.setState((prevState) => {
-      return {drawerIsOpen: !prevState.drawerIsOpen};
+    this.setState(prevState => {
+      return { drawerIsOpen: !prevState.drawerIsOpen };
     });
-
   };
 
   backdropClickHandler = () => {
-    this.setState({drawerIsOpen: false})
+    this.setState({ drawerIsOpen: false });
   };
 
   render() {
@@ -83,6 +84,7 @@ class App extends React.Component {
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/notifications" component={Notifications} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/list" component={List} />
             <Route
               exact
               path="/upload"

@@ -24,39 +24,28 @@ code {
   display: inline-block;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+/* Style page content - push the body to the right */
 body {
   transition: margin-left 0.5s;
   padding-left: 50px;
 }
 
 h1 {
+  margin: 0;
   text-align: center;
-}
-
-.marginBody {
-  margin-left: 100px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-  .sidenav a {
-    font-size: 18px;
-  }
-}
-
-h1 {
   padding: 40px 0 0;
 }
 
-/* TABLE from notifications page */
+/* body responsiveness to when the navbar toggle */
+.marginBody {
+  margin-left: 45px;
+}
+
+/* TABLE from notifications and List page */
 table {
   border-collapse: collapse;
   width: 80%;
-  margin: auto;
+  margin: 40px auto 0;
 }
 
 td {
@@ -73,4 +62,8 @@ th {
   color: white;
   text-align: left;
   padding: 8px;
+}
+
+h4 {
+  margin: 10px 0;
 }
