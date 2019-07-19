@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Redirect } from "react-router-dom";
 
 const Formbox = styled.form`
   position: absolute;
@@ -53,6 +54,9 @@ const Tittle = styled.h2`
   font-weight: 400;
 `;
 
+const JWT =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNjcxNjI5MDIzfQ.5YSiFpqnhV0BfSyC2OwULPvywIbnn86-xI62aqQi96Q";
+
 class Loginform extends React.Component {
   constructor(props) {
     super(props);
@@ -72,29 +76,54 @@ class Loginform extends React.Component {
     });
   }
 
+  // simulates the request on the API to get the token
+  handleLogin = () => {
+    if (
+      (this.state.userName === "superUser") &
+      (this.state.password === "superPassword")
+    ) {
+      localStorage.setItem(
+        "token",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNjcxNjI5MDIzfQ.5YSiFpqnhV0BfSyC2OwULPvywIbnn86-xI62aqQi96Q"
+      );
+    } else {
+      alert("wrong login, try again");
+    }
+  };
+
+  content = () => (
+    <section>
+      <Formbox>
+        <Tittle>Login</Tittle>
+        <Inputfield
+          name="userName"
+          type="text"
+          placeholder="usuário"
+          value={this.state.userName}
+          onChange={this.handleInputChange}
+        />
+        <Inputfield
+          name="password"
+          type="text"
+          placeholder="senha"
+          value={this.state.password}
+          onChange={this.handleInputChange}
+        />
+        <Inputbutton type="submit" value="Submit" onClick={this.handleLogin} />
+      </Formbox>
+    </section>
+  );
+
+  redirect = () => <Redirect to="dashboard" />;
   render() {
-    return (
-      <section>
-        <Formbox>
-          <Tittle>Login</Tittle>
-          <Inputfield
-            name="userName"
-            type="text"
-            placeholder="usuário"
-            value={this.state.userName}
-            onChange={this.handleInputChange}
-          />
-          <Inputfield
-            name="password"
-            type="text"
-            placeholder="senha"
-            value={this.state.password}
-            onChange={this.handleInputChange}
-          />
-          <Inputbutton type="submit" value="Submit" />
-        </Formbox>
-      </section>
-    );
+    console.log(this.state);
+    console.log(localStorage.getItem("token"));
+
+    if (localStorage.getItem("token") === JWT) {
+      return this.redirect();
+    } else {
+      return this.content();
+    }
   }
 }
 

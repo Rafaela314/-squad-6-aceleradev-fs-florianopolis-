@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Form, Button, Jumbotron, Col } from "react-bootstrap";
-
 const Formbox = styled.form`
   margin: 100px 0;
   background: #fff;

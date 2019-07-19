@@ -1,5 +1,5 @@
 import React from "react";
-import { getAll } from "../../services/funcionarios";
+// import { getAll } from "../../services/funcionarios";
 
 import styled from "styled-components";
 
@@ -17,20 +17,12 @@ const ChartsWrapper = styled.div`
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { date: new Date() };
-  }
-  async componentDidMount() {
-    try {
-      const prospects = await getAll();
-      this.props.addProspects(prospects);
-    } catch (error) {
-      console.log(error);
-    }
+    this.state = {};
   }
 
   render() {
-    console.log(this.props);
-    console.log(this.state);
+    // console.log(this.props);
+    // console.log(this.state);
     return (
       <div>
         <h1>Dashboard</h1>
@@ -43,11 +35,6 @@ class Dashboard extends React.Component {
           <LineData />
           <LineData />
         </ChartsWrapper>
-
-        <ol className="books-grid">
-          {this.props.prospects &&
-            this.props.prospects.map(p => <p>{this.props.title}</p>)}
-        </ol>
       </div>
     );
   }
