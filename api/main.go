@@ -147,6 +147,29 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(tokenString))
 }
 
+func registerAdministrator(w http.ResponseWriter, r *http.Request) {
+	creds := &Credentials{}
+	err := json.NewDecoder(r.Body).Decode(creds)
+	if err != nil {
+		fmt.Println("ERRO 400: dados inconsistentes.")
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
+
+	hashpwd, err := bcrypt.GenerateFromPassword([]byte(creds.Password), hashCost)
+	if err != nil {
+		fmt.Println("ERRO 500: Problemas para criptografar a senha.")
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+	_, err = db.Exec("INSERT INTO administradores (username, password, created_on) VALUES ($1, $2, now())", creds.Username, string(hashpwd))
+	if err != nil {
+		fmt.Println("ERRO 500: não foi possível conectar ao BD.", err)
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+}
+
 func registerUser(w http.ResponseWriter, r *http.Request) {
 	usrs := &Users{}
 	err := json.NewDecoder(r.Body).Decode(usrs)
