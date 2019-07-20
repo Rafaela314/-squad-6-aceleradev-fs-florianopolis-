@@ -55,6 +55,7 @@ func main() {
 func handlerRequests() {
 	router := mux.NewRouter()
 	router.HandleFunc("/login", Login)
+	router.HandleFunc("/clientsup", uploadCliente)
 	router.Handle("/users", middleware(http.HandlerFunc(registerUser))).Methods("POST")
 	router.Handle("/users", middleware(http.HandlerFunc(getUsers))).Methods("GET")
 	http.ListenAndServe(":"+port, router)
@@ -218,6 +219,49 @@ func getUsers(w http.ResponseWriter, r *http.Request) {
 	}
 	response, _ := json.Marshal(usrs)
 	w.Write(response)
+}
+
+func uploadCliente(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("POST")
+	file, _, err := r.FormFile("clienteCSV")//aqui será um parametro
+	if err != nil {
+		fmt.Println("ERRO 400: nenhum arquivo encontrado.")
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
+	defer file.Close()
+	var resultsja [][]string
+	reader := csv.NewReader(bufio.NewReader(file))
+	t := 0
+	j := 0
+	i := 0
+	record, err := reader.ReadAll()
+	if err != nil {
+		fmt.Println("ERRO 500: não foi possível ler o arquivo.")
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+	for _, line := range record {
+		if rowExists("SELECT id FROM clientes WHERE name=$1", line[0]) {
+			fmt.Println("Cliente já cadastrado.")
+			resultsja = append(resultsja, line)
+			j++
+		} else {
+			_, err = db.Exec("INSERT INTO clientes (name, created_on) VALUES ($1, now())", line[0])
+			if err != nil {
+				fmt.Println("ERRO 500: não foi possível conectar ao BD.")
+				w.WriteHeader(http.StatusInternalServerError)
+				return
+			}
+			i++
+		}
+		t++
+	}
+	fmt.Println("Total importado", t)
+	fmt.Println("Já cadastrados", j)
+	fmt.Println("Novos", i)
+	//return resulsja
+	//return OK???
 }
 
 func rowExists(query string, args ...interface{}) bool {
