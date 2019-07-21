@@ -25,6 +25,7 @@ const Navlink = styled.a`
   display: block;
   transition: 0.3s;
   padding: 40px 0;
+  /* outline:none; */
 
   &:hover {
     color: #44c4e7;

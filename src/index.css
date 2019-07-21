@@ -27,7 +27,7 @@ code {
 /* Style page content - push the body to the right */
 body {
   transition: margin-left 0.5s;
-  padding-left: 50px;
+  margin-top: 50px;
 }
 
 h1 {

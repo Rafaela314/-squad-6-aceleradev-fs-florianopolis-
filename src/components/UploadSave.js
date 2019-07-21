@@ -1,7 +1,7 @@
 import React, { Component } from "react";
+import styled from "styled-components";
 import Prospect from "./Prospect";
 import PropTypes from "prop-types";
-import styled from "styled-components";
 
 const Main = styled.div`
   display: flex;
@@ -38,7 +38,7 @@ const Tr = styled.tr`
   border-bottom: 2px solid black;
 `;
 
-class Upload extends Component {
+class UploadSave extends Component {
   static propTypes = {
     prospects: PropTypes.array.isRequired
   };
@@ -50,7 +50,7 @@ class Upload extends Component {
       query: query.trim()
     }));
   };
-
+  prospects;
   renderTableHeader() {
     let header = Object.keys(this.props.prospects[0]);
     return header.map((key, index) => {
@@ -94,4 +94,4 @@ class Upload extends Component {
   }
 }
 
-export default Upload;
+export default UploadSave;

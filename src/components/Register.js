@@ -59,7 +59,7 @@ const Register = () => (
   <div>
     <Flexbox>
       <Formbox>
-        <Tittle>Register</Tittle>
+        <Tittle>Users</Tittle>
         <Inputfield
           name="email"
           type="text"

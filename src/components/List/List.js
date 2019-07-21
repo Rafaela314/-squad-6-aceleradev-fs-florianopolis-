@@ -26,7 +26,6 @@ class Notifications extends Component {
   renderList = () => {
     const searchItem = this.state.searchString;
     if (searchItem === "") {
-      console.log("yay");
       return list.registered.map((person, i) => (
         <Row props={person} key={i} id={i} />
       ));

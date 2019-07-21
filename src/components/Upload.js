@@ -15,7 +15,7 @@ const Upload = () => {
     <div>
       <h1>Upload CSV file</h1>
       <Wrapper>
-        <input type="file" id="file" />
+        <input type="file" id="file" name="FileCSV" />
         <label for="file">Choose a file</label>
         <button>confirm</button>
       </Wrapper>
