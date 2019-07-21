@@ -27,13 +27,16 @@ code {
 /* Style page content - push the body to the right */
 body {
   transition: margin-left 0.5s;
-  margin-top: 50px;
+  /* padding-top: 50px; */
+  /* overflow: hidden; */
+  /* overflow: hidden; */
 }
 
 h1 {
   margin: 0;
+  /* padding-top: 50px; */
   text-align: center;
-  padding: 40px 0 0;
+  padding: 100px 0 0;
 }
 
 /* body responsiveness to when the navbar toggle */

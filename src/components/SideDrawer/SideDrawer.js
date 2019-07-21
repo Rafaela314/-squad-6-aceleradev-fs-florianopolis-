@@ -68,7 +68,7 @@ const Hoveri = styled.header`
 `;
 
 const Sidenav = styled.div`
-  height: 100%; /* 100% Full-height */
+  height: 100vh; /* 100% Full-height */
   width: 0px;
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
@@ -129,6 +129,7 @@ const Navlink = styled.a`
 
 const Sideblock = styled.div`
   /* margin: 3px solid #b1b1b1; */
+  /* position: fixed; */
   background-color: #d3d3d3;
   height: 19.5%;
 `;
