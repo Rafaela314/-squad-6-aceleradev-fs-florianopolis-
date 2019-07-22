@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import ModalForm from '../components/Modal'
+import Modal from '../components/Modal';
 
 import userService from '../services/userService';
 import pen from "../assets/icons/edit.svg";
@@ -66,6 +66,7 @@ const Addnew = styled.button`
 
 `;
 
+
 class Users extends Component {
   state = {
     users: [
@@ -89,7 +90,7 @@ class Users extends Component {
         email:"JohnletItSnow@gmail.com"
       },
       {
-        id: 3,
+        id: 4,
         name: "Tyrion Lanister",
         position: "gerente de vendas NORTE",
         email:"Tyriondwarfw@gmail.com"
@@ -97,20 +98,21 @@ class Users extends Component {
   
     ],
     userForm: '',
-   
+    show: false
   };
 
-  /*
- 
-  
+  showModal = e => {
+    this.setState({
+      show: !this.state.show
+    });
+  };
 
-  getUsers(){
+  /*getUsers(){
     fetch('http://localhost:3000/crud')
       .then(response => response.json())
       .then(users => this.setState({users}))
       .catch(err => console.log(err))
-  }
-*/
+  }*/
 
   addUserState = (user) => {
     this.setState(prevState => ({
@@ -123,7 +125,7 @@ class Users extends Component {
     this.setState({ users: updatedUsers })
   }
 
-  deleteUser = id => {
+  /*deleteUser = id => {
     let confirmDelete = window.confirm('Are you sure?')
     if(confirmDelete){
       fetch('http://localhost:3000/crud', {
@@ -142,10 +144,9 @@ class Users extends Component {
       .catch(err => console.log(err))
     }
 
-  }
+  }*/
 
-/*
-  componentDidMount(){
+  /*componentDidMount(){
     this.getUsers()
   }*/
       
@@ -160,20 +161,19 @@ class Users extends Component {
   render(){
 
     const { users } = this.state;
-/*
-    const newList =
-      prospects.filter(c =>
-            c.title.toLowerCase().includes(query.toLowerCase())
-          );*/
 
     return(
       <Main>
+        <Modal onClose={this.showModal} show={this.state.show} addItemToState={this.addUserState}>
+          Message in Modal
+        </Modal>
         <Table>
           <tbody>
-      
             <Tr>{this.renderTableHeader()}
-    
-                <Th>ADD NEW<Icon src={plus} alt="new user" style={{display: 'inline'}}/>
+                <Th>
+                  <button onClick={e => {
+              this.showModal();
+         }}>ADD NEW<Icon src={plus} alt="new user" style={{display: 'inline'}}/></button>
                 </Th>
               
             </Tr>
@@ -185,7 +185,7 @@ class Users extends Component {
                 <Td>{user.email}</Td>
                 <Td style={{align:'center'}}>
                 
-              <button color="danger" onClick={() => this.deleteUser(user.id)} style={{margin:'auto', display:'block'}}> <Icon src={trash} alt="delete"/> </button>
+              <button color="danger" onClick={() => this.deleteUserState(user.id)} style={{margin:'auto', display:'block'}}> <Icon src={trash} alt="delete"/> </button>
                 </Td>
               
             </tr>

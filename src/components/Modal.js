@@ -1,52 +1,40 @@
-import React, { Component } from 'react'
-import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap'
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import AddForm from '../components/AddForm';
 
 
-class ModalForm extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      modal: false
-    }
-  }
+const Display = styled.div`
+  float: right;
+  display: block;
+  width: 20px;
+  height: 200px;
 
-  toggle = () => {
-    this.setState(prevState => ({
-      modal: !prevState.modal
-    }))
-  }
+`;
+class Modal extends Component {
 
-  render() {
-      const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>
+    onClose = e => {
+        this.props.onClose && this.props.onClose(e);
+    };
 
-      const label = this.props.buttonLabel
-
-      let button = ''
-      let title = ''
-
-    
-        button = <Button
-                  color="success"
-                  onClick={this.toggle}
-                  style={{float: "left", marginRight:"10px"}}>{label}
-                </Button>
-        title = 'Add New Item'
-  
-
-
-    return (
-      <div>
-            {button}
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-          <ModalHeader toggle={this.toggle} close={closeBtn}>{title}</ModalHeader>
-          <ModalBody>
-           
-          </ModalBody>
-        </Modal>
-      
-      </div>
-    )
-  }
+    render() {
+        if(!this.props.show){
+            return null;
+        }
+      return (
+        <Display>
+            <div>
+            <AddForm addUserState={this.props.addUserState}
+               />
+            </div>
+            <div>
+                <button
+                onClick={this.onClose}
+                style={{float: "left", marginRight:"10px"}}
+                >X</button>
+            </div>  
+        </Display>
+      );
+    }   
 }
 
-export default ModalForm;
+export default Modal;

@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 import PieData from "./Charts/PieData";
 import LineData from "./Charts/LineData";
+import BubbleData from "./Charts/BubbleData";
 
 const ChartsWrapper = styled.div`
   display: flex;
@@ -34,6 +35,11 @@ class Dashboard extends React.Component {
         <ChartsWrapper>
           <LineData />
           <LineData />
+          
+        </ChartsWrapper>
+        <ChartsWrapper>
+          <BubbleData />
+          <BubbleData />
         </ChartsWrapper>
       </div>
     );
