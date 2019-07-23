@@ -4,19 +4,20 @@ import styled from "styled-components";
 import logo from "../../assets/uati_logo.png";
 import BurgerButton from "./BurgerButton";
 
-import dash from "../../assets/icons/dashboard.svg";
+import dash from "../../assets/icons/dashboard_g.svg";
 import bell from "../../assets/icons/bell.svg";
-import clipboard from "../../assets/icons/clipboard.svg";
+import group_g from "../../assets/icons/group_g.svg";
 import upload from "../../assets/icons/upload.svg";
 import list from "../../assets/icons/list.svg";
 import ToolBar from "./ToolBar";
 
 // TOOLBAR ===========
 const Line = styled.hr`
+  background-color: #2b313e;
   margin: 0;
   padding: 0;
   border: 0;
-  height: 1px;
+  height: 4px;
   background-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0),
@@ -74,7 +75,7 @@ const Sidenav = styled.div`
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: #d3d3d3; /* Black*/
+  background-color: white /*#d3d3d3*/; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 0px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -102,9 +103,10 @@ const Sidenav = styled.div`
 const Navlink = styled.a`
   /* padding: 80px 80px 80px 80px; */
   text-decoration: none;
-  font-size: 15px;
-  color: black;
-  background-color: #d3d3d3;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: white;
+  background-color: #2b313e;
   display: block;
   transition: 0.3s;
   height: 100%;
@@ -117,7 +119,7 @@ const Navlink = styled.a`
 
   &:hover {
     color: black;
-    background-color: white;
+    background-color: #6bd2c9;
   }
 
   ${Logo}:hover & {
@@ -130,14 +132,20 @@ const Navlink = styled.a`
 const Sideblock = styled.div`
   /* margin: 3px solid #b1b1b1; */
   /* position: fixed; */
-  background-color: #d3d3d3;
+  background-color: #2b313e;
   height: 19.5%;
 `;
 
 const Icon = styled.img`
+  filter: brightness(1000);
   display: block;
   width: 30px;
   height: 30px;
+  ${Navlink}:hover & {
+    /* color: red; */
+    /* background-color: yellow; */
+    filter: brightness(0);
+  }
 `;
 
 const Inv = styled.h4`
@@ -170,23 +178,23 @@ const SideDrawer = props => (
         <Sideblock>
           <Navlink href="/dashboard">
             <Inv>.</Inv>
-            <Icon src={dash} alt="penes" />
+            <Icon src={dash} alt="dash" />
             <h4>Dashboard</h4>
           </Navlink>
         </Sideblock>
         <Line />
         <Sideblock>
-          <Navlink href="/register">
+          <Navlink href="/users">
             <Inv>.</Inv>
-            <Icon src={clipboard} alt="penes" />
-            <h4>Register</h4>
+            <Icon src={group_g} alt="users" />
+            <h4>Users</h4>
           </Navlink>
         </Sideblock>
         <Line />
         <Sideblock>
           <Navlink href="/list">
             <Inv>.</Inv>
-            <Icon src={list} alt="penes" />
+            <Icon src={list} alt="list" />
             <h4>list</h4>
           </Navlink>
         </Sideblock>
@@ -195,7 +203,7 @@ const SideDrawer = props => (
         <Sideblock>
           <Navlink href="/notifications">
             <Inv>.</Inv>
-            <Icon src={bell} alt="penes" />
+            <Icon src={bell} alt="notifications" />
             <h4>notifications</h4>
           </Navlink>
         </Sideblock>
@@ -203,7 +211,7 @@ const SideDrawer = props => (
         <Sideblock>
           <Navlink href="/upload">
             <Inv>.</Inv>
-            <Icon src={upload} alt="penes" />
+            <Icon src={upload} alt="upload" />
             <h4>upload</h4>
           </Navlink>
         </Sideblock>

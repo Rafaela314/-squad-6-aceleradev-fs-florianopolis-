@@ -3,7 +3,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import Loginform from "./components/Loginform";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Notifications from "./components/Notifications/Notifications";
-import Register from "./components/Register";
+import Users from "./components/Users";
 import Upload from "./components/Upload";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 import ToolBar from "./components/SideDrawer/ToolBar";
@@ -80,7 +80,7 @@ class App extends React.Component {
             <Route exact path="/login" component={Loginform} />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/notifications" component={Notifications} />
-            <Route exact path="/register" component={Register} />
+            <Route exact path="/users" component={Users} />
             <Route exact path="/list" component={List} />
             <Route exact path="/upload" component={Upload} />
             <Route
