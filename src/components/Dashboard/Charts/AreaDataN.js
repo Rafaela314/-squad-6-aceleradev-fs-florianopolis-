@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import {
   AreaChart,
   Area,
@@ -58,7 +58,7 @@ const data = [
 
 const AreaDataN = () => (
   <div style={{padding:'10px'}}>
-    <AreaChart
+    <AreaChart 
       width={500}
       height={400}
       data={data}
@@ -79,7 +79,6 @@ const AreaDataN = () => (
        <Area name='Clients' dataKey='clients' stackId='1' stroke='#00ccff' fill='#00ccff' />
        <Area name='Prospects' dataKey='prospects' stackId='1' stroke='#0099bf' fill='#0099bf' />
       <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-      <p>hello</p>
     </AreaChart>
   </div>
 );

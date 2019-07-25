@@ -1,28 +1,32 @@
 import React from 'react';
 import styled from "styled-components";
-
+import { Container, Row, Col } from "react-bootstrap";
 
 const Formbox = styled.form`
-  
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  width: 100%;
   top: 20%;
-  left: 50%;
-  background: #fff;
-  width: 100vw;
-  margin: -10px 0 0 -400px;
+  z-index: 0.5;
   padding: 20px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  z-index: 3;
 `;
+  
+  
+  /*
+  left: 50%;
+  background: #fff;
+  flex-flow: row wrap;
+  margin: -10px 0 0 -400px;*/
+  
 
 const Inputfield = styled.input`
-  outline: none;
-  display: block;
-  width: 100%;
-  margin: 0 0 20px;
-  padding: 10px 15px;
+  outline: none; 
+  padding: 10px 15px 10px 15px;
+  margin-left: 15px;
   border: 1px solid #ccc;
   box-sizing: border-box;
   font-size: 14px;

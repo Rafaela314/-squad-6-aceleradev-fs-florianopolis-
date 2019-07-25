@@ -10,20 +10,12 @@ import Top10N from "./Charts/Top10N";
 import Top10RS from "./Charts/Top10RS";
 import RangeWage from "./Charts/RangeWage";
 
-const ChartsWrapper = styled.div`
+/*const ChartsWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   @media only screen and (max-width: 800px) {
     display: inline-block;
   }
-`;
-
-/*const TCard = styled.Card`
-  width: 40px;
-  max-height: 299px;
-  border-radius: 10px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-
 `;*/
 
 const Spacer = styled.div`
@@ -99,18 +91,22 @@ class Dashboard extends React.Component {
           <Spacer />
           <Row>
             <Col md={4} sm={12}>
+            
               <PieData />
             </Col>
             <Col md={8} sm={12}>
+           
               <RangeWage />
             </Col>
           </Row>
          
           <Row>
             <Col md={6} sm={12}>
+             
               <AreaDataN />
             </Col>
             <Col md={6} sm={12}>
+              
               <AreaDataRS />
             </Col>
           </Row>
@@ -125,21 +121,6 @@ class Dashboard extends React.Component {
           </Row>
 
         </Container>
-        {/*<h1>Dashboard</h1>
-        <ChartsWrapper>
-          <PieData />
-          <PieData />
-          <PieData />
-        </ChartsWrapper>
-        <ChartsWrapper>
-          <LineData />
-          <LineData />
-          
-        </ChartsWrapper>
-        <ChartsWrapper>
-          <BubbleData />
-          <BubbleData />
-        </ChartsWrapper>*/}
       </div>
     );
   }

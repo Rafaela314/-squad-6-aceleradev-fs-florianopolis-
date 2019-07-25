@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
-import { PieChart, Pie, Sector, Cell } from "recharts";
+import React from 'react';
+import { PieChart, Pie, Cell } from "recharts";
 import styled from "styled-components";
 
 const data = [
