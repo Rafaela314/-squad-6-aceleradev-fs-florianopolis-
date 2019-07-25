@@ -1,13 +1,13 @@
-import React from "react";
+import React, { PureComponent } from 'react';
 import { PieChart, Pie, Sector, Cell } from "recharts";
 import styled from "styled-components";
 
 const data = [
-  { name: "Funcionários Publicos", value: 400 },
-  { name: "Clientes", value: 100 }
+  { name: "Total", value: 400 },
+  { name: "Clients", value: 100 }
 ];
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+const COLORS = ["#0099bf", "#a8eeff", "#00ccff", "#FF8042"];
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({
@@ -48,7 +48,7 @@ const PieData = () => (
       width={400}
       height={400}
     >
-      <PieChart width={300} height={300} display={"inline"}>
+      <PieChart width={400} height={400} display={"inline"}>
         <Pie
           data={data}
           cx={150}
