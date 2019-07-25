@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Modal from '../components/Modal';
 
-import userService from '../services/userService';
+
+
 import trash from "../assets/icons/delete.svg";
 import plus from "../assets/icons/plus_b.svg";
 
