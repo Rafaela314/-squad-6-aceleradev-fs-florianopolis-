@@ -5,11 +5,29 @@ import AddForm from '../components/AddForm';
 
 const Display = styled.div`
   float: right;
-  display: block;
-  width: 20px;
-  height: 200px;
+  display: flex;
+  width: 100%;
+  height: 100px;
+  margin: 50px 0px 0px 0px;
+  
 
 `;
+
+const Closebutton = styled.button`
+  cursor: pointer;
+  background: #6bd2c9;
+  border: 0;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 500px 0px 0px 900px;
+  
+  &:hover {
+    background: #369cb8;
+  }
+`;
+
 class Modal extends Component {
 
     onClose = e => {
@@ -27,10 +45,10 @@ class Modal extends Component {
                />
             </div>
             <div>
-                <button
+                <Closebutton
                 onClick={this.onClose}
                 style={{float: "left", marginRight:"10px"}}
-                >X</button>
+                >X</Closebutton>
             </div>  
         </Display>
       );

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Modal from '../components/Modal';
 
-// import userService from '../services/userService';
-// import pen from "../assets/icons/edit.svg";
+
+
 import trash from "../assets/icons/delete.svg";
 import plus from "../assets/icons/plus_b.svg";
 
@@ -59,12 +59,17 @@ const Icon = styled.img`
 `;
 
 const Addnew = styled.button`
-  float: right;
-  display: block;
-  width: 20px;
-  height: 20px;
+  
+  display: inline-block;
+  width: 120px;
+  height: 50px;
+  background-color: transparent;
+  margin-left: 3px; 
 
 `;
+
+
+
 
 
 class Users extends Component {
@@ -164,16 +169,19 @@ class Users extends Component {
 
     return(
       <Main>
-        <Modal onClose={this.showModal} show={this.state.show} addItemToState={this.addUserState}>
+        <Modal onClose={this.showModal} 
+        show={this.state.show} 
+        addItemToState={this.addUserState}
+        style={{flexDirection: 'row'}}>
           Message in Modal
         </Modal>
         <Table>
           <tbody>
             <Tr>{this.renderTableHeader()}
                 <Th>
-                  <button onClick={e => {
+                  <Addnew  onClick={e => {
               this.showModal();
-         }}>ADD NEW<Icon src={plus} alt="new user" style={{display: 'inline'}}/></button>
+         }}>ADD NEW<Icon src={plus} alt="new user" style={{display: 'inline'}}/></Addnew >
                 </Th>
               
             </Tr>
@@ -185,7 +193,7 @@ class Users extends Component {
                 <Td>{user.email}</Td>
                 <Td style={{align:'center'}}>
                 
-              <button color="danger" onClick={() => this.deleteUserState(user.id)} style={{margin:'auto', display:'block'}}> <Icon src={trash} alt="delete"/> </button>
+              <button  onClick={() => this.deleteUserState(user.id)} style={{margin:'auto', display:'block'}}> <Icon src={trash} alt="delete"/> </button>
                 </Td>
               
             </tr>
