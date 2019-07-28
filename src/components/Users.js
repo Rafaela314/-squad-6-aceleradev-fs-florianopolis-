@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import Modal from '../components/Modal';
-
-
+import React, { Component } from "react";
+import styled from "styled-components";
+import Modal from "../components/Modal";
 
 import trash from "../assets/icons/delete.svg";
 import plus from "../assets/icons/plus_b.svg";
@@ -13,7 +11,7 @@ const Main = styled.div`
 `;
 
 const Table = styled.table`
-  text-align: center;
+  /* text-align: left; */
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   border: 3px solid #ddd;
@@ -30,7 +28,7 @@ const Th = styled.th`
   border: 1px solid black;
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: center;
+  text-align: left;
   background-color: #6bd2c9;
   font-size: 18px;
   color: white;
@@ -59,52 +57,48 @@ const Icon = styled.img`
 `;
 
 const Addnew = styled.button`
-  
   display: inline-block;
   width: 120px;
   height: 50px;
   background-color: transparent;
-  margin-left: 3px; 
-
+  margin-left: 3px;
 `;
-
-
-
-
 
 class Users extends Component {
   state = {
-    users: [
-      {
-        id: 1,
-        name: "Danaerys Targaryan",
-        position: "gerente de vendas CO",
-        email:"Danearys@gmail.com"
-      },
-      {
-        id: 2,
-        name: "Arya Startk",
-        position: "gerente de vendas NE",
-        email:"Arya@gmail.com"
-        
-      },
-      {
-        id: 3,
-        name: "John Snow",
-        position: "gerente de vendas SUL",
-        email:"JohnletItSnow@gmail.com"
-      },
-      {
-        id: 4,
-        name: "Tyrion Lanister",
-        position: "gerente de vendas NORTE",
-        email:"Tyriondwarfw@gmail.com"
-      }
-  
-    ],
-    userForm: '',
+    users: [],
+    userForm: "",
     show: false
   };
+
+  componentDidMount() {
+    console.log("componentDidMount coming through!");
+
+    // FETCH
+    fetch("http://localhost:8080/users", {
+      method: "GET",
+      credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Basic YWRtaW46YWRtaW4="
+      },
+      redirect: "follow", // manual, *follow, error
+      referrer: "no-referrer" // no-referrer, *client
+    })
+      .then(response => {
+        console.log("hello");
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        this.setState({
+          users: data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
 
   showModal = e => {
     this.setState({
@@ -119,16 +113,16 @@ class Users extends Component {
       .catch(err => console.log(err))
   }*/
 
-  addUserState = (user) => {
+  addUserState = user => {
     this.setState(prevState => ({
       users: [...prevState.users, user]
-    }))
-  }
+    }));
+  };
 
-  deleteUserState = (id) => {
-    const updatedUsers = this.state.users.filter(user => user.id !== id)
-    this.setState({ users: updatedUsers })
-  }
+  deleteUserState = id => {
+    const updatedUsers = this.state.users.filter(user => user.id !== id);
+    this.setState({ users: updatedUsers });
+  };
 
   /*deleteUser = id => {
     let confirmDelete = window.confirm('Are you sure?')
@@ -154,36 +148,49 @@ class Users extends Component {
   /*componentDidMount(){
     this.getUsers()
   }*/
-      
 
   renderTableHeader() {
-    let header = Object.keys(this.state.users[0]);
-    return header.map((key, index) => {
-      return <Th key={index}>{key.toUpperCase()}</Th>;
-    });
+    if (this.state.users[0]) {
+      let header = Object.keys(this.state.users[0]);
+      return header.map((key, index) => {
+        return <Th key={index}>{key.toUpperCase()}</Th>;
+      });
+    } else {
+      return null;
+    }
   }
-  
-  render(){
 
+  render() {
     const { users } = this.state;
 
-    return(
+    return (
       <Main>
-        <Modal onClose={this.showModal} 
-        show={this.state.show} 
-        addItemToState={this.addUserState}
-        style={{flexDirection: 'row'}}>
+        <Modal
+          onClose={this.showModal}
+          show={this.state.show}
+          addItemToState={this.addUserState}
+          style={{ flexDirection: "row" }}
+        >
           Message in Modal
         </Modal>
         <Table>
           <tbody>
-            <Tr>{this.renderTableHeader()}
-                <Th>
-                  <Addnew  onClick={e => {
-              this.showModal();
-         }}>ADD NEW<Icon src={plus} alt="new user" style={{display: 'inline'}}/></Addnew >
-                </Th>
-              
+            <Tr>
+              {this.renderTableHeader()}
+              <Th>
+                <Addnew
+                  onClick={e => {
+                    this.showModal();
+                  }}
+                >
+                  ADD NEW
+                  <Icon
+                    src={plus}
+                    alt="new user"
+                    style={{ display: "inline" }}
+                  />
+                </Addnew>
+              </Th>
             </Tr>
             {users.map((user, index) => (
               <tr key={user.id}>
@@ -191,19 +198,21 @@ class Users extends Component {
                 <Td>{user.name}</Td>
                 <Td>{user.position}</Td>
                 <Td>{user.email}</Td>
-                <Td style={{align:'center'}}>
-                
-              <button  onClick={() => this.deleteUserState(user.id)} style={{margin:'auto', display:'block'}}> <Icon src={trash} alt="delete"/> </button>
+                <Td style={{ align: "center" }}>
+                  <button
+                    onClick={() => this.deleteUserState(user.id)}
+                    style={{ margin: "auto", display: "block" }}
+                  >
+                    {" "}
+                    <Icon src={trash} alt="delete" />{" "}
+                  </button>
                 </Td>
-              
-            </tr>
+              </tr>
             ))}
           </tbody>
         </Table>
       </Main>
     );
-  };
-
+  }
 }
 export default Users;
-

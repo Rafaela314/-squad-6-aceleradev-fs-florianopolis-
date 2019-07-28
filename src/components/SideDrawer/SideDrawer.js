@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-import logo from "../../assets/uati_logo.png";
-import BurgerButton from "./BurgerButton";
+// import logo from "../../assets/uati_logo.png";
+// import BurgerButton from "./BurgerButton";
 
-import dash from "../../assets/icons/dashboard_g.svg";
-import bell from "../../assets/icons/bell.svg";
-import group_g from "../../assets/icons/group_g.svg";
-import upload from "../../assets/icons/upload.svg";
-import list from "../../assets/icons/list.svg";
+import dash from "../../assets/icons/DashboardNew.svg";
+import bell from "../../assets/icons/BellNew.svg";
+import users from "../../assets/icons/UsersNew.svg";
+import upload from "../../assets/icons/CloudNew.svg";
+import list from "../../assets/icons/ListNew.svg";
 import ToolBar from "./ToolBar";
 
 // TOOLBAR ===========
@@ -102,10 +102,10 @@ const Sidenav = styled.div`
 
 const Navlink = styled.a`
   /* padding: 80px 80px 80px 80px; */
-  text-decoration: none;
+
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   font-size: 20px;
-  color: white;
+  color: #d3d3d3;
   background-color: #2b313e;
   display: block;
   transition: 0.3s;
@@ -118,6 +118,8 @@ const Navlink = styled.a`
   /* border-top: 1px solid #b1b1b1; */
 
   &:hover {
+    text-decoration: none;
+
     color: black;
     background-color: #6bd2c9;
   }
@@ -137,14 +139,14 @@ const Sideblock = styled.div`
 `;
 
 const Icon = styled.img`
-  filter: brightness(1000);
+  filter: brightness(1);
   display: block;
   width: 30px;
   height: 30px;
   ${Navlink}:hover & {
     /* color: red; */
     /* background-color: yellow; */
-    filter: brightness(0);
+    filter: brightness(0.9);
   }
 `;
 
@@ -186,7 +188,7 @@ const SideDrawer = props => (
         <Sideblock>
           <Navlink href="/users">
             <Inv>.</Inv>
-            <Icon src={group_g} alt="users" />
+            <Icon src={users} alt="users" />
             <h4>Users</h4>
           </Navlink>
         </Sideblock>
@@ -195,7 +197,7 @@ const SideDrawer = props => (
           <Navlink href="/list">
             <Inv>.</Inv>
             <Icon src={list} alt="list" />
-            <h4>list</h4>
+            <h4>clients</h4>
           </Navlink>
         </Sideblock>
 
