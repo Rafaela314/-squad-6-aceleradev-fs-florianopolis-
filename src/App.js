@@ -14,62 +14,44 @@ import "./App.css";
 
 class App extends React.Component {
   state = {
-    prospects: [
-      {
-        id: 1,
-        name: "Carlos Santos",
-        position: "gerente de vendas",
-        place: "INSS",
-        salary: 23.0,
-        isclient: "yes"
-      },
-      {
-        id: 2,
-        name: "Sabrina Oliveira",
-        position: "recepcionista",
-        place: "TFJ",
-        salary: 21.0,
-        isclient: "no"
-      },
-      {
-        id: 3,
-        name: "Sarah Lima",
-        position: "Inspetora",
-        place: "Polícia Federal",
-        salary: 19.0,
-        isclient: "no"
-      },
-      {
-        id: 4,
-        name: "Marcos Schuler",
-        position: "caixa",
-        place: "Banco do Brasil",
-        salary: 20.0,
-        isclient: "yes"
-      }
-    ],
-    drawerIsOpen: false
+    // prospects: [
+    //   {
+    //     id: 1,
+    //     name: "Carlos Santos",
+    //     position: "gerente de vendas",
+    //     place: "INSS",
+    //     salary: 23.0,
+    //     isclient: "yes"
+    //   },
+    //   {
+    //     id: 2,
+    //     name: "Sabrina Oliveira",
+    //     position: "recepcionista",
+    //     place: "TFJ",
+    //     salary: 21.0,
+    //     isclient: "no"
+    //   },
+    //   {
+    //     id: 3,
+    //     name: "Sarah Lima",
+    //     position: "Inspetora",
+    //     place: "Polícia Federal",
+    //     salary: 19.0,
+    //     isclient: "no"
+    //   },
+    //   {
+    //     id: 4,
+    //     name: "Marcos Schuler",
+    //     position: "caixa",
+    //     place: "Banco do Brasil",
+    //     salary: 20.0,
+    //     isclient: "yes"
+    //   }
+    // ],
+    // drawerIsOpen: false
   };
 
-  // drawerToggleClickHandler = () => {
-  //   this.setState(prevState => {
-  //     return { drawerIsOpen: !prevState.drawerIsOpen };
-  //   });
-  // };
-
-  // backdropClickHandler = () => {
-  //   this.setState({ drawerIsOpen: false });
-  // };
-
   render() {
-    // let sideDrawer;
-    // let backdrop;
-
-    // if (this.state.drawerIsOpen) {
-    //   sideDrawer = <SideDrawer />;
-    //   backdrop = <Backdrop click={this.backdropClickHandler} />;
-    // }
-
     return (
       <div className="App" style={{ height: "100%" }}>
         {/* <ToolBar /> */}

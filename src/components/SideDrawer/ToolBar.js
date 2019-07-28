@@ -13,6 +13,7 @@ const Header = styled.header`
 `;
 
 const Logo = styled.div`
+  padding-left: 10px;
   position: fixed;
   margin-left: 3rem;
 
