@@ -53,14 +53,6 @@ const Inputbutton = styled.input`
     background: #369cb8;
   }
 `;
-/*
-const Tittle = styled.h2`
-  margin: 0 0 20px;
-  line-height: 1;
-  color: #44c4e7;
-  font-size: 18px;
-  font-weight: 400;
-`;*/
 
 class AddForm extends React.Component {
     state = {
@@ -77,8 +69,25 @@ class AddForm extends React.Component {
       submitFormAdd = e => {
         e.preventDefault()
 
-        this.props.addUserState();
-        /*fetch('http://localhost:3000/crud', {
+        /* insert users to get notification */
+     /* axios({
+       method:"post",
+       responseType:"json",
+       url:"/users",
+       data:{
+         name: this.state.name,
+         email: this.state.email,
+         position: this.state.position,
+
+       }
+     })
+     .then(response => {
+       console.log("response", response)
+     })
+     .catch(error=>{HTMLFormControlsCollection.log("erro",error);
+    });   */
+
+        fetch('http://localhost:8080/users', {
           method: 'post',
           headers: {
             'Content-Type': 'application/json'
@@ -99,16 +108,12 @@ class AddForm extends React.Component {
               console.log('failure')
             }
           })
-          .catch(err => console.log(err))*/
+          .catch(err => console.log(err))
       }
-      
-     /* componentDidMount(){
-          // if item exists, populate the state with proper data
-          if(this.props.user) {
-              const {id, name, email, position} = this.props.user
-              this.setState({ id, name, position, email})
-          }
-      }*/
+
+
+   
+
       render() {
     
           return(

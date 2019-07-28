@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Modal from "../components/Modal";
+import axios from 'axios';
 
 import trash from "../assets/icons/delete.svg";
 import plus from "../assets/icons/plus_b.svg";
@@ -71,11 +72,12 @@ class Users extends Component {
     show: false
   };
 
-  componentDidMount() {
-    console.log("componentDidMount coming through!");
+ 
+    
 
-    // FETCH
-    fetch("http://localhost:8080/users", {
+  
+    getUsers =() => {
+      fetch("http://localhost:8080/users", {
       method: "GET",
       credentials: "same-origin", // include, *same-origin, omit
       headers: {
@@ -98,7 +100,10 @@ class Users extends Component {
       .catch(err => {
         console.log(err);
       });
-  }
+    }
+    
+    
+  
 
   showModal = e => {
     this.setState({
@@ -106,18 +111,12 @@ class Users extends Component {
     });
   };
 
-  /*getUsers(){
-    fetch('http://localhost:3000/crud')
-      .then(response => response.json())
-      .then(users => this.setState({users}))
-      .catch(err => console.log(err))
-  }*/
-
-  addUserState = user => {
+  addUserToState = (user) => {
     this.setState(prevState => ({
       users: [...prevState.users, user]
-    }));
-  };
+    }))
+  }
+
 
   deleteUserState = id => {
     const updatedUsers = this.state.users.filter(user => user.id !== id);
@@ -125,9 +124,9 @@ class Users extends Component {
   };
 
   /*deleteUser = id => {
-    let confirmDelete = window.confirm('Are you sure?')
+    let confirmDelete = window.confirm('Are you sure you want to delete this user?')
     if(confirmDelete){
-      fetch('http://localhost:3000/crud', {
+      fetch('http://localhost:8080/users', {
       method: 'delete',
       headers: {
         'Content-Type': 'application/json'
@@ -138,16 +137,40 @@ class Users extends Component {
     })
       .then(response => response.json())
       .then(item => {
-        this.deleteItemFromState(id)
+        this.props.deleteUserState(id)
+      })
+      .catch(err => console.log(err))
+    }   
+  }*/
+    
+
+/*
+  deleteUser = id => {
+    let confirmDelete = window.confirm('Are you sure you want to delete this user?')
+    if(confirmDelete){
+      fetch("http://localhost:8080/users/", {
+        method: 'delete',
+        params:{user:id},
+        /*headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          id
+        })
+      })
+      .then(response => response.json())
+      .then(item => {
+        this.props.deleteUserState(id)
       })
       .catch(err => console.log(err))
     }
 
   }*/
-
-  /*componentDidMount(){
+  componentDidMount(){
+    console.log("componentDidMount coming through!");
     this.getUsers()
-  }*/
+  }
+
 
   renderTableHeader() {
     if (this.state.users[0]) {
@@ -165,14 +188,17 @@ class Users extends Component {
 
     return (
       <Main>
-        <Modal
-          onClose={this.showModal}
-          show={this.state.show}
-          addItemToState={this.addUserState}
-          style={{ flexDirection: "row" }}
-        >
-          Message in Modal
-        </Modal>
+        <div style={{width:'110px'}}>
+          <Modal
+            onClose={this.showModal}
+            show={this.state.show}
+            addUserState={this.addUserState}
+            style={{ flexDirection: "row" }}
+           >
+            Message in Modal
+          </Modal>
+        </div>
+        
         <Table>
           <tbody>
             <Tr>
@@ -200,7 +226,7 @@ class Users extends Component {
                 <Td>{user.email}</Td>
                 <Td style={{ align: "center" }}>
                   <button
-                    onClick={() => this.deleteUserState(user.id)}
+                    onClick={() => this.deleteUser(user.id)}
                     style={{ margin: "auto", display: "block" }}
                   >
                     {" "}
