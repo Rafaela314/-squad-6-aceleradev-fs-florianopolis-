@@ -25,54 +25,51 @@ class Dashboard extends React.Component {
       
   }
 
-
-
-  /*getDash =() => {
-    axios.get('/dashboard').then(response => response.data)
-    .then((data)=> {
-    this.setState({users: data})
-    console.log(this.state.users)
+  getDash = () => {
+    axios("http://localhost:8080/dashboard", {
+    method: "GET",
+    credentials: "same-origin", // include, *same-origin, omit
+    headers: {
+    "Content-Type": "application/json",
+    Authorization: "Basic YWRtaW46YWRtaW4="
+    },
+    redirect: "follow", // manual, *follow, error
+    referrer: "no-referrer" // no-referrer, *client
     })
-
-  }*/
-      
-  getDash =() => {
-      fetch("http://localhost:8080/dashboard", {
-      method: "GET",
-      credentials: "same-origin", // include, *same-origin, omit
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Basic YWRtaW46YWRtaW4="
-      },
-      redirect: "follow", // manual, *follow, error
-      referrer: "no-referrer" // no-referrer, *client
+    .then(response => {
+    console.log("Statistics", response.data.statistics);
+    console.log("Ranks", response.data.ranks);
+    //return response.json(); não faz - dá erro
     })
-      .then(response => {
-        console.log("hello");
-        return response.json();
-      })
-      .then(data => {
-        console.log(data);
-        this.setState({
-          users: data
-        });
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    .then(data => {
+    //não está fazendo -
+    console.log("data", data);
+    /*this.setState({
+    users: data
+    });*/
+    })
+    .catch(err => {
+    if (err.response) {
+    if (err.response.status === 400) {
+    //precisa - vai passar aqui qdo não tiver
+    alert(err.response.data.message); 
     }
-     
-
-  componentDidMount() {
-   /* axios.get('/dashboard').then(response => response.data)
-    .then((data)=> {
-    this.setState({users: data})
-    console.log(this.state.users)
-    })*/
-    this.getDash()
+  } else {
+  console.log("Erro", err);
   }
+  });
+};
 
-  
+componentDidMount() {
+/* axios.get('/dashboard').then(response => response.data)
+.then((data)=> {
+this.setState({users: data})
+console.log(this.state.users)
+})*/
+this.getDash();
+}
+
+
 
     /*request login*/
 
@@ -86,7 +83,6 @@ class Dashboard extends React.Component {
   .catch(function (error) {
     console.log(error);
   });*/
-
   
   render() {
     // console.log(this.props);
