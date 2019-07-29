@@ -1,4 +1,41 @@
-// Get statistics to dashboard
+/* DAQUI - ESCRITO EM CIMA DO FRONT*/
+getDash = () => {
+  axios("http://localhost:8080/dashboard", {
+    method: "GET",
+    credentials: "same-origin", // include, *same-origin, omit
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Basic YWRtaW46YWRtaW4="
+    },
+    redirect: "follow", // manual, *follow, error
+    referrer: "no-referrer" // no-referrer, *client
+  })
+    .then(response => {
+      console.log("Statistics", response.data.statistics);
+      console.log("Ranks", response.data.ranks);
+      //return response.json(); não faz - dá erro
+    })
+    .then(data => { //não está fazendo - 
+      console.log("data", data);
+      /*this.setState({
+        users: data
+      });*/
+    })
+    .catch(err => {
+      if (err.response) {
+        if (err.response.status === 400) { //precisa - vai passar aqui qdo não tiver 
+          alert(err.response.data.message);
+        }
+      } else {
+        console.log("Erro", err);
+      }
+    });
+};
+/*ATÉ AQUI*/
+
+
+
+// meu primeiro Get statistics to dashboard
 const getDash = () => {
   axios({
     method: "get",
