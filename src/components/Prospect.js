@@ -13,13 +13,11 @@ const Td = styled.td`
 
 const Prospect = ({ prospect }) => {
   return (
-    <tr key={prospect.id}>
-      <Td>{prospect.id}</Td>
+    <tr key={prospect.id_lote}>
       <Td>{prospect.name}</Td>
       <Td>{prospect.position}</Td>
       <Td>{prospect.place}</Td>
       <Td>{prospect.salary}</Td>
-      <Td>{prospect.isclient}</Td>
     </tr>
   );
 };
