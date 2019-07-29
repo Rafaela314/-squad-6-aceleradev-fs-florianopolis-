@@ -189,7 +189,7 @@ const SideDrawer = props => (
         <Sideblock>
           <Navlink href="/prospects">
             <Inv>.</Inv>
-            <Icon src={target} alt="prospects" />
+            <Icon src={target} alt="prospects list" />
             <h4>Prospects</h4>
           </Navlink>
         </Sideblock>
@@ -197,7 +197,7 @@ const SideDrawer = props => (
         <Sideblock>
           <Navlink href="/clients">
             <Inv>.</Inv>
-            <Icon src={clients} alt="list" />
+            <Icon src={clients} alt="clients list" />
             <h4>clients</h4>
           </Navlink>
         </Sideblock>
