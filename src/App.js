@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import Loginform from "./components/Loginform";
-import Dashboard from "./components/Dashboard/Dashboard";
+import Dashboard from "./views/Dashboard";
 import Notifications from "./components/Notifications/Notifications";
 import Users from "./components/Users";
 import Upload from "./views/Upload/Upload";
