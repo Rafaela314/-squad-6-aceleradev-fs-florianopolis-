@@ -4,11 +4,12 @@ import styled from "styled-components";
 // import logo from "../../assets/uati_logo.png";
 // import BurgerButton from "./BurgerButton";
 
-import dash from "../../assets/icons/DashboardNew.svg";
-import bell from "../../assets/icons/BellNew.svg";
-import users from "../../assets/icons/UsersNew.svg";
-import upload from "../../assets/icons/CloudNew.svg";
-import list from "../../assets/icons/ListNew.svg";
+import dash from "../../assets/icons/dash_w.svg";
+import target from "../../assets/icons/objective_w.svg";
+import clients from "../../assets/icons/clients_w.svg";
+import users from "../../assets/icons/group_w.svg";
+import bell from "../../assets/icons/bell_w.svg";
+
 import ToolBar from "./ToolBar";
 
 // TOOLBAR ===========
@@ -186,6 +187,22 @@ const SideDrawer = props => (
         </Sideblock>
         <Line />
         <Sideblock>
+          <Navlink href="/prospects">
+            <Inv>.</Inv>
+            <Icon src={target} alt="prospects" />
+            <h4>Prospects</h4>
+          </Navlink>
+        </Sideblock>
+        <Line />
+        <Sideblock>
+          <Navlink href="/clients">
+            <Inv>.</Inv>
+            <Icon src={clients} alt="list" />
+            <h4>clients</h4>
+          </Navlink>
+        </Sideblock>
+        <Line />
+        <Sideblock>
           <Navlink href="/users">
             <Inv>.</Inv>
             <Icon src={users} alt="users" />
@@ -193,13 +210,6 @@ const SideDrawer = props => (
           </Navlink>
         </Sideblock>
         <Line />
-        <Sideblock>
-          <Navlink href="/list">
-            <Inv>.</Inv>
-            <Icon src={list} alt="list" />
-            <h4>clients</h4>
-          </Navlink>
-        </Sideblock>
 
         <Line />
         <Sideblock>
@@ -210,13 +220,6 @@ const SideDrawer = props => (
           </Navlink>
         </Sideblock>
         <Line />
-        <Sideblock>
-          <Navlink href="/upload">
-            <Inv>.</Inv>
-            <Icon src={upload} alt="upload" />
-            <h4>upload</h4>
-          </Navlink>
-        </Sideblock>
       </Sidenav>
     </Hoveri>
   </div>
