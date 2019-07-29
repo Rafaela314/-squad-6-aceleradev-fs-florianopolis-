@@ -73,7 +73,12 @@ class Users extends Component {
   };
 
  
-    
+    /* get users that will receive notifications
+    axios.get('/users').then(response => response.data)
+    .then((data)=> {
+    this.setState({users: data})
+    console.log(this.state.users)
+    })*/
 
   
     getUsers =() => {
@@ -123,7 +128,7 @@ class Users extends Component {
     this.setState({ users: updatedUsers });
   };
 
-  /*deleteUser = id => {
+  deleteUser = id => {
     let confirmDelete = window.confirm('Are you sure you want to delete this user?')
     if(confirmDelete){
       fetch('http://localhost:8080/users', {
@@ -136,36 +141,13 @@ class Users extends Component {
       })
     })
       .then(response => response.json())
-      .then(item => {
+      .then(user => {
         this.props.deleteUserState(id)
       })
       .catch(err => console.log(err))
     }   
-  }*/
+  }
     
-
-/*
-  deleteUser = id => {
-    let confirmDelete = window.confirm('Are you sure you want to delete this user?')
-    if(confirmDelete){
-      fetch("http://localhost:8080/users/", {
-        method: 'delete',
-        params:{user:id},
-        /*headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          id
-        })
-      })
-      .then(response => response.json())
-      .then(item => {
-        this.props.deleteUserState(id)
-      })
-      .catch(err => console.log(err))
-    }
-
-  }*/
   componentDidMount(){
     console.log("componentDidMount coming through!");
     this.getUsers()
