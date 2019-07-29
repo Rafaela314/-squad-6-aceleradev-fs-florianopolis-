@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import { Container, Row, Col } from "react-bootstrap";
+import axios from 'axios';
 
 const Formbox = styled.form`
   display: flex;
@@ -68,25 +69,6 @@ class AddForm extends React.Component {
 
       submitFormAdd = e => {
         e.preventDefault()
-
-        /* insert users to get notification */
-     /* axios({
-       method:"post",
-       responseType:"json",
-       url:"/users",
-       data:{
-         name: this.state.name,
-         email: this.state.email,
-         position: this.state.position,
-
-       }
-     })
-     .then(response => {
-       console.log("response", response)
-     })
-     .catch(error=>{HTMLFormControlsCollection.log("erro",error);
-    });   */
-
         fetch('http://localhost:8080/users', {
           method: 'post',
           headers: {
@@ -109,10 +91,14 @@ class AddForm extends React.Component {
             }
           })
           .catch(err => console.log(err))
-      }
+    }
 
-
-   
+    componentDidMount(){
+        if(this.props.user){
+            const {id, name, position, email} = this.props.user
+            this.setState({id, name, position, email})
+        }
+    }
 
       render() {
     

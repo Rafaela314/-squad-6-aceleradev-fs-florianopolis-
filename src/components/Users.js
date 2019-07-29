@@ -131,7 +131,17 @@ class Users extends Component {
   deleteUser = id => {
     let confirmDelete = window.confirm('Are you sure you want to delete this user?')
     if(confirmDelete){
-      fetch('http://localhost:8080/users', {
+      axios.delete('http://localhost:8080/users/'+ id)
+      .then(console.log('Deleted'))
+      .catch(err => console.log(err))
+    }
+    
+  }
+
+  /*deleteUser = id => {
+    let confirmDelete = window.confirm('Are you sure you want to delete this user?')
+    if(confirmDelete){
+      fetch('http://localhost:8080/users/', {
       method: 'delete',
       headers: {
         'Content-Type': 'application/json'
@@ -146,7 +156,7 @@ class Users extends Component {
       })
       .catch(err => console.log(err))
     }   
-  }
+  }*/
     
   componentDidMount(){
     console.log("componentDidMount coming through!");
@@ -201,7 +211,7 @@ class Users extends Component {
               </Th>
             </Tr>
             {users.map((user, index) => (
-              <tr key={user.id}>
+              <tr key={user.id} >
                 <Td>{user.id}</Td>
                 <Td>{user.name}</Td>
                 <Td>{user.position}</Td>
