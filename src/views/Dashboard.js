@@ -25,12 +25,51 @@ class Dashboard extends React.Component {
       
   }
 
-  componentDidMount() {
+
+
+  /*getDash =() => {
     axios.get('/dashboard').then(response => response.data)
     .then((data)=> {
     this.setState({users: data})
     console.log(this.state.users)
     })
+
+  }*/
+      
+  getDash =() => {
+      fetch("http://localhost:8080/dashboard", {
+      method: "GET",
+      credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Basic YWRtaW46YWRtaW4="
+      },
+      redirect: "follow", // manual, *follow, error
+      referrer: "no-referrer" // no-referrer, *client
+    })
+      .then(response => {
+        console.log("hello");
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        this.setState({
+          users: data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    }
+     
+
+  componentDidMount() {
+   /* axios.get('/dashboard').then(response => response.data)
+    .then((data)=> {
+    this.setState({users: data})
+    console.log(this.state.users)
+    })*/
+    this.getDash()
   }
 
   
@@ -49,8 +88,6 @@ class Dashboard extends React.Component {
   });*/
 
   
-  
-
   render() {
     // console.log(this.props);
     // console.log(this.state);
