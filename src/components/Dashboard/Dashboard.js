@@ -96,12 +96,14 @@ class Dashboard extends React.Component {
                 <Card.Body>
                   <Card.Title>
                     Goal vs Actual <br />
-                    (20K+ only)
+              
                   </Card.Title>
                   <Card.Text style={{ paddingBottom: "5px" }}>
                     Period: Jul/ 2019 <br />
-                    Market Share: 70% | 53% <br />
-                    TT Revenue: 2MM | 1.354MM <br />
+                    TT Market potential: 480MM <br />
+                    Market Share: 10% | 0.1% <br />
+                    TT Revenue: 62MM | 485M <br />
+                    
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -129,12 +131,12 @@ class Dashboard extends React.Component {
                 </Card.Header>
                 <Card.Body>
                   <Card.Title>
-                    Gov. workforce wage <br /> (20K+ only)
+                    Gov. workforce wage <br /> 
                   </Card.Title>
                   <Card.Text style={{ paddingBottom: "5px" }}>
-                    Mean: 19k <br />
-                    Median: 20k <br />
-                    Mode: 45k <br />
+                    Mean: 5.004,48 <br />
+                    Median: 3.617,89 <br />
+                    Mode: 2.968,7 <br />
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -165,9 +167,8 @@ class Dashboard extends React.Component {
                     Gov. workforce wage <br /> (20K+ only)
                   </Card.Title>
                   <Card.Text style={{ paddingBottom: "5px" }}>
-                    Range: 19k - 54K <br />
-                    Variance: XXXXX <br />
-                    St Deviation: 15k <br />
+                    Range clients: 445 - 38k <br />
+                    Range prospects: 20k - 170K <br />
                   </Card.Text>
                 </Card.Body>
               </Card>
