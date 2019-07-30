@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+import { render } from 'react-dom';
+
 import styled from "styled-components";
 import Prospect from "../components/Prospect";
+import Loading from '../components/Loading';
 import PropTypes from "prop-types";
 
 const Main = styled.div`
@@ -46,7 +49,8 @@ class Prospects extends Component {
 
   state = {
     query: "",
-    prospects: []
+    prospects: [],
+    loading: true,
   };
 
   updateQuery = query => {
@@ -54,6 +58,7 @@ class Prospects extends Component {
       query: query.trim()
     }));
   };
+
 
   getProspects = () => {
     fetch("http://localhost:8080/leads", {
@@ -66,12 +71,13 @@ class Prospects extends Component {
       redirect: "follow", // manual, *follow, error
       referrer: "no-referrer" // no-referrer, *client
     })
-      .then(response => {
+      .then(response =>{
         return response.json();
       })
       .then(data => {
         console.log(data);
         this.setState({
+          loading: false,
           prospects: data
         });
       })
@@ -80,11 +86,39 @@ class Prospects extends Component {
       });
   };
 
+ /* getProspects = () => {
+    fetch("http://localhost:8080/leads", {
+      method: "GET",
+      credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Basic YWRtaW46YWRtaW4="
+      },
+      redirect: "follow", // manual, *follow, error
+      referrer: "no-referrer" // no-referrer, *client
+    })
+      .then(response =>{
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        this.setState({
+          loading: false,
+          prospects: data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };*/
+
   componentDidMount() {
+
     this.getProspects();
   }
 
   renderTableHeader() {
+
     if (this.state.prospects[0]) {
       let header = Object.keys(this.state.prospects[0]);
       return header.map((key, index) => {
@@ -96,8 +130,9 @@ class Prospects extends Component {
   }
 
   render() {
+
     /*const { query } = this.state;*/
-    const { prospects } = this.state;
+    const { prospects, loading } = this.state;
 
     /*const newList =
       query === ""
@@ -107,67 +142,35 @@ class Prospects extends Component {
           );*/
 
     return (
+     
       <Main>
-        <div>
-          {/*<input
-            type="text"
-            placeholder="Search Contacts"
-            value={query}
-          onChange={event => this.updateQuery(event.target.value)}*/}
-          />
-        </div>
+        {loading ? 
+        <Loading /> 
+        : 
+        
+        <React.Fragment>
+          <div>
+            {/*<input
+              type="text"
+              placeholder="Search Contacts"
+              value={query}
+            onChange={event => this.updateQuery(event.target.value)}*/}
+            />
+          </div>
 
-        <Table>
-          <tbody>
-            <Tr>{this.renderTableHeader()}</Tr>
-            {prospects.map((item, index) => (
-              <Prospect key={index} prospect={item} />
-            ))}
-          </tbody>
-        </Table>
+          <Table>
+            <tbody>
+              <Tr>{this.renderTableHeader()}</Tr>
+              {prospects.map((item, index) => (
+                <Prospect key={index} prospect={item} />
+              ))}
+            </tbody>
+          </Table>
+        </React.Fragment>
+        }
       </Main>
     );
   }
 }
-
-/*
-<Table>
-          <tbody>
-            <Tr>
-              {this.renderTableHeader()}
-              <Th>
-                <Addnew
-                  onClick={e => {
-                    this.showModal();
-                  }}
-                >
-                  ADD NEW
-                  <Icon
-                    src={plus}
-                    alt="new user"
-                    style={{ display: "inline" }}
-                  />
-                </Addnew>
-              </Th>
-            </Tr>
-            {users.map((user, index) => (
-              <tr key={user.id} >
-                <Td>{user.id}</Td>
-                <Td>{user.name}</Td>
-                <Td>{user.position}</Td>
-                <Td>{user.email}</Td>
-                <Td style={{ align: "center" }}>
-                  <button
-                    onClick={() => this.deleteUser(user.id)}
-                    style={{ margin: "auto", display: "block" }}
-                  >
-                    {" "}
-                    <Icon src={trash} alt="delete" />{" "}
-                  </button>
-                </Td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>*/
 
 export default Prospects;
