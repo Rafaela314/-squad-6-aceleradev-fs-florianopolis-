@@ -4,12 +4,12 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 // import { getAll } from "../../services/funcionarios";
 
 import styled from "styled-components";
-import PieData from "./Dashboard/Charts/PieData";
-import AreaDataRS from "./Dashboard/Charts/AreaDataRS";
-import AreaDataN from "./Dashboard/Charts/AreaDataN";
-import Top10N from "./Dashboard/Charts/Top10N";
-import Top10RS from "./Dashboard/Charts/Top10RS";
-import RangeWage from "./Dashboard/Charts/RangeWage";
+import PieData from "./Charts/PieData";
+import AreaDataRS from "./Charts/AreaDataRS";
+import AreaDataN from "./Charts/AreaDataN";
+import Top10N from "./Charts/Top10N";
+import Top10RS from "./Charts/Top10RS";
+import RangeWage from "./Charts/RangeWage";
 
 // Falta Revisar o código e formatar com boas práticas
 

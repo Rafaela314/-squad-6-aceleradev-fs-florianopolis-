@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import Modal from "../components/Modal";
+import Modal from "../Modal";
 import axios from "axios";
 
-import trash from "../assets/icons/delete.svg";
-import plus from "../assets/icons/plus_b.svg";
+import trash from "../../assets/icons/delete.svg";
+import plus from "../../assets/icons/plus_b.svg";
 
 const Main = styled.div`
   display: flex;
@@ -80,6 +80,32 @@ class Users extends Component {
     })*/
 
   getUsers = () => {
+    fetch("http://localhost:8080/users", {
+      method: "GET",
+      credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Basic YWRtaW46YWRtaW4="
+      },
+      redirect: "follow", // manual, *follow, error
+      referrer: "no-referrer" // no-referrer, *client
+    })
+      .then(response => {
+        console.log("hello");
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        this.setState({
+          users: data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
+  postUsers = () => {
     fetch("http://localhost:8080/users", {
       method: "GET",
       credentials: "same-origin", // include, *same-origin, omit

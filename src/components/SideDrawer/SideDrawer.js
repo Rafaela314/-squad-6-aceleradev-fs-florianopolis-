@@ -1,14 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-// import logo from "../../assets/uati_logo.png";
-// import BurgerButton from "./BurgerButton";
-
+// import Icons
 import dash from "../../assets/icons/dash_w.svg";
-import target from "../../assets/icons/objective_w.svg";
+import prospects from "../../assets/icons/objective_w.svg";
 import clients from "../../assets/icons/clients_w.svg";
 import users from "../../assets/icons/group_w.svg";
-import bell from "../../assets/icons/bell_w.svg";
+import notifications from "../../assets/icons/bell_w.svg";
 
 import ToolBar from "./ToolBar";
 
@@ -49,13 +47,6 @@ const Logo = styled.div`
     height: auto;
     width: 80px;
   }
-
-  /* ${Header}:hover & {
-    background-color: yellow;
-    width: 200px;
-    color: white;
-
-  } */
 `;
 
 // SIDENAV ================
@@ -189,7 +180,7 @@ const SideDrawer = props => (
         <Sideblock>
           <Navlink href="/prospects">
             <Inv>.</Inv>
-            <Icon src={target} alt="prospects list" />
+            <Icon src={prospects} alt="prospects list" />
             <h4>Prospects</h4>
           </Navlink>
         </Sideblock>
@@ -215,7 +206,7 @@ const SideDrawer = props => (
         <Sideblock>
           <Navlink href="/notifications">
             <Inv>.</Inv>
-            <Icon src={bell} alt="notifications" />
+            <Icon src={notifications} alt="notifications" />
             <h4>notifications</h4>
           </Navlink>
         </Sideblock>
