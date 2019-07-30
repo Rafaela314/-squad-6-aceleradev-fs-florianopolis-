@@ -5,7 +5,7 @@ import Login from "./components/Login/Loginform";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Prospects from "./views/Prospects";
 import Clients from "./components/Clients/Clients";
-import Users from "./components/AddUser/Users";
+import Users from "./views/Users/Users";
 import Notifications from "./components/Notifications/Notifications";
 
 import SideDrawer from "./components/SideDrawer/SideDrawer";
