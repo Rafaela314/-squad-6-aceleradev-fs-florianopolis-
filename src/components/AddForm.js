@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "react-bootstrap";
-import axios from 'axios';
+import axios from "axios";
 
 const Formbox = styled.form`
   display: flex;
@@ -15,17 +15,15 @@ const Formbox = styled.form`
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
   z-index: 3;
 `;
-  
-  
-  /*
+
+/*
   left: 50%;
   background: #fff;
   flex-flow: row wrap;
   margin: -10px 0 0 -400px;*/
-  
 
 const Inputfield = styled.input`
-  outline: none; 
+  outline: none;
   padding: 10px 15px 10px 15px;
   margin-left: 15px;
   border: 1px solid #ccc;
@@ -56,75 +54,72 @@ const Inputbutton = styled.input`
 `;
 
 class AddForm extends React.Component {
-    state = {
-        id: 0,
-        name: " ",
-        position: " ",
-        email:" "
-    }
+  state = {
+    id: 0,
+    name: " ",
+    position: " ",
+    email: " "
+  };
 
-    onChange = e => {
-        this.setState({[e.target.name]: e.target.value})
-      }
+  onChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
-      submitFormAdd = e => {
-        e.preventDefault()
-        fetch('http://localhost:8080/users', {
-          method: 'post',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            id: this.state.id,
-            name: this.state.name,
-            email: this.state.email,
-            position: this.state.position,
-           
-          })
-        })
-          .then(response => response.json())
-          .then(user => {
-            if(Array.isArray(user)) {
-              this.props.addUserState(user[0])
-           } else {
-              console.log('failure')
-            }
-          })
-          .catch(err => console.log(err))
-    }
-
-    componentDidMount(){
-        if(this.props.user){
-            const {id, name, position, email} = this.props.user
-            this.setState({id, name, position, email})
+  submitFormAdd = e => {
+    e.preventDefault();
+    fetch("http://localhost:8080/users", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        id: this.state.id,
+        name: this.state.name,
+        email: this.state.email,
+        position: this.state.position
+      })
+    })
+      .then(response => response.json())
+      .then(user => {
+        if (Array.isArray(user)) {
+          this.props.addUserState(user[0]);
+        } else {
+          console.log("failure");
         }
+      })
+      .catch(err => console.log(err));
+  };
+
+  componentDidMount() {
+    if (this.props.user) {
+      const { id, name, position, email } = this.props.user;
+      this.setState({ id, name, position, email });
     }
+  }
 
-      render() {
-    
-          return(
-              <Formbox onSubmit={this.submitFormAdd}>
-                  <label>
-                     Id:
-                    <Inputfield type="text" name="id" onChange={this.onChange} />
-                  </label>
-                  <label>
-                     Name:
-                    <Inputfield type="text" name="name"  onChange={this.onChange}/>
-                  </label>
-                  <label>
-                     Position:
-                    <Inputfield type="text" name="position" onChange={this.onChange}/>
-                  </label>
-                  <label>
-                     Email:
-                    <Inputfield type="text" name="email" onChange={this.onChange}/>
-                  </label>
-                  <Inputbutton type="submit" value="Submit" />
-              </Formbox>
-          );
-
-      }
+  render() {
+    return (
+      <Formbox onSubmit={this.submitFormAdd}>
+        <label>
+          Id:
+          <Inputfield type="text" name="id" onChange={this.onChange} />
+        </label>
+        <label>
+          Name:
+          <Inputfield type="text" name="name" onChange={this.onChange} />
+        </label>
+        <label>
+          Position:
+          <Inputfield type="text" name="position" onChange={this.onChange} />
+        </label>
+        <label>
+          Email:
+          <Inputfield type="text" name="email" onChange={this.onChange} />
+        </label>
+        <Inputbutton type="submit" value="Submit" />
+      </Formbox>
+    );
+  }
 }
 
 export default AddForm;
