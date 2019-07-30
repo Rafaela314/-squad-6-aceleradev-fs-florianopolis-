@@ -74,7 +74,7 @@ class Notifications extends Component {
   };
 
   render() {
-    // console.log("state table", this.state);
+    console.log("state table", this.state);
     return (
       <div className="container">
         <SearchBar

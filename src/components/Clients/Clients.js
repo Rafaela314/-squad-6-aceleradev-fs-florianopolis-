@@ -4,6 +4,8 @@ import styled from "styled-components";
 import axios from "axios";
 import Table from "./Table";
 
+const auth = localStorage.getItem("token");
+
 const Wrapper = styled.div`
   padding-top: 50px;
   height: 100%;
@@ -19,30 +21,30 @@ class Upload extends Component {
     searchString: ""
   };
 
-  componentDidMount() {
-    console.log("componentDidMount coming through!");
-    console.log(this);
-    console.log(<Table />);
+  // componentDidMount() {
+  //   console.log("componentDidMount coming through!");
+  //   console.log(this);
+  //   console.log(<Table />);
 
-    axios
-      .get("http://localhost:8080/clients", {
-        method: "GET",
-        credentials: "same-origin", // include, *same-origin, omit
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Basic YWRtaW46YWRtaW4="
-        },
-        redirect: "follow", // manual, *follow, error
-        referrer: "no-referrer" // no-referrer, *client
-      })
-      .then(res => {
-        const users = res.data;
-        console.log(users);
-        // this.setState({
-        //   users
-        // });
-      });
-  }
+  //   axios
+  //     .get("http://localhost:8080/clients", {
+  //       method: "GET",
+  //       credentials: "same-origin", // include, *same-origin, omit
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Authorization: "Basic YWRtaW46YWRtaW4="
+  //       },
+  //       redirect: "follow", // manual, *follow, error
+  //       referrer: "no-referrer" // no-referrer, *client
+  //     })
+  //     .then(res => {
+  //       const users = res.data;
+  //       console.log(users);
+  //       // this.setState({
+  //       //   users
+  //       // });
+  //     });
+  // }
 
   uploadCSV = () => {
     var formData = new FormData();
@@ -60,7 +62,7 @@ class Upload extends Component {
           headers: {
             "content-type":
               "multipart/form-data; boundary=--------------------------210852888477784036698929",
-            Authorization: "Basic YWRtaW46YWRtaW4="
+            Authorization: auth
           }
         }
       )
@@ -68,7 +70,7 @@ class Upload extends Component {
   };
 
   render() {
-    console.log("state", this.state.clients);
+    // console.log("state", this.state.clients);
     return (
       <div>
         <h1>Upload CSV file</h1>

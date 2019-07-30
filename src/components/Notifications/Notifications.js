@@ -3,6 +3,8 @@ import styled from "styled-components";
 // import notifications from "../../JSON/notifications.json";
 import Row from "./Row";
 
+const auth = localStorage.getItem("token");
+
 // Objetivo de importar notifications e da função render notifications é simular
 // uma request padrao para a API
 

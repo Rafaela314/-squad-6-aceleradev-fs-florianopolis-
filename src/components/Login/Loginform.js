@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { Redirect } from "react-router-dom";
+import axios from "axios";
 
-const Formbox = styled.form`
+const Formbox = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -54,30 +55,19 @@ const Tittle = styled.h2`
   font-weight: 400;
 `;
 
-/*axios.post( '/login', {
-  password: "admin",
-  username: "admin"
-})
-.then(function(response){
-  console.log(response);
-})
-.catch(function(error) {
-  console.log(error);
-}); */
-
-const JWT =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNjcxNjI5MDIzfQ.5YSiFpqnhV0BfSyC2OwULPvywIbnn86-xI62aqQi96Q";
+const auth = "Basic YWRtaW46YWRtaW4=";
 
 class Loginform extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userName: "",
-      password: ""
+      userName: " ",
+      password: " ",
+      status: ""
     };
-    this.handleInputChange = this.handleInputChange.bind(this);
   }
-  handleInputChange(e) {
+
+  handleInputChange = e => {
     const target = e.target;
     const value = target.value;
     const name = target.name;
@@ -85,21 +75,27 @@ class Loginform extends React.Component {
     this.setState({
       [name]: value
     });
-  }
+  };
 
-  // simulates the request on the API to get the token
-  handleLogin = () => {
-    if (
-      (this.state.userName === "superUser") &
-      (this.state.password === "superPassword")
-    ) {
-      localStorage.setItem(
-        "token",
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNjcxNjI5MDIzfQ.5YSiFpqnhV0BfSyC2OwULPvywIbnn86-xI62aqQi96Q"
-      );
-    } else {
-      alert("wrong login, try again");
-    }
+  doLogin = () => {
+    axios
+      .post("http://localhost:8080/login", {
+        // password: "admin",
+        // username: "admin"
+        username: this.state.userName,
+        password: this.state.password
+      })
+      .then(function(res) {
+        if (res.status === 200) {
+          alert("Loggado com sucesso!");
+          localStorage.setItem("token", "Basic YWRtaW46YWRtaW4=");
+        } else {
+          alert(" wrong username/password try again");
+        }
+      })
+      .catch(function(error) {
+        alert("Wrong login/password");
+      });
   };
 
   content = () => (
@@ -120,17 +116,17 @@ class Loginform extends React.Component {
           value={this.state.password}
           onChange={this.handleInputChange}
         />
-        <Inputbutton type="submit" value="Submit" onClick={this.handleLogin} />
+        <Inputbutton type="submit" value="Submit" onClick={this.doLogin} />
       </Formbox>
     </section>
   );
 
   redirect = () => <Redirect to="dashboard" />;
   render() {
-    console.log(this.state);
-    console.log(localStorage.getItem("token"));
+    // console.log("login state", this.state);
+    // console.log("localStorage login", localStorage.getItem("token"));
 
-    if (localStorage.getItem("token") === JWT) {
+    if (localStorage.getItem("token") === auth) {
       return this.redirect();
     } else {
       return this.content();

@@ -13,6 +13,8 @@ import RangeWage from "./Charts/RangeWage";
 
 // Falta Revisar o código e formatar com boas práticas
 
+const auth = localStorage.getItem("token");
+
 const Spacer = styled.div`
   height: 40px;
   width: 100%;
@@ -31,7 +33,7 @@ class Dashboard extends React.Component {
       credentials: "same-origin", // include, *same-origin, omit
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Basic YWRtaW46YWRtaW4="
+        Authorization: auth
       },
       redirect: "follow", // manual, *follow, error
       referrer: "no-referrer" // no-referrer, *client
