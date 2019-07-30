@@ -44,22 +44,34 @@ const Tr = styled.tr`
   border-bottom: 2px solid black;
 `;
 
+const SearchBar = styled.input`
+  display: block;
+  width: 200px;
+  margin-top: 40px;
+  margin-left: 80%;
+  border: 3px solid #6bd2c9;
+  padding: 5px;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  color: black;
+`;
+
 class Prospects extends Component {
   static propTypes = {
     prospects: PropTypes.array.isRequired
   };
 
   state = {
-    query: "",
+    searchString: "",
     prospects: [],
     loading: true
   };
 
-  updateQuery = query => {
-    this.setState(() => ({
-      query: query.trim()
-    }));
-  };
+  changeSearch = e =>
+    this.setState({
+      searchString: e.target.value
+    });
 
   getProspects = () => {
     fetch("http://localhost:8080/leads", {
@@ -102,16 +114,31 @@ class Prospects extends Component {
     }
   }
 
-  render() {
-    /*const { query } = this.state;*/
-    const { prospects, loading } = this.state;
+  renderProspects = searchString => {
+    const search = this.state.searchString;
+    const prospectsJson = this.state.prospects;
 
-    /*const newList =
-      query === ""
-        ? prospects
-        : prospects.filter(c =>
-            c.title.toLowerCase().includes(query.toLowerCase())
-          );*/
+    if (search === "") {
+      return prospectsJson.map((item, index) => (
+          <Prospect key={index} prospect={item} id={index}/>
+        ))
+    } else {
+      let result = prospectsJson.filter(c =>
+        c.name.toLowerCase().includes(search.toLowerCase())
+      );
+
+      return result.map((item, index) => (
+        <Prospect key={index} prospect={item} id={index}/>
+      
+
+      ))
+    }
+  } 
+
+
+  render() {
+
+    const { prospects, loading } = this.state;
 
     return (
       <Main>
@@ -119,21 +146,10 @@ class Prospects extends Component {
           <Loading />
         ) : (
           <React.Fragment>
-            <div>
-              {/*<input
-              type="text"
-              placeholder="Search Contacts"
-              value={query}
-            onChange={event => this.updateQuery(event.target.value)}*/}
-              />
-            </div>
-
             <Table>
               <tbody>
                 <Tr>{this.renderTableHeader()}</Tr>
-                {prospects.map((item, index) => (
-                  <Prospect key={index} prospect={item} />
-                ))}
+                {this.renderProspects()}
               </tbody>
             </Table>
           </React.Fragment>

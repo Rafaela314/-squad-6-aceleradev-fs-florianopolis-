@@ -10,17 +10,6 @@ const auth = localStorage.getItem("token");
 // Objetivo de importar notifications e da função render notifications é simular
 // uma request padrao para a API
 
-const SearchBar = styled.input`
-  display: block;
-  margin-top: 40px;
-  margin-left: 10%;
-  border: 3px solid #00b4cc;
-  padding: 5px;
-  height: 20px;
-  border-radius: 5px;
-  outline: none;
-  color: black;
-`;
 
 const Main = styled.div`
   display: flex;
@@ -122,7 +111,7 @@ class Notifications extends Component {
       searchString: e.target.value
     });
 
-  getNotifications = () => {
+  /*getNotifications = () => {
     fetch("http://localhost:8080/events", {
       method: "GET",
       credentials: "same-origin", // include, *same-origin, omit
@@ -146,7 +135,7 @@ class Notifications extends Component {
       .catch(err => {
         console.log(err);
       });
-  };
+  };*/
 
   renderTableHeader() {
     if (this.state.notifications[0]) {
@@ -158,8 +147,6 @@ class Notifications extends Component {
       return null;
     }
   }
-
-
  
   renderNotifications = searchString => {
     const search = this.state.searchString;
