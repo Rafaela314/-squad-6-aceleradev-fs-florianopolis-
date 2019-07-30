@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Modal from "./Modal";
-import axios from 'axios';
+import axios from "axios";
 
 import trash from "../../assets/icons/delete.svg";
 import plus from "../../assets/icons/plus_b.svg";
+
+const auth = localStorage.getItem("token");
 
 const Main = styled.div`
   display: flex;
@@ -87,22 +89,20 @@ class Users extends Component {
     show: false
   };
 
- 
-    /* get users that will receive notifications
+  /* get users that will receive notifications
     axios.get('/users').then(response => response.data)
     .then((data)=> {
     this.setState({users: data})
     console.log(this.state.users)
     })*/
 
-  
-    getUsers =() => {
-      fetch("http://localhost:8080/users", {
+  getUsers = () => {
+    fetch("http://localhost:8080/users", {
       method: "GET",
       credentials: "same-origin", // include, *same-origin, omit
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Basic YWRtaW46YWRtaW4="
+        Authorization: auth
       },
       redirect: "follow", // manual, *follow, error
       referrer: "no-referrer" // no-referrer, *client
@@ -120,10 +120,7 @@ class Users extends Component {
       .catch(err => {
         console.log(err);
       });
-    }
-    
-    
-  
+  };
 
   showModal = e => {
     this.setState({
@@ -131,11 +128,12 @@ class Users extends Component {
     });
   };
 
-  addUserToState = (user) => {
-    this.setState(prevState => ({
+  addUserState = user => {
+    const teste = this.setState(prevState => ({
       users: [...prevState.users, user]
-    }))
-  }
+    }));
+    this.setState({ users: teste });
+  };
 
   deleteUserState = id => {
     const updatedUsers = this.state.users.filter(user => user.id !== id);
@@ -143,24 +141,27 @@ class Users extends Component {
   };
 
   deleteUser = id => {
-    let confirmDelete = window.confirm('Are you sure you want to delete this user?')
-    if(confirmDelete){
-      axios.delete('http://localhost:8080/users/'+ id)
-      .then(console.log('Deleted'))
-      .then(user => {
-        this.deleteUserState(id)
-      })
-      .catch(err => console.log(err))
+    let confirmDelete = window.confirm(
+      "Are you sure you want to delete this user?"
+    );
+    if (confirmDelete) {
+      axios
+        .delete("http://localhost:8080/users/" + id)
+        .then(console.log("Deleted"))
+        .then(user => {
+          this.deleteUserState(id);
+        })
+        .catch(err => console.log(err));
     }
-    
-  }
-//authorized.POST("events", sentEmail) 
+    this.deleteUserState(id);
+  };
+  //authorized.POST("events", sentEmail)
   sendMail = id => {
     fetch("http://localhost:8080/events", {
       method: "POST",
       credentials: "same-origin", // include, *same-origin, omit
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
       redirect: "follow", // manual, *follow, error
       referrer: "no-referrer" // no-referrer, *client
@@ -174,12 +175,11 @@ class Users extends Component {
       alert('report enviado');
   }
 
-    
-  componentDidMount(){
-    console.log("componentDidMount coming through!");
-    this.getUsers()
-  }
 
+  componentDidMount() {
+    console.log("componentDidMount coming through!");
+    this.getUsers();
+  }
 
   renderTableHeader() {
     if (this.state.users[0]) {
@@ -192,72 +192,64 @@ class Users extends Component {
     }
   }
 
-
-
   render() {
     const { users } = this.state;
 
     return (
-     <React.Fragment>
-       <Main>
-        <div style={{width:'110px'}}>
-          <Modal
-            onClose={this.showModal}
-            show={this.state.show}
-            addUserState={this.addUserState}
-            style={{ flexDirection: "row" }}
-           >
-            Message in Modal
-          </Modal>
-        </div>
-        
-        <Table>
-          <tbody>
-            <Tr>
-              {this.renderTableHeader()}
-              <Th>
-                <Addnew
-                  onClick={e => {
-                    this.showModal();
-                  }}
-                >
-                  ADD NEW
-                  <Icon
-                    src={plus}
-                    alt="new user"
-                    style={{ display: "inline" }}
-                  />
-                </Addnew>
-              </Th>
-            </Tr>
-            {users.map((user, index) => (
-              <tr key={user.id} >
-                <Td>{user.id}</Td>
-                <Td>{user.name}</Td>
-                <Td>{user.position}</Td>
-                <Td>{user.email}</Td>
-                <Td style={{ align: "center" }}>
-                  <button
-                    onClick={() => this.deleteUser(user.id)}
-                    style={{ margin: "auto", display: "block" }}
-                  >
-                    {" "}
-                    <Icon src={trash} alt="delete" />{" "}
-                  </button>
-                  
-                </Td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-      </Main>
-      <Mailbutton
-        onClick={() => this.sendMail()}>
-          Send Report
-      </Mailbutton>
-    </React.Fragment>
-      
+      <React.Fragment>
+        <Main>
+          <div style={{ width: "110px" }}>
+            <Modal
+              onClose={this.showModal}
+              show={this.state.show}
+              addUserState={this.addUserState}
+              style={{ flexDirection: "row" }}
+            >
+              Message in Modal
+            </Modal>
+          </div>
 
+          <Table>
+            <tbody>
+              <Tr>
+                {this.renderTableHeader()}
+                <Th>
+                  <Addnew
+                    onClick={e => {
+                      this.showModal();
+                    }}
+                  >
+                    ADD NEW
+                    <Icon
+                      src={plus}
+                      alt="new user"
+                      style={{ display: "inline" }}
+                    />
+                  </Addnew>
+                </Th>
+              </Tr>
+              {users.map((user, index) => (
+                <tr key={user.id}>
+                  <Td>{user.id}</Td>
+                  <Td>{user.name}</Td>
+                  <Td>{user.position}</Td>
+                  <Td>{user.email}</Td>
+                  <Td style={{ align: "center" }}>
+                    <button
+                      onClick={() => this.deleteUser(user.id)}
+                      style={{ margin: "auto", display: "block" }}
+                    >
+                      {" "}
+                      <Icon src={trash} alt="delete" />{" "}
+                    </button>
+                  </Td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </Main>
+        <Mailbutton onClick={() => this.sendMail()}>Send Report</Mailbutton>
+      </React.Fragment>
     );
   }
 }

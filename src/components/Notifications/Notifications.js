@@ -1,6 +1,26 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import axios from 'axios';
+import axios from "axios";
+
+// import notifications from "../../JSON/notifications.json";
+import Row from "./Row";
+
+const auth = localStorage.getItem("token");
+
+// Objetivo de importar notifications e da função render notifications é simular
+// uma request padrao para a API
+
+const SearchBar = styled.input`
+  display: block;
+  margin-top: 40px;
+  margin-left: 10%;
+  border: 3px solid #00b4cc;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px;
+  outline: none;
+  color: black;
+`;
 
 const Main = styled.div`
   display: flex;
@@ -102,6 +122,31 @@ class Notifications extends Component {
       searchString: e.target.value
     });
 
+  getNotifications = () => {
+    fetch("http://localhost:8080/events", {
+      method: "GET",
+      credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Basic YWRtaW46YWRtaW4="
+      },
+      redirect: "follow", // manual, *follow, error
+      referrer: "no-referrer" // no-referrer, *client
+    })
+      .then(response => {
+        console.log("hello");
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        this.setState({
+          notifications: data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
 
   renderTableHeader() {
     if (this.state.notifications[0]) {
@@ -113,6 +158,7 @@ class Notifications extends Component {
       return null;
     }
   }
+
 
  
   renderNotifications = searchString => {
@@ -149,10 +195,12 @@ class Notifications extends Component {
     }
   }  
 
+
   render() {
     const { notifications } = this.state;
 
     return (
+
      <React.Fragment>
        <Main>
        <SearchBar
@@ -173,7 +221,6 @@ class Notifications extends Component {
       </Main>
     </React.Fragment>
       
-
     );
   }
 }

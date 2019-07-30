@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Row from "./Row";
 import axios from "axios";
 
+const auth = localStorage.getItem("token");
+
 const SearchBar = styled.input`
   display: block;
   float: right;
@@ -27,7 +29,7 @@ class Notifications extends Component {
   }
 
   componentDidMount() {
-    console.log("componentDidMount coming through!");
+    // console.log("componentDidMount coming through!");
 
     axios
       .get("http://localhost:8080/clients", {
@@ -35,7 +37,7 @@ class Notifications extends Component {
         credentials: "same-origin", // include, *same-origin, omit
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Basic YWRtaW46YWRtaW4="
+          Authorization: auth
         },
         redirect: "follow", // manual, *follow, error
         referrer: "no-referrer" // no-referrer, *client
@@ -69,7 +71,7 @@ class Notifications extends Component {
   };
 
   render() {
-    console.log(this.state);
+    console.log("state", this.state);
     return (
       <div className="container">
         <SearchBar
@@ -82,6 +84,9 @@ class Notifications extends Component {
           <thead>
             <tr>
               <th>Name</th>
+              <th>place</th>
+              <th>position</th>
+              <th>salary</th>
               <th>ID</th>
             </tr>
           </thead>

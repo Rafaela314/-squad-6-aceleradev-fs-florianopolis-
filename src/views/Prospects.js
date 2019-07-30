@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import { render } from 'react-dom';
+import { render } from "react-dom";
 
 import styled from "styled-components";
 import Prospect from "../components/Prospect";
-import Loading from '../components/Loading';
+import Loading from "../components/Loading";
 import PropTypes from "prop-types";
+
+const auth = localStorage.getItem("token");
 
 const Main = styled.div`
   display: flex;
@@ -50,7 +52,7 @@ class Prospects extends Component {
   state = {
     query: "",
     prospects: [],
-    loading: true,
+    loading: true
   };
 
   updateQuery = query => {
@@ -59,19 +61,18 @@ class Prospects extends Component {
     }));
   };
 
-
   getProspects = () => {
     fetch("http://localhost:8080/leads", {
       method: "GET",
       credentials: "same-origin", // include, *same-origin, omit
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Basic YWRtaW46YWRtaW4="
+        Authorization: auth
       },
       redirect: "follow", // manual, *follow, error
       referrer: "no-referrer" // no-referrer, *client
     })
-      .then(response =>{
+      .then(response => {
         return response.json();
       })
       .then(data => {
@@ -86,39 +87,11 @@ class Prospects extends Component {
       });
   };
 
- /* getProspects = () => {
-    fetch("http://localhost:8080/leads", {
-      method: "GET",
-      credentials: "same-origin", // include, *same-origin, omit
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Basic YWRtaW46YWRtaW4="
-      },
-      redirect: "follow", // manual, *follow, error
-      referrer: "no-referrer" // no-referrer, *client
-    })
-      .then(response =>{
-        return response.json();
-      })
-      .then(data => {
-        console.log(data);
-        this.setState({
-          loading: false,
-          prospects: data
-        });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };*/
-
   componentDidMount() {
-
     this.getProspects();
   }
 
   renderTableHeader() {
-
     if (this.state.prospects[0]) {
       let header = Object.keys(this.state.prospects[0]);
       return header.map((key, index) => {
@@ -130,7 +103,6 @@ class Prospects extends Component {
   }
 
   render() {
-
     /*const { query } = this.state;*/
     const { prospects, loading } = this.state;
 
@@ -142,32 +114,30 @@ class Prospects extends Component {
           );*/
 
     return (
-     
       <Main>
-        {loading ? 
-        <Loading /> 
-        : 
-        
-        <React.Fragment>
-          <div>
-            {/*<input
+        {loading ? (
+          <Loading />
+        ) : (
+          <React.Fragment>
+            <div>
+              {/*<input
               type="text"
               placeholder="Search Contacts"
               value={query}
             onChange={event => this.updateQuery(event.target.value)}*/}
-            />
-          </div>
+              />
+            </div>
 
-          <Table>
-            <tbody>
-              <Tr>{this.renderTableHeader()}</Tr>
-              {prospects.map((item, index) => (
-                <Prospect key={index} prospect={item} />
-              ))}
-            </tbody>
-          </Table>
-        </React.Fragment>
-        }
+            <Table>
+              <tbody>
+                <Tr>{this.renderTableHeader()}</Tr>
+                {prospects.map((item, index) => (
+                  <Prospect key={index} prospect={item} />
+                ))}
+              </tbody>
+            </Table>
+          </React.Fragment>
+        )}
       </Main>
     );
   }
