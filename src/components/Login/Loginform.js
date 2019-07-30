@@ -54,6 +54,17 @@ const Tittle = styled.h2`
   font-weight: 400;
 `;
 
+/*axios.post( '/login', {
+  password: "admin",
+  username: "admin"
+})
+.then(function(response){
+  console.log(response);
+})
+.catch(function(error) {
+  console.log(error);
+}); */
+
 const JWT =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNjcxNjI5MDIzfQ.5YSiFpqnhV0BfSyC2OwULPvywIbnn86-xI62aqQi96Q";
 

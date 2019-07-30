@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import Modal from "../views/Users/Modal";
+import Modal from "./Modal";
 import axios from 'axios';
 
-import trash from "../assets/icons/delete.svg";
-import plus from "../assets/icons/plus_b.svg";
+import trash from "../../assets/icons/delete.svg";
+import plus from "../../assets/icons/plus_b.svg";
 
 const Main = styled.div`
   display: flex;
