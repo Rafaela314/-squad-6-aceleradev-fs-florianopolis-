@@ -48,7 +48,8 @@ h1 {
 table {
   border-collapse: collapse;
   width: 80%;
-  margin: 80px auto 0;
+  /* margin: 80px auto 0; */
+  margin: auto;
 }
 
 td {
