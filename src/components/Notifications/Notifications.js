@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import notifications from "../../JSON/notifications.json";
+// import notifications from "../../JSON/notifications.json";
 import Row from "./Row";
 
 // Objetivo de importar notifications e da função render notifications é simular
@@ -23,23 +23,23 @@ class Notifications extends Component {
     searchString: ""
   };
 
-  renderNotifications = searchString => {
-    console.log("render notifications no comando!");
-    const search = this.state.searchString;
-    const notificationsJson = notifications.notifications;
+  // renderNotifications = searchString => {
+  //   console.log("render notifications no comando!");
+  //   const search = this.state.searchString;
+  //   const notificationsJson = notifications.notifications;
 
-    if (search === "") {
-      return notificationsJson.map((not, i) => (
-        <Row notification={not} key={i} id={i} />
-      ));
-    } else {
-      var result = notificationsJson.filter(c =>
-        c.name.toLowerCase().includes(search.toLowerCase())
-      );
+  //   if (search === "") {
+  //     return notificationsJson.map((not, i) => (
+  //       <Row notification={not} key={i} id={i} />
+  //     ));
+  //   } else {
+  //     var result = notificationsJson.filter(c =>
+  //       c.name.toLowerCase().includes(search.toLowerCase())
+  //     );
 
-      return result.map((not, i) => <Row notification={not} key={i} id={i} />);
-    }
-  };
+  //     return result.map((not, i) => <Row notification={not} key={i} id={i} />);
+  //   }
+  // };
 
   changeSearch = e =>
     this.setState({
@@ -66,7 +66,7 @@ class Notifications extends Component {
               <th>data</th>
             </tr>
           </thead>
-          <tbody>{this.renderNotifications()}</tbody>
+          {/* <tbody>{this.renderNotifications()}</tbody> */}
         </table>
       </div>
     );

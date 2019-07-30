@@ -16,6 +16,7 @@ const Table = styled.table`
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   border: 3px solid #ddd;
+  margin: 100px auto;
   width: 100%;
   tbody:before {
     content: "-";
@@ -67,6 +68,11 @@ const Addnew = styled.button`
 
 class Users extends Component {
   state = {
+    user: {
+      name: "",
+      position: "",
+      email: ""
+    },
     users: [],
     userForm: "",
     show: false
@@ -105,26 +111,21 @@ class Users extends Component {
       });
   };
 
+  // POST USERS BASED STATE
   postUsers = () => {
-    fetch("http://localhost:8080/users", {
-      method: "GET",
-      credentials: "same-origin", // include, *same-origin, omit
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Basic YWRtaW46YWRtaW4="
-      },
-      redirect: "follow", // manual, *follow, error
-      referrer: "no-referrer" // no-referrer, *client
-    })
-      .then(response => {
-        console.log("hello");
-        return response.json();
+    axios
+      .post("http://localhost:8080/clients", {
+        credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Basic YWRtaW46YWRtaW4="
+        },
+        redirect: "follow", // manual, *follow, error
+        referrer: "no-referrer" // no-referrer, *client
       })
-      .then(data => {
-        console.log(data);
-        this.setState({
-          users: data
-        });
+      .then(res => {
+        const users = res.data;
+        console.log(users);
       })
       .catch(err => {
         console.log(err);
@@ -201,6 +202,7 @@ class Users extends Component {
 
     return (
       <Main>
+        <h1>Add User</h1>
         <div style={{ width: "110px" }}>
           <Modal
             onClose={this.showModal}

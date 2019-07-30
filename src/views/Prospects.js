@@ -10,6 +10,7 @@ const Main = styled.div`
 
 const Table = styled.table`
   text-align: center;
+  margin: 100px auto;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   border: 3px solid #ddd;
@@ -46,7 +47,6 @@ class Prospects extends Component {
   state = {
     query: "",
     prospects: []
-   
   };
 
   updateQuery = query => {
@@ -55,46 +55,44 @@ class Prospects extends Component {
     }));
   };
 
-  getProspects =() => {
+  getProspects = () => {
     fetch("http://localhost:8080/leads", {
-    method: "GET",
-    credentials: "same-origin", // include, *same-origin, omit
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: "Basic YWRtaW46YWRtaW4="
-    },
-    redirect: "follow", // manual, *follow, error
-    referrer: "no-referrer" // no-referrer, *client
-  })
-    .then(response => {
-      
-      return response.json();
+      method: "GET",
+      credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Basic YWRtaW46YWRtaW4="
+      },
+      redirect: "follow", // manual, *follow, error
+      referrer: "no-referrer" // no-referrer, *client
     })
-    .then(data => {
-      console.log(data);
-      this.setState({
-        prospects: data
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        this.setState({
+          prospects: data
+        });
+      })
+      .catch(err => {
+        console.log(err);
       });
-    })
-    .catch(err => {
-      console.log(err);
-    });
-  }
-  
+  };
 
   componentDidMount() {
-    this.getProspects()
+    this.getProspects();
   }
 
   renderTableHeader() {
-    if(this.state.prospects[0]){
+    if (this.state.prospects[0]) {
       let header = Object.keys(this.state.prospects[0]);
       return header.map((key, index) => {
-      return <Th key={index}>{key.toUpperCase()}</Th>;
+        return <Th key={index}>{key.toUpperCase()}</Th>;
       });
     } else {
       return null;
-    } 
+    }
   }
 
   render() {
@@ -118,7 +116,7 @@ class Prospects extends Component {
           onChange={event => this.updateQuery(event.target.value)}*/}
           />
         </div>
-        
+
         <Table>
           <tbody>
             <Tr>{this.renderTableHeader()}</Tr>
