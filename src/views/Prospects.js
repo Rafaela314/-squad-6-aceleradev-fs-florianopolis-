@@ -86,31 +86,6 @@ class Prospects extends Component {
       });
   };
 
- /* getProspects = () => {
-    fetch("http://localhost:8080/leads", {
-      method: "GET",
-      credentials: "same-origin", // include, *same-origin, omit
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Basic YWRtaW46YWRtaW4="
-      },
-      redirect: "follow", // manual, *follow, error
-      referrer: "no-referrer" // no-referrer, *client
-    })
-      .then(response =>{
-        return response.json();
-      })
-      .then(data => {
-        console.log(data);
-        this.setState({
-          loading: false,
-          prospects: data
-        });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };*/
 
   componentDidMount() {
 

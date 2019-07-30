@@ -9,6 +9,7 @@ import plus from "../../assets/icons/plus_b.svg";
 const Main = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 60px;
 `;
 
 const Table = styled.table`
@@ -116,10 +117,11 @@ class Users extends Component {
     });
   };
 
-  addUserToState = (user) => {
-    this.setState(prevState => ({
+  addUserState = (user) => {
+    const teste = this.setState(prevState => ({
       users: [...prevState.users, user]
     }))
+    this.setState({users: teste});
   }
 
   deleteUserState = id => {
@@ -133,7 +135,7 @@ class Users extends Component {
       axios.delete('http://localhost:8080/users/'+ id)
       .then(console.log('Deleted'))
       .catch(err => console.log(err))
-    }
+    } this.deleteUserState(id)
     
   }
 
