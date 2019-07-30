@@ -66,9 +66,10 @@ class AddForm extends React.Component {
   submitFormAdd = e => {
     e.preventDefault();
     fetch("http://localhost:8080/users", {
-      method: "post",
+      method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        Authorization: "Basic YWRtaW46YWRtaW4="
       },
       body: JSON.stringify({
         id: this.state.id,
@@ -88,88 +89,28 @@ class AddForm extends React.Component {
       .catch(err => console.log(err));
       
   };
-
-
-  /*.then(user => {
-    if (Array.isArray(user)) {
-      this.props.addUserState(user[0]);
-    } else {
-      console.log("checkout");
-    }
-  })*/
-
-  /*postUsers = () => {
-    let user = this.state.createUser;
-    axios
-      .post(
-        "http://localhost:8080/users",
-        {
-          name: user.name,
-          email: user.email,
-          position: user.position
-        },
-        {
-          credentials: "same-origin", // include, *same-origin, omit
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: "Basic YWRtaW46YWRtaW4=",
-            "Cache-Control": "no-cache"
-          },
-          redirect: "follow", // manual, *follow, error
-          referrer: "no-referrer" // no-referrer, *client
-        }
-      )
-      .then(res => {
-        console.log(res);
-      })
-      .then(user => {
-        if (Array.isArray(user)) {
-          this.props.addUserState(user[0]);
-        } else {
-          console.log("checkout");
-        }
-      })
-      .catch(err => {
-        console.log(err);
-        err.preventDefault();
-      });
-  };
-
-  /*changeName = e => {
-    this.setState({
-      createUser: {
-        name: e.target.value,
-        email: this.state.createUser.email,
-        position: this.state.createUser.position
-      }
-    });
-  };
-
-  changeEmail = e => {
-    this.setState({
-      createUser: {
-        name: this.state.createUser.name,
-        email: e.target.value,
-        position: this.state.createUser.position
-      }
-    });
-  };
-
-  changePosition = e => {
-    this.setState({
-      createUser: {
-        name: this.state.createUser.name,
-        email: this.state.createUser.email,
-        position: e.target.value
-      }
-    });
-  };
-
-  submitFormAdd = e => {
-    e.preventDefault();
-    this.postUsers()
+/*
+  addUserState = (user) => {
+    this.setState(prevState => ({
+      users: [...prevState.users, user]
+    }))
   }
-*/
+
+  deleteUserState = id => {
+    const updatedUsers = this.state.users.filter(user => user.id !== id);
+    this.setState({ users: updatedUsers });
+  };
+
+  deleteUser = id => {
+    let confirmDelete = window.confirm('Are you sure you want to delete this user?')
+    if(confirmDelete){
+      axios.delete('http://localhost:8080/users/'+ id)
+      .then(console.log('Deleted'))
+      .catch(err => console.log(err))
+    }
+    
+  }*/
+  
 
   componentDidMount() {
     if (this.props.user) {
