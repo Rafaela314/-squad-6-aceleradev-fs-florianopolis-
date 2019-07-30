@@ -171,6 +171,7 @@ class Users extends Component {
       .catch(err => {
         console.log(err);
       });
+      alert('report enviado');
   }
 
     
