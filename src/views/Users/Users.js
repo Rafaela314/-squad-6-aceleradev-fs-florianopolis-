@@ -68,6 +68,20 @@ const Addnew = styled.button`
   margin-left: 3px;
 `;
 
+const Mailbutton = styled.button`
+  cursor: pointer;
+  background: #6bd2c9;
+  width: 100px;
+  padding: 10px 15px;
+  border: 1;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  &:hover {
+    background: #369cb8;
+  }
+`;
+
 class Users extends Component {
   state = {
     users: [],
@@ -134,9 +148,30 @@ class Users extends Component {
       axios
         .delete("http://localhost:8080/users/" + id)
         .then(console.log("Deleted"))
+        .then(user => {
+          this.deleteUserState(id);
+        })
         .catch(err => console.log(err));
     }
     this.deleteUserState(id);
+  };
+  //authorized.POST("events", sentEmail)
+  sendMail = id => {
+    fetch("http://localhost:8080/events", {
+      method: "POST",
+      credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+        "Content-Type": "application/json"
+      },
+      redirect: "follow", // manual, *follow, error
+      referrer: "no-referrer" // no-referrer, *client
+    })
+      .then(response => {
+        return response.json();
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   componentDidMount() {
@@ -159,57 +194,60 @@ class Users extends Component {
     const { users } = this.state;
 
     return (
-      <Main>
-        <div style={{ width: "110px" }}>
-          <Modal
-            onClose={this.showModal}
-            show={this.state.show}
-            addUserState={this.addUserState}
-            style={{ flexDirection: "row" }}
-          >
-            Message in Modal
-          </Modal>
-        </div>
+      <React.Fragment>
+        <Main>
+          <div style={{ width: "110px" }}>
+            <Modal
+              onClose={this.showModal}
+              show={this.state.show}
+              addUserState={this.addUserState}
+              style={{ flexDirection: "row" }}
+            >
+              Message in Modal
+            </Modal>
+          </div>
 
-        <Table>
-          <tbody>
-            <Tr>
-              {this.renderTableHeader()}
-              <Th>
-                <Addnew
-                  onClick={e => {
-                    this.showModal();
-                  }}
-                >
-                  ADD NEW
-                  <Icon
-                    src={plus}
-                    alt="new user"
-                    style={{ display: "inline" }}
-                  />
-                </Addnew>
-              </Th>
-            </Tr>
-            {users.map((user, index) => (
-              <tr key={user.id}>
-                <Td>{user.id}</Td>
-                <Td>{user.name}</Td>
-                <Td>{user.position}</Td>
-                <Td>{user.email}</Td>
-                <Td style={{ align: "center" }}>
-                  <button
-                    onClick={() => this.deleteUser(user.id)}
-                    style={{ margin: "auto", display: "block" }}
+          <Table>
+            <tbody>
+              <Tr>
+                {this.renderTableHeader()}
+                <Th>
+                  <Addnew
+                    onClick={e => {
+                      this.showModal();
+                    }}
                   >
-                    {" "}
-                    <Icon src={trash} alt="delete" />{" "}
-                  </button>
-                </Td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-      </Main>
+                    ADD NEW
+                    <Icon
+                      src={plus}
+                      alt="new user"
+                      style={{ display: "inline" }}
+                    />
+                  </Addnew>
+                </Th>
+              </Tr>
+              {users.map((user, index) => (
+                <tr key={user.id}>
+                  <Td>{user.id}</Td>
+                  <Td>{user.name}</Td>
+                  <Td>{user.position}</Td>
+                  <Td>{user.email}</Td>
+                  <Td style={{ align: "center" }}>
+                    <button
+                      onClick={() => this.deleteUser(user.id)}
+                      style={{ margin: "auto", display: "block" }}
+                    >
+                      {" "}
+                      <Icon src={trash} alt="delete" />{" "}
+                    </button>
+                  </Td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </Main>
+        <Mailbutton onClick={() => this.sendMail()}>Send Report</Mailbutton>
+      </React.Fragment>
     );
   }
 }
