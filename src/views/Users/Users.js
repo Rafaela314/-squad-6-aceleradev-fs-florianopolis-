@@ -66,6 +66,20 @@ const Addnew = styled.button`
   margin-left: 3px;
 `;
 
+const Mailbutton = styled.button`
+  cursor: pointer;
+  background: #6bd2c9;
+  width: 100px;
+  padding: 10px 15px;
+  border: 1;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  &:hover {
+    background: #369cb8;
+  }
+`;
+
 class Users extends Component {
   state = {
     users: [],
@@ -134,9 +148,30 @@ class Users extends Component {
     if(confirmDelete){
       axios.delete('http://localhost:8080/users/'+ id)
       .then(console.log('Deleted'))
+      .then(user => {
+        this.deleteUserState(id)
+      })
       .catch(err => console.log(err))
     } this.deleteUserState(id)
     
+  }
+//authorized.POST("events", sentEmail) 
+  sendMail = id => {
+    fetch("http://localhost:8080/events", {
+      method: "POST",
+      credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+        "Content-Type": "application/json",
+      },
+      redirect: "follow", // manual, *follow, error
+      referrer: "no-referrer" // no-referrer, *client
+    })
+      .then(response => {
+        return response.json();
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
     
@@ -163,7 +198,8 @@ class Users extends Component {
     const { users } = this.state;
 
     return (
-      <Main>
+     <React.Fragment>
+       <Main>
         <div style={{width:'110px'}}>
           <Modal
             onClose={this.showModal}
@@ -208,12 +244,20 @@ class Users extends Component {
                     {" "}
                     <Icon src={trash} alt="delete" />{" "}
                   </button>
+                  
                 </Td>
               </tr>
             ))}
           </tbody>
         </Table>
       </Main>
+      <Mailbutton
+        onClick={() => this.sendMail()}>
+          Send Report
+      </Mailbutton>
+    </React.Fragment>
+      
+
     );
   }
 }
