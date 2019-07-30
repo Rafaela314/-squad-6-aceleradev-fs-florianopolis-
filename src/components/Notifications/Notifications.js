@@ -68,15 +68,59 @@ const Td = styled.td`
   }
 `;
 
+const SearchBar = styled.input`
+  display: block;
+  width: 200px;
+  margin-top: 40px;
+  margin-left: 80%;
+  border: 3px solid #6bd2c9;
+  padding: 5px;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  color: black;
+`;
 class Notifications extends Component {
   state = {
     searchString: "",
-    notifications: []
-  };
-
-  componentDidMount() {
-    this.getNotifications();
+    notifications:[],
   }
+
+  componentDidMount(){
+    this.getNotifications()
+}
+
+  getNotifications = () => {
+    fetch("http://localhost:8080/events", {
+    method: "GET",
+    credentials: "same-origin", // include, *same-origin, omit
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Basic YWRtaW46YWRtaW4="
+    },
+    redirect: "follow", // manual, *follow, error
+    referrer: "no-referrer" // no-referrer, *client
+    })
+    .then(response => {
+      console.log("hello");
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      this.setState({
+        notifications: data
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+
+  }
+
+  changeSearch = e =>
+    this.setState({
+      searchString: e.target.value
+    });
 
   getNotifications = () => {
     fetch("http://localhost:8080/events", {
@@ -115,29 +159,68 @@ class Notifications extends Component {
     }
   }
 
+
+ 
+  renderNotifications = searchString => {
+    const search = this.state.searchString;
+    const notificationsJson = this.state.notifications;
+
+    if (search === "") {
+      return notificationsJson.map((notifications, index) => (
+        <tr key={index} id={index} >
+          <Td>{notifications.id}</Td>
+          <Td>{notifications.name}</Td>
+          <Td>{notifications.email}</Td>
+          <Td>{notifications.qtLeads}</Td>
+          <Td>{notifications.dtEnvio}</Td>
+          <Td>{notifications.hrEnvio}</Td>
+        </tr>
+      ))
+    } else {
+      let result = notificationsJson.filter(c =>
+        c.name.toLowerCase().includes(search.toLowerCase())
+      );
+
+      return result.map((notifications, index) => (
+        <tr key={index} id={index} >
+          <Td>{notifications.id}</Td>
+          <Td>{notifications.name}</Td>
+          <Td>{notifications.email}</Td>
+          <Td>{notifications.qtLeads}</Td>
+          <Td>{notifications.dtEnvio}</Td>
+          <Td>{notifications.hrEnvio}</Td>
+        </tr>
+
+      ))
+    }
+  }  
+
+
   render() {
     const { notifications } = this.state;
 
     return (
-      <React.Fragment>
-        <Main>
-          <Table>
-            <tbody>
-              <Tr>{this.renderTableHeader()}</Tr>
-              {notifications.map((notifications, index) => (
-                <tr key={notifications.id}>
-                  <Td>{notifications.id}</Td>
-                  <Td>{notifications.name}</Td>
-                  <Td>{notifications.email}</Td>
-                  <Td>{notifications.qtLeads}</Td>
-                  <Td>{notifications.dtEnvio}</Td>
-                  <Td>{notifications.hrEnvio}</Td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
-        </Main>
-      </React.Fragment>
+
+     <React.Fragment>
+       <Main>
+       <SearchBar
+          type="text "
+          placeholder="pesquisa por nome"
+          value={this.state.searchString}
+          onChange={this.changeSearch}
+        />
+        
+        <Table>
+          <tbody>
+            <Tr>
+              {this.renderTableHeader()}
+            </Tr>
+            {this.renderNotifications()}
+          </tbody>
+        </Table>
+      </Main>
+    </React.Fragment>
+      
     );
   }
 }
