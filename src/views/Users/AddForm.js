@@ -84,12 +84,19 @@ class AddForm extends React.Component {
           this.props.addUserState(user[0]);
         } else {
           console.log("checkout");
+          alert("User added!please refresh the page");
         }
       })
       .catch(err => console.log(err));
       
   };
 /*
+
+ if (Array.isArray(user)) {
+          this.props.addUserState(user[0]);
+        } else {
+          console.log("checkout");
+        }
   addUserState = (user) => {
     this.setState(prevState => ({
       users: [...prevState.users, user]
