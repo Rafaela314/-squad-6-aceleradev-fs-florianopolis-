@@ -117,9 +117,8 @@ class Users extends Component {
   };
 
   addUserToState = (user) => {
-    this.setState(prevState => ({
-      users: [...prevState.users, user]
-    }))
+    this.setState({...this.state,users : {...this.state.users, user}
+    })
   }
 
   deleteUserState = id => {

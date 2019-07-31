@@ -47,7 +47,7 @@ const Tr = styled.tr`
 const SearchBar = styled.input`
   display: block;
   width: 200px;
-  margin-top: 40px;
+  margin-top: 70px;
   margin-left: 80%;
   border: 3px solid #6bd2c9;
   padding: 5px;
@@ -146,6 +146,12 @@ class Prospects extends Component {
           <Loading />
         ) : (
           <React.Fragment>
+             <SearchBar
+          type="text "
+          placeholder="pesquisa por nome"
+          value={this.state.searchString}
+          onChange={this.changeSearch}
+        />
             <Table>
               <tbody>
                 <Tr>{this.renderTableHeader()}</Tr>
