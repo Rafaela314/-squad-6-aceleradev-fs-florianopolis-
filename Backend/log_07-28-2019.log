@@ -1,0 +1,1103 @@
+2019/07/28 09:54:34 Validando schema DB
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:id                --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:id                --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/28 10:01:21 Iniciando getUsers
+2019/07/28 10:01:21 Consultando usuários
+2019/07/28 10:01:21 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 10:01:21 | 200 |   21.310002ms |             ::1 | GET      /users
+2019/07/28 10:01:36 Iniciando uploadCliente
+2019/07/28 10:01:36 Capturando arquivo 'file'
+2019/07/28 10:01:36 Arquivo não localizado
+[GIN] 2019/07/28 - 10:01:36 | 500 |     300.556µs |             ::1 | POST     /clients
+2019/07/28 10:03:14 Iniciando uploadCliente
+2019/07/28 10:03:14 Capturando arquivo 'file'
+2019/07/28 10:03:14 Arquivo não localizado
+[GIN] 2019/07/28 - 10:03:14 | 500 |     635.464µs |             ::1 | POST     /clients
+2019/07/28 10:03:19 Iniciando getUsers
+2019/07/28 10:03:19 Consultando usuários
+2019/07/28 10:03:19 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 10:03:19 | 200 |  100.766356ms |             ::1 | GET      /users
+2019/07/28 10:03:33 Iniciando uploadCliente
+2019/07/28 10:03:33 Capturando arquivo 'file'
+2019/07/28 10:03:33 Arquivo não localizado
+[GIN] 2019/07/28 - 10:03:33 | 500 |     378.824µs |             ::1 | POST     /clients
+2019/07/28 10:05:40 Iniciando getEvents
+2019/07/28 10:05:40 Abrindo conexão com o banco
+2019/07/28 10:05:40 Verificando se existe algum evento
+2019/07/28 10:05:41 Nenhum evento encontrado
+[GIN] 2019/07/28 - 10:05:41 | 204 |   43.679149ms |             ::1 | GET      /events
+2019/07/28 10:05:49 Iniciando getStatistic
+2019/07/28 10:05:49 sql: Scan error on column index 1, name "salario_total": converting driver.Value type <nil> ("<nil>") to a float64: invalid syntax
+[GIN] 2019/07/28 - 10:05:49 | 500 |   60.357916ms |             ::1 | GET      /dashboard
+2019/07/28 10:05:55 Iniciando getEventsId
+2019/07/28 10:05:55 Carregando ID
+2019/07/28 10:05:55 Abrindo conexão com o banco
+2019/07/28 10:05:55 Verificando se existe algum evento
+2019/07/28 10:05:55 Nenhum evento encontrado
+[GIN] 2019/07/28 - 10:05:55 | 204 |   36.538716ms |             ::1 | GET      /events/1
+2019/07/28 11:08:38 Validando schema DB
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:id                --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:id                --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2019/07/28 - 11:08:59 | 404 |       2.955µs |       127.0.0.1 | GET      /api/dashboard/
+[GIN] 2019/07/28 - 11:10:07 | 401 |      37.246µs |       127.0.0.1 | GET      /dashboard
+2019/07/28 11:10:22 Iniciando getStatistic
+2019/07/28 11:10:22 sql: Scan error on column index 1, name "salario_total": converting driver.Value type <nil> ("<nil>") to a float64: invalid syntax
+[GIN] 2019/07/28 - 11:10:22 | 500 |   30.927208ms |       127.0.0.1 | GET      /dashboard
+2019/07/28 11:14:34 Iniciando getStatistic
+2019/07/28 11:14:35 sql: Scan error on column index 1, name "salario_total": converting driver.Value type <nil> ("<nil>") to a float64: invalid syntax
+[GIN] 2019/07/28 - 11:14:35 | 500 |   49.897988ms |       127.0.0.1 | GET      /dashboard
+2019/07/28 11:16:35 Iniciando getLeads
+2019/07/28 11:16:35 Abrindo conexão com o banco
+2019/07/28 11:16:35 Verificando se existe algum lead
+2019/07/28 11:16:35 Nenhum lead encontrado
+[GIN] 2019/07/28 - 11:16:35 | 204 |    29.73265ms |       127.0.0.1 | GET      /leads
+2019/07/28 11:17:33 Iniciando getLeads
+2019/07/28 11:17:33 Abrindo conexão com o banco
+2019/07/28 11:17:33 Verificando se existe algum lead
+2019/07/28 11:17:33 Nenhum lead encontrado
+[GIN] 2019/07/28 - 11:17:33 | 204 |  160.816225ms |       127.0.0.1 | GET      /leads
+2019/07/28 11:17:56 Iniciando getLeads
+2019/07/28 11:17:56 Abrindo conexão com o banco
+2019/07/28 11:17:56 Verificando se existe algum lead
+2019/07/28 11:17:56 Nenhum lead encontrado
+[GIN] 2019/07/28 - 11:17:56 | 204 |   54.153408ms |       127.0.0.1 | GET      /leads
+2019/07/28 11:20:20 Iniciando getLeads
+2019/07/28 11:20:20 Abrindo conexão com o banco
+2019/07/28 11:20:20 Verificando se existe algum lead
+2019/07/28 11:20:20 Nenhum lead encontrado
+[GIN] 2019/07/28 - 11:20:20 | 204 |   95.851121ms |       127.0.0.1 | GET      /leads
+2019/07/28 11:20:40 Iniciando getLeads
+2019/07/28 11:20:40 Abrindo conexão com o banco
+2019/07/28 11:20:40 Verificando se existe algum lead
+2019/07/28 11:20:40 Nenhum lead encontrado
+[GIN] 2019/07/28 - 11:20:40 | 204 |  330.380026ms |       127.0.0.1 | GET      /leads
+2019/07/28 11:22:04 Validando schema DB
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:id                --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:id                --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/28 11:22:22 Iniciando getLeads
+2019/07/28 11:22:22 Abrindo conexão com o banco
+2019/07/28 11:22:22 Verificando se existe algum lead
+2019/07/28 11:22:22 Nenhum lead encontrado
+[GIN] 2019/07/28 - 11:22:22 | 204 |   24.398991ms |       127.0.0.1 | GET      /leads
+2019/07/28 11:23:57 Iniciando getStatistic
+2019/07/28 11:23:57 sql: Scan error on column index 1, name "salario_total": converting driver.Value type <nil> ("<nil>") to a float64: invalid syntax
+[GIN] 2019/07/28 - 11:23:57 | 500 |   41.244683ms |       127.0.0.1 | GET      /dashboard
+2019/07/28 11:39:07 Validando schema DB
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:id                --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:id                --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/28 11:39:43 Iniciando getStatistic
+2019/07/28 11:39:43 sql: Scan error on column index 1, name "salario_total": converting driver.Value type <nil> ("<nil>") to a float64: invalid syntax
+[GIN] 2019/07/28 - 11:39:43 | 500 |   51.586177ms |       127.0.0.1 | GET      /dashboard
+2019/07/28 11:42:22 Iniciando registerAdministrator
+[GIN] 2019/07/28 - 11:42:22 | 500 |   73.974912ms |             ::1 | POST     /admin
+2019/07/28 11:42:52 Iniciando login
+2019/07/28 11:42:52 Consulta no banco de dados
+2019/07/28 11:42:52 Comparando senha
+2019/07/28 11:42:52 Autenticado
+[GIN] 2019/07/28 - 11:42:52 | 200 |  159.495061ms |             ::1 | POST     /login
+2019/07/28 11:43:48 Iniciando getStatistic
+2019/07/28 11:43:48 Iniciando login
+2019/07/28 11:43:48 Dados obrigatórios não recebidos
+[GIN] 2019/07/28 - 11:43:48 | 400 |    7.655406ms |       127.0.0.1 | POST     /login
+2019/07/28 11:43:48 sql: Scan error on column index 1, name "salario_total": converting driver.Value type <nil> ("<nil>") to a float64: invalid syntax
+[GIN] 2019/07/28 - 11:43:48 | 500 |  128.291353ms |       127.0.0.1 | GET      /dashboard
+2019/07/28 11:45:01 Iniciando getStatistic
+2019/07/28 11:45:01 sql: Scan error on column index 1, name "salario_total": converting driver.Value type <nil> ("<nil>") to a float64: invalid syntax
+[GIN] 2019/07/28 - 11:45:01 | 500 |   62.853145ms |             ::1 | GET      /dashboard
+2019/07/28 11:45:43 Iniciando uploadCliente
+2019/07/28 11:45:43 Capturando arquivo 'file'
+2019/07/28 11:45:43 Arquivo não localizado
+[GIN] 2019/07/28 - 11:45:43 | 500 |    2.238321ms |             ::1 | POST     /clients
+2019/07/28 11:45:54 Registrando usuário
+2019/07/28 11:45:54 Validando se o e-mail foi recebido
+2019/07/28 11:45:54 Abrindo conexão com o banco
+2019/07/28 11:45:54 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 11:45:54 Inserindo usuário
+2019/07/28 11:45:54 Usuário inserido com sucesso
+[GIN] 2019/07/28 - 11:45:54 | 201 |   47.983259ms |             ::1 | POST     /users
+2019/07/28 11:46:41 Iniciando getStatistic
+2019/07/28 11:46:41 Iniciando login
+2019/07/28 11:46:41 Dados obrigatórios não recebidos
+[GIN] 2019/07/28 - 11:46:41 | 400 |         189µs |       127.0.0.1 | POST     /login
+2019/07/28 11:46:41 sql: Scan error on column index 1, name "salario_total": converting driver.Value type <nil> ("<nil>") to a float64: invalid syntax
+[GIN] 2019/07/28 - 11:46:41 | 500 |   68.303395ms |       127.0.0.1 | GET      /dashboard
+2019/07/28 11:47:55 Iniciando login
+2019/07/28 11:47:55 Dados obrigatórios não recebidos
+[GIN] 2019/07/28 - 11:47:55 | 400 |     700.759µs |       127.0.0.1 | POST     /login
+[GIN] 2019/07/28 - 11:50:16 | 404 |       2.531µs |       127.0.0.1 | GET      /babel/parser/lib/index.js
+2019/07/28 11:50:31 Iniciando login
+2019/07/28 11:50:31 Dados obrigatórios não recebidos
+[GIN] 2019/07/28 - 11:50:31 | 400 |     760.261µs |       127.0.0.1 | POST     /login
+2019/07/28 12:04:27 Iniciando login
+2019/07/28 12:04:27 Consulta no banco de dados
+2019/07/28 12:04:27 Comparando senha
+2019/07/28 12:04:27 Autenticado
+[GIN] 2019/07/28 - 12:04:27 | 200 |   74.360181ms |       127.0.0.1 | POST     /login
+2019/07/28 12:07:21 Iniciando rotina de atualização dos funcionários publicos
+2019/07/28 12:07:21 Iniciando BaixarCSV
+2019/07/28 12:07:21 Iniciando download
+[GIN] 2019/07/28 - 12:07:21 | 200 |     826.019µs |             ::1 | POST     /publicagents
+2019/07/28 12:08:01 Download finalizado
+2019/07/28 12:08:01 Salvando localmente
+2019/07/28 12:08:15 Descompactando arquivo remuneracao.rar
+2019/07/28 12:08:16 Abrindo conexão com o banco para importar
+2019/07/28 12:08:16 Limpando tabela public_agent
+2019/07/28 12:08:16 Iniciando leitura do arquivo
+2019/07/28 12:08:18 1076487
+2019/07/28 12:08:18 Aguardando
+2019/07/28 12:08:18 Iniciando transação
+2019/07/28 12:08:18 Iniciando transação
+2019/07/28 12:08:18 Iniciando transação
+2019/07/28 12:08:18 Iniciando transação
+2019/07/28 12:08:18 Iniciando transação
+2019/07/28 12:08:18 Iniciando transação
+2019/07/28 12:08:18 Iniciando transação
+2019/07/28 12:08:18 Iniciando transação
+2019/07/28 12:08:18 Iniciando transação
+2019/07/28 12:08:18 Iniciando transação
+2019/07/28 12:08:18 Iniciando transação
+2019/07/28 12:14:07 Commit efetuado
+2019/07/28 12:15:35 Iniciando uploadCliente
+2019/07/28 12:15:35 Capturando arquivo 'file'
+2019/07/28 12:15:35 Arquivo não localizado
+[GIN] 2019/07/28 - 12:15:35 | 500 |     860.875µs |             ::1 | POST     /clients
+2019/07/28 12:16:02 Iniciando getEventsId
+2019/07/28 12:16:02 Carregando ID
+2019/07/28 12:16:02 Abrindo conexão com o banco
+2019/07/28 12:16:02 Verificando se existe algum evento
+2019/07/28 12:16:02 Nenhum evento encontrado
+[GIN] 2019/07/28 - 12:16:02 | 204 |   74.586099ms |             ::1 | GET      /events/1
+2019/07/28 12:16:29 Commit efetuado
+2019/07/28 12:16:29 Commit efetuado
+2019/07/28 12:16:30 Commit efetuado
+2019/07/28 12:16:31 Commit efetuado
+2019/07/28 12:16:32 Commit efetuado
+2019/07/28 12:16:33 Commit efetuado
+2019/07/28 12:16:33 Commit efetuado
+2019/07/28 12:16:34 Commit efetuado
+2019/07/28 12:16:34 Commit efetuado
+2019/07/28 12:16:34 Commit efetuado
+2019/07/28 12:16:34 Finalizado
+2019/07/28 12:16:34 remuneracao.csv remuneracao.rar
+2019/07/28 12:16:34 Finalizando BaixarCSV
+2019/07/28 12:19:17 Iniciando getEventsId
+2019/07/28 12:19:17 Carregando ID
+2019/07/28 12:19:17 Abrindo conexão com o banco
+2019/07/28 12:19:17 Verificando se existe algum evento
+2019/07/28 12:19:17 Nenhum evento encontrado
+[GIN] 2019/07/28 - 12:19:17 | 204 |     81.7696ms |             ::1 | GET      /events/1
+2019/07/28 12:20:36 Iniciando uploadCliente
+2019/07/28 12:20:36 Capturando arquivo 'file'
+2019/07/28 12:20:36 Arquivo não localizado
+[GIN] 2019/07/28 - 12:20:36 | 500 |     730.383µs |             ::1 | POST     /clients
+[GIN] 2019/07/28 - 12:30:03 | 404 |       2.553µs |       127.0.0.1 | GET      /babel/parser/lib/index.js
+2019/07/28 12:30:54 Iniciando getUsers
+2019/07/28 12:30:54 Consultando usuários
+2019/07/28 12:30:54 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 12:30:54 | 200 |    41.76935ms |       127.0.0.1 | GET      /users
+2019/07/28 12:33:42 Iniciando login
+2019/07/28 12:33:42 Consulta no banco de dados
+2019/07/28 12:33:42 Usuário não encontrado
+[GIN] 2019/07/28 - 12:33:42 | 401 |   90.112683ms |       127.0.0.1 | POST     /login
+2019/07/28 12:33:46 Iniciando login
+2019/07/28 12:33:46 Consulta no banco de dados
+2019/07/28 12:33:46 Usuário não encontrado
+[GIN] 2019/07/28 - 12:33:46 | 401 |   30.018808ms |       127.0.0.1 | POST     /login
+2019/07/28 12:35:01 Iniciando login
+2019/07/28 12:35:01 Consulta no banco de dados
+2019/07/28 12:35:01 Usuário não encontrado
+[GIN] 2019/07/28 - 12:35:01 | 401 |   24.277723ms |       127.0.0.1 | POST     /login
+2019/07/28 12:36:24 Registrando usuário
+2019/07/28 12:36:24 Validando se o e-mail foi recebido
+2019/07/28 12:36:24 Abrindo conexão com o banco
+2019/07/28 12:36:24 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 12:36:24 Email já cadastrado
+[GIN] 2019/07/28 - 12:36:24 | 400 |   85.070464ms |             ::1 | POST     /users
+2019/07/28 12:36:32 Registrando usuário
+2019/07/28 12:36:32 Validando se o e-mail foi recebido
+2019/07/28 12:36:32 Abrindo conexão com o banco
+2019/07/28 12:36:32 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 12:36:32 Email já cadastrado
+[GIN] 2019/07/28 - 12:36:32 | 400 |   59.060415ms |             ::1 | POST     /users?rafaela=123456
+2019/07/28 12:42:29 Iniciando getUsers
+2019/07/28 12:42:29 Consultando usuários
+2019/07/28 12:42:29 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 12:42:29 | 200 |   63.228732ms |             ::1 | GET      /users
+[GIN] 2019/07/28 - 12:48:20 | 404 |       3.888µs |       127.0.0.1 | GET      /babel/parser/lib/index.js
+[GIN] 2019/07/28 - 12:49:08 | 401 |      12.087µs |       127.0.0.1 | POST     /users
+2019/07/28 12:49:58 Registrando usuário
+2019/07/28 12:49:58 Validando se o e-mail foi recebido
+2019/07/28 12:49:58 Abrindo conexão com o banco
+2019/07/28 12:49:58 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 12:49:58 Inserindo usuário
+2019/07/28 12:49:58 Usuário inserido com sucesso
+[GIN] 2019/07/28 - 12:49:58 | 201 |   38.566647ms |       127.0.0.1 | POST     /users
+2019/07/28 13:00:11 Iniciando uploadCliente
+2019/07/28 13:00:11 Capturando arquivo 'file'
+2019/07/28 13:00:11 Arquivo não localizado
+[GIN] 2019/07/28 - 13:00:11 | 500 |    1.784546ms |             ::1 | POST     /clients?uploadClientes.csv=
+2019/07/28 13:27:54 Validando schema DB
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:id                --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:id                --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/28 13:30:01 Registrando usuário
+2019/07/28 13:30:01 Validando se o e-mail foi recebido
+2019/07/28 13:30:01 Abrindo conexão com o banco
+2019/07/28 13:30:01 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 13:30:01 Email já cadastrado
+[GIN] 2019/07/28 - 13:30:01 | 400 |    24.48137ms |       127.0.0.1 | POST     /users
+2019/07/28 13:31:51 Iniciando getUsers
+2019/07/28 13:31:51 Consultando usuários
+2019/07/28 13:31:51 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 13:31:51 | 200 |   32.724759ms |       127.0.0.1 | GET      /users
+2019/07/28 15:37:13 Iniciando getUsers
+2019/07/28 15:37:13 Consultando usuários
+2019/07/28 15:37:13 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 15:37:13 | 200 |   53.983484ms |             ::1 | GET      /users
+2019/07/28 15:42:21 Iniciando getUsers
+2019/07/28 15:42:21 Consultando usuários
+2019/07/28 15:42:21 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 15:42:21 | 200 |   55.441809ms |             ::1 | GET      /users
+2019/07/28 15:42:58 Iniciando getUsers
+2019/07/28 15:42:58 Consultando usuários
+2019/07/28 15:42:58 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 15:42:58 | 200 |   76.468224ms |             ::1 | GET      /users
+2019/07/28 15:55:09 Iniciando getUsers
+2019/07/28 15:55:09 Consultando usuários
+2019/07/28 15:55:09 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 15:55:09 | 200 |   77.314667ms |             ::1 | GET      /users
+2019/07/28 15:55:39 Iniciando getUsers
+2019/07/28 15:55:39 Consultando usuários
+2019/07/28 15:55:39 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 15:55:39 | 200 |   73.077901ms |             ::1 | GET      /users
+2019/07/28 15:58:37 Iniciando getUsers
+2019/07/28 15:58:37 Consultando usuários
+2019/07/28 15:58:37 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 15:58:37 | 200 |    50.71796ms |             ::1 | GET      /users
+[GIN] 2019/07/28 - 15:59:01 | 404 |       7.016µs |             ::1 | DELETE   /users
+2019/07/28 16:06:41 Iniciando getUsers
+2019/07/28 16:06:41 Consultando usuários
+2019/07/28 16:06:41 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 16:06:41 | 200 |   84.776116ms |             ::1 | GET      /users
+2019/07/28 16:06:54 Iniciando getUsers
+2019/07/28 16:06:54 Consultando usuários
+2019/07/28 16:06:54 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 16:06:54 | 200 |   29.031089ms |             ::1 | GET      /users
+[GIN] 2019/07/28 - 16:06:57 | 404 |      20.501µs |             ::1 | DELETE   /users
+2019/07/28 16:10:09 Iniciando getUsers
+2019/07/28 16:10:09 Consultando usuários
+2019/07/28 16:10:09 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 16:10:09 | 200 |   51.003192ms |             ::1 | GET      /users
+[GIN] 2019/07/28 - 16:10:12 | 401 |      20.092µs |             ::1 | DELETE   /users/:id
+2019/07/28 16:10:46 Erro ao realizar update
+2019/07/28 16:10:46 pq: invalid input syntax for integer: ":id"
+[GIN] 2019/07/28 - 16:10:46 | 500 |   38.786208ms |             ::1 | DELETE   /users/:id
+2019/07/28 16:20:12 Iniciando getUsers
+2019/07/28 16:20:12 Consultando usuários
+2019/07/28 16:20:13 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 16:20:13 | 200 |  166.252184ms |             ::1 | GET      /users
+2019/07/28 16:20:27 Iniciando getUsers
+2019/07/28 16:20:27 Consultando usuários
+2019/07/28 16:20:27 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 16:20:27 | 200 |    22.81008ms |             ::1 | GET      /users
+2019/07/28 16:20:34 Erro ao realizar update
+2019/07/28 16:20:34 pq: invalid input syntax for integer: ":id"
+[GIN] 2019/07/28 - 16:20:34 | 500 |   55.176045ms |             ::1 | DELETE   /users/:id
+2019/07/28 16:20:44 Iniciando getUsers
+2019/07/28 16:20:44 Consultando usuários
+2019/07/28 16:20:44 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 16:20:44 | 200 |   81.035776ms |             ::1 | GET      /users
+2019/07/28 16:20:51 Erro ao realizar update
+2019/07/28 16:20:51 pq: invalid input syntax for integer: ":id"
+[GIN] 2019/07/28 - 16:20:51 | 500 |   41.879239ms |             ::1 | DELETE   /users/:id
+[GIN] 2019/07/28 - 16:21:24 | 401 |       7.828µs |             ::1 | POST     /users
+2019/07/28 16:21:24 Registrando usuário
+2019/07/28 16:21:24 Validando se o e-mail foi recebido
+2019/07/28 16:21:24 Abrindo conexão com o banco
+2019/07/28 16:21:24 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 16:21:24 Inserindo usuário
+2019/07/28 16:21:24 Usuário inserido com sucesso
+[GIN] 2019/07/28 - 16:21:24 | 201 |   118.85965ms |             ::1 | POST     /users
+2019/07/28 16:21:29 Registrando usuário
+2019/07/28 16:21:29 Validando se o e-mail foi recebido
+2019/07/28 16:21:29 Abrindo conexão com o banco
+2019/07/28 16:21:29 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 16:21:29 Email já cadastrado
+[GIN] 2019/07/28 - 16:21:29 | 400 |    23.64835ms |             ::1 | POST     /users
+2019/07/28 16:21:30 Registrando usuário
+2019/07/28 16:21:30 Validando se o e-mail foi recebido
+2019/07/28 16:21:30 Abrindo conexão com o banco
+2019/07/28 16:21:30 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 16:21:30 Email já cadastrado
+[GIN] 2019/07/28 - 16:21:30 | 400 |   17.401949ms |             ::1 | POST     /users
+2019/07/28 16:21:31 Registrando usuário
+2019/07/28 16:21:31 Validando se o e-mail foi recebido
+2019/07/28 16:21:31 Abrindo conexão com o banco
+2019/07/28 16:21:31 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 16:21:31 Email já cadastrado
+[GIN] 2019/07/28 - 16:21:31 | 400 |   12.907929ms |             ::1 | POST     /users
+2019/07/28 16:24:00 Iniciando getUsers
+2019/07/28 16:24:00 Consultando usuários
+2019/07/28 16:24:01 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 16:24:01 | 200 |   97.216057ms |             ::1 | GET      /users
+2019/07/28 16:24:12 Iniciando getUsers
+2019/07/28 16:24:12 Consultando usuários
+2019/07/28 16:24:12 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 16:24:12 | 200 |   77.779119ms |             ::1 | GET      /users
+2019/07/28 16:27:05 Erro ao realizar update
+2019/07/28 16:27:05 pq: invalid input syntax for integer: ":id"
+[GIN] 2019/07/28 - 16:27:05 | 500 |   20.825756ms |             ::1 | DELETE   /users/:id
+2019/07/28 16:27:23 Iniciando getUsers
+2019/07/28 16:27:23 Consultando usuários
+2019/07/28 16:27:23 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 16:27:23 | 200 |   69.474055ms |             ::1 | GET      /users
+2019/07/28 16:31:36 Iniciando getUsers
+2019/07/28 16:31:36 Consultando usuários
+2019/07/28 16:31:36 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 16:31:36 | 200 |   68.542029ms |             ::1 | GET      /users
+2019/07/28 16:31:39 Erro ao realizar update
+2019/07/28 16:31:39 pq: invalid input syntax for integer: ":id"
+[GIN] 2019/07/28 - 16:31:39 | 500 |     25.3275ms |             ::1 | DELETE   /users/:id
+2019/07/28 16:33:02 Iniciando getUsers
+2019/07/28 16:33:02 Consultando usuários
+2019/07/28 16:33:02 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 16:33:02 | 200 |   77.668214ms |             ::1 | GET      /users
+2019/07/28 16:33:22 Iniciando getUsers
+2019/07/28 16:33:22 Consultando usuários
+2019/07/28 16:33:22 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 16:33:22 | 200 |   86.162518ms |             ::1 | GET      /users
+2019/07/28 16:44:12 Iniciando getUsers
+2019/07/28 16:44:12 Consultando usuários
+2019/07/28 16:44:12 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 16:44:12 | 200 |  107.239421ms |             ::1 | GET      /users
+[GIN] 2019/07/28 - 16:44:15 | 404 |      26.718µs |             ::1 | DELETE   /users/
+2019/07/28 16:45:56 Iniciando getUsers
+2019/07/28 16:45:56 Consultando usuários
+2019/07/28 16:45:56 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 16:45:56 | 200 |  154.441649ms |             ::1 | GET      /users
+[GIN] 2019/07/28 - 16:45:59 | 404 |       6.319µs |             ::1 | DELETE   /users/
+2019/07/28 16:46:41 Iniciando getUsers
+2019/07/28 16:46:41 Consultando usuários
+2019/07/28 16:46:42 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 16:46:42 | 200 |   87.729969ms |             ::1 | GET      /users
+[GIN] 2019/07/28 - 16:46:43 | 404 |       6.134µs |             ::1 | DELETE   /users/
+2019/07/28 16:52:09 Validando schema DB
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:user              --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:user              --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/28 16:53:45 Iniciando getUsers
+2019/07/28 16:53:45 Consultando usuários
+2019/07/28 16:53:45 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 16:53:45 | 200 |    26.37341ms |             ::1 | GET      /users
+[GIN] 2019/07/28 - 16:53:47 | 404 |      23.538µs |             ::1 | DELETE   /users/
+2019/07/28 17:14:55 Iniciando getUsers
+2019/07/28 17:14:55 Consultando usuários
+2019/07/28 17:14:55 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 17:14:55 | 200 |  199.309453ms |             ::1 | GET      /users
+2019/07/28 17:17:51 Iniciando getUsers
+2019/07/28 17:17:51 Consultando usuários
+2019/07/28 17:17:51 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 17:17:51 | 200 |  106.419504ms |             ::1 | GET      /users
+2019/07/28 17:23:01 Iniciando getUsers
+2019/07/28 17:23:01 Consultando usuários
+2019/07/28 17:23:01 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 17:23:01 | 200 |   44.048982ms |             ::1 | GET      /users
+2019/07/28 17:23:20 Erro ao realizar update
+2019/07/28 17:23:20 pq: invalid input syntax for integer: ""
+[GIN] 2019/07/28 - 17:23:20 | 500 |   29.096578ms |             ::1 | DELETE   /users/12?3=
+2019/07/28 17:26:24 Erro ao realizar update
+2019/07/28 17:26:24 pq: invalid input syntax for integer: ""
+[GIN] 2019/07/28 - 17:26:24 | 500 |   60.510669ms |             ::1 | DELETE   /users/2
+2019/07/28 17:26:44 Erro ao realizar update
+2019/07/28 17:26:44 pq: invalid input syntax for integer: ""
+[GIN] 2019/07/28 - 17:26:44 | 500 |   33.009257ms |             ::1 | DELETE   /users/2
+2019/07/28 17:28:47 Iniciando getUsers
+2019/07/28 17:28:47 Consultando usuários
+2019/07/28 17:28:47 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 17:28:47 | 200 |   37.177923ms |             ::1 | GET      /users
+2019/07/28 17:28:59 Erro ao realizar update
+2019/07/28 17:28:59 pq: invalid input syntax for integer: ""
+[GIN] 2019/07/28 - 17:28:59 | 500 |   20.837456ms |             ::1 | DELETE   /users/2
+2019/07/28 17:30:59 Validando schema DB
+2019/07/28 17:30:59 Iniciando base dos agentes publicos
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:user              --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:user              --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/28 17:30:59 Base já populada
+[GIN-debug] redirecting request 301: /users/ --> /users
+2019/07/28 17:31:42 Iniciando getUsers
+2019/07/28 17:31:42 Consultando usuários
+2019/07/28 17:31:42 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 17:31:42 | 200 |    63.94231ms |             ::1 | GET      /users
+[GIN] 2019/07/28 - 17:31:51 | 200 |   27.597411ms |             ::1 | DELETE   /users/2
+[GIN] 2019/07/28 - 17:32:21 | 204 |      39.991µs |             ::1 | OPTIONS  /users
+2019/07/28 17:33:36 Iniciando getUsers
+2019/07/28 17:33:36 Consultando usuários
+2019/07/28 17:33:36 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 17:33:36 | 200 |  126.049768ms |             ::1 | GET      /users
+2019/07/28 17:33:50 Registrando usuário
+2019/07/28 17:33:50 Validando se o e-mail foi recebido
+2019/07/28 17:33:50 Abrindo conexão com o banco
+2019/07/28 17:33:50 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 17:33:50 Inserindo usuário
+2019/07/28 17:33:50 Usuário inserido com sucesso
+[GIN] 2019/07/28 - 17:33:50 | 201 |   19.803353ms |             ::1 | POST     /users
+2019/07/28 17:33:57 Registrando usuário
+2019/07/28 17:33:57 Validando se o e-mail foi recebido
+2019/07/28 17:33:57 Abrindo conexão com o banco
+2019/07/28 17:33:57 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 17:33:57 Email já cadastrado
+[GIN] 2019/07/28 - 17:33:57 | 400 |   11.781439ms |             ::1 | POST     /users
+2019/07/28 17:35:45 Registrando usuário
+2019/07/28 17:35:45 Validando se o e-mail foi recebido
+2019/07/28 17:35:45 Abrindo conexão com o banco
+2019/07/28 17:35:45 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 17:35:45 Inserindo usuário
+2019/07/28 17:35:45 Usuário inserido com sucesso
+[GIN] 2019/07/28 - 17:35:45 | 201 |   21.349384ms |             ::1 | POST     /users
+2019/07/28 17:35:49 Registrando usuário
+2019/07/28 17:35:49 Validando se o e-mail foi recebido
+2019/07/28 17:35:49 Abrindo conexão com o banco
+2019/07/28 17:35:49 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 17:35:49 Email já cadastrado
+[GIN] 2019/07/28 - 17:35:49 | 400 |   11.170056ms |             ::1 | POST     /users
+[GIN-debug] redirecting request 301: /users/ --> /users
+2019/07/28 17:38:05 Iniciando getUsers
+2019/07/28 17:38:05 Consultando usuários
+2019/07/28 17:38:05 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 17:38:05 | 200 |   40.257041ms |             ::1 | GET      /users
+2019/07/28 17:38:34 Iniciando getUsers
+2019/07/28 17:38:34 Consultando usuários
+2019/07/28 17:38:34 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 17:38:34 | 200 |   85.859302ms |             ::1 | GET      /users
+2019/07/28 17:40:28 Registrando usuário
+2019/07/28 17:40:28 Validando se o e-mail foi recebido
+2019/07/28 17:40:28 Abrindo conexão com o banco
+2019/07/28 17:40:28 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 17:40:28 Inserindo usuário
+2019/07/28 17:40:28 Usuário inserido com sucesso
+[GIN] 2019/07/28 - 17:40:28 | 201 |    19.73864ms |             ::1 | POST     /users
+2019/07/28 17:40:34 Iniciando getUsers
+2019/07/28 17:40:34 Consultando usuários
+2019/07/28 17:40:34 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 17:40:34 | 200 |   33.016559ms |             ::1 | GET      /users
+2019/07/28 17:46:20 Registrando usuário
+2019/07/28 17:46:20 Validando se o e-mail foi recebido
+2019/07/28 17:46:20 Abrindo conexão com o banco
+2019/07/28 17:46:20 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 17:46:20 Inserindo usuário
+2019/07/28 17:46:20 Usuário inserido com sucesso
+[GIN] 2019/07/28 - 17:46:20 | 201 |   18.372696ms |             ::1 | POST     /users
+2019/07/28 17:57:39 Iniciando getUsers
+2019/07/28 17:57:39 Consultando usuários
+2019/07/28 17:57:39 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 17:57:39 | 200 |   36.951596ms |             ::1 | GET      /users
+2019/07/28 17:58:03 Registrando usuário
+2019/07/28 17:58:03 Validando se o e-mail foi recebido
+2019/07/28 17:58:03 Abrindo conexão com o banco
+2019/07/28 17:58:03 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 17:58:03 Inserindo usuário
+2019/07/28 17:58:03 Usuário inserido com sucesso
+[GIN] 2019/07/28 - 17:58:03 | 201 |   22.834396ms |             ::1 | POST     /users
+2019/07/28 17:58:23 Iniciando getUsers
+2019/07/28 17:58:23 Consultando usuários
+2019/07/28 17:58:23 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 17:58:23 | 200 |   21.926293ms |             ::1 | GET      /users
+2019/07/28 18:08:20 Iniciando getUsers
+2019/07/28 18:08:20 Consultando usuários
+2019/07/28 18:08:20 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 18:08:20 | 200 |   43.814421ms |             ::1 | GET      /users
+2019/07/28 18:08:27 Registrando usuário
+2019/07/28 18:08:27 Validando se o e-mail foi recebido
+2019/07/28 18:08:27 Abrindo conexão com o banco
+2019/07/28 18:08:27 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 18:08:27 Inserindo usuário
+2019/07/28 18:08:27 Usuário inserido com sucesso
+[GIN] 2019/07/28 - 18:08:27 | 201 |   28.017525ms |             ::1 | POST     /users
+2019/07/28 18:08:32 Registrando usuário
+2019/07/28 18:08:32 Validando se o e-mail foi recebido
+2019/07/28 18:08:32 Abrindo conexão com o banco
+2019/07/28 18:08:32 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 18:08:32 Email já cadastrado
+[GIN] 2019/07/28 - 18:08:32 | 400 |   18.933377ms |             ::1 | POST     /users
+2019/07/28 18:08:36 Iniciando getUsers
+2019/07/28 18:08:36 Consultando usuários
+2019/07/28 18:08:36 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 18:08:36 | 200 |   31.284857ms |             ::1 | GET      /users
+2019/07/28 18:09:47 Iniciando getUsers
+2019/07/28 18:09:47 Consultando usuários
+2019/07/28 18:09:47 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 18:09:47 | 200 |   42.213988ms |             ::1 | GET      /users
+2019/07/28 18:09:53 Registrando usuário
+2019/07/28 18:09:53 Validando se o e-mail foi recebido
+2019/07/28 18:09:53 Abrindo conexão com o banco
+2019/07/28 18:09:53 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 18:09:53 Inserindo usuário
+2019/07/28 18:09:53 Usuário inserido com sucesso
+[GIN] 2019/07/28 - 18:09:53 | 201 |   15.128225ms |             ::1 | POST     /users
+2019/07/28 18:09:57 Registrando usuário
+2019/07/28 18:09:57 Validando se o e-mail foi recebido
+2019/07/28 18:09:57 Abrindo conexão com o banco
+2019/07/28 18:09:57 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 18:09:57 Email já cadastrado
+[GIN] 2019/07/28 - 18:09:57 | 400 |   16.985526ms |             ::1 | POST     /users
+2019/07/28 18:10:00 Iniciando getUsers
+2019/07/28 18:10:00 Consultando usuários
+2019/07/28 18:10:00 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 18:10:00 | 200 |   79.848253ms |             ::1 | GET      /users
+2019/07/28 18:13:05 Iniciando getUsers
+2019/07/28 18:13:05 Consultando usuários
+2019/07/28 18:13:05 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 18:13:05 | 200 |   82.546276ms |             ::1 | GET      /users
+2019/07/28 18:14:29 Iniciando getUsers
+2019/07/28 18:14:29 Consultando usuários
+2019/07/28 18:14:29 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 18:14:29 | 200 |   32.835716ms |             ::1 | GET      /users
+2019/07/28 18:14:37 Registrando usuário
+2019/07/28 18:14:37 Validando se o e-mail foi recebido
+2019/07/28 18:14:37 Abrindo conexão com o banco
+2019/07/28 18:14:37 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 18:14:37 Inserindo usuário
+2019/07/28 18:14:37 Usuário inserido com sucesso
+[GIN] 2019/07/28 - 18:14:37 | 201 |   28.610841ms |             ::1 | POST     /users
+2019/07/28 18:14:47 Registrando usuário
+2019/07/28 18:14:47 Validando se o e-mail foi recebido
+2019/07/28 18:14:47 Abrindo conexão com o banco
+2019/07/28 18:14:47 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 18:14:47 Email já cadastrado
+[GIN] 2019/07/28 - 18:14:47 | 400 |   12.962538ms |             ::1 | POST     /users
+2019/07/28 18:14:52 Iniciando getUsers
+2019/07/28 18:14:52 Consultando usuários
+2019/07/28 18:14:52 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 18:14:52 | 200 |  121.783891ms |             ::1 | GET      /users
+2019/07/28 18:21:09 Iniciando getUsers
+2019/07/28 18:21:09 Consultando usuários
+2019/07/28 18:21:09 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 18:21:09 | 200 |    52.31302ms |             ::1 | GET      /users
+2019/07/28 18:21:31 Iniciando getUsers
+2019/07/28 18:21:31 Consultando usuários
+2019/07/28 18:21:32 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 18:21:32 | 200 |  237.450109ms |             ::1 | GET      /users
+2019/07/28 18:21:38 Registrando usuário
+2019/07/28 18:21:38 Validando se o e-mail foi recebido
+2019/07/28 18:21:38 Abrindo conexão com o banco
+2019/07/28 18:21:38 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 18:21:38 Inserindo usuário
+2019/07/28 18:21:38 Usuário inserido com sucesso
+[GIN] 2019/07/28 - 18:21:38 | 201 |   50.006664ms |             ::1 | POST     /users
+2019/07/28 18:21:48 Iniciando getUsers
+2019/07/28 18:21:48 Consultando usuários
+2019/07/28 18:21:48 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 18:21:48 | 200 |  100.942399ms |             ::1 | GET      /users
+2019/07/28 18:29:25 Iniciando getStatistic
+2019/07/28 18:29:27 sql: Scan error on column index 1, name "salario_total": converting driver.Value type <nil> ("<nil>") to a float64: invalid syntax
+[GIN] 2019/07/28 - 18:29:27 | 500 |  1.669319723s |             ::1 | GET      /dashboard
+2019/07/28 18:39:28 Validando schema DB
+2019/07/28 18:39:28 Iniciando base dos agentes publicos
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:user              --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:user              --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/28 18:39:28 Base já populada
+2019/07/28 18:46:10 Iniciando getUsers
+2019/07/28 18:46:10 Consultando usuários
+2019/07/28 18:46:10 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 18:46:10 | 200 |   73.169625ms |             ::1 | GET      /users
+2019/07/28 19:05:47 Iniciando getUsers
+2019/07/28 19:05:47 Consultando usuários
+2019/07/28 19:05:47 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 19:05:47 | 200 |    150.2892ms |             ::1 | GET      /users
+2019/07/28 19:10:15 Iniciando getUsers
+2019/07/28 19:10:15 Consultando usuários
+2019/07/28 19:10:15 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 19:10:15 | 200 |   44.360127ms |             ::1 | GET      /users
+2019/07/28 19:10:22 Registrando usuário
+2019/07/28 19:10:22 Validando se o e-mail foi recebido
+2019/07/28 19:10:22 Abrindo conexão com o banco
+2019/07/28 19:10:22 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 19:10:22 Email já cadastrado
+[GIN] 2019/07/28 - 19:10:22 | 400 |   22.123692ms |             ::1 | POST     /users
+2019/07/28 19:10:29 Iniciando getUsers
+2019/07/28 19:10:29 Consultando usuários
+2019/07/28 19:10:29 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 19:10:29 | 200 |   38.875225ms |             ::1 | GET      /users
+2019/07/28 20:38:02 Validando schema DB
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+2019/07/28 20:38:02 Iniciando base dos agentes publicos
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:user              --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:user              --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/28 20:38:02 Base já populada
+2019/07/28 20:38:28 Iniciando getUsers
+2019/07/28 20:38:28 Consultando usuários
+2019/07/28 20:38:28 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 20:38:28 | 200 |   63.623098ms |             ::1 | GET      /users
+2019/07/28 20:38:42 Iniciando getUsers
+2019/07/28 20:38:42 Consultando usuários
+2019/07/28 20:38:42 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 20:38:42 | 200 |   23.055757ms |             ::1 | GET      /users
+2019/07/28 20:46:01 Iniciando getUsers
+2019/07/28 20:46:01 Consultando usuários
+2019/07/28 20:46:01 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 20:46:01 | 200 |   46.583049ms |             ::1 | GET      /users
+2019/07/28 20:48:49 Iniciando getUsers
+2019/07/28 20:48:49 Consultando usuários
+2019/07/28 20:48:49 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 20:48:49 | 200 |   81.637588ms |             ::1 | GET      /users
+2019/07/28 20:53:21 Iniciando getUsers
+2019/07/28 20:53:21 Consultando usuários
+2019/07/28 20:53:21 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 20:53:21 | 200 |   50.020542ms |             ::1 | GET      /users
+[GIN] 2019/07/28 - 20:53:25 | 404 |       4.933µs |             ::1 | DELETE   /users
+[GIN] 2019/07/28 - 20:53:33 | 404 |       4.511µs |             ::1 | DELETE   /users
+[GIN] 2019/07/28 - 20:53:36 | 404 |       5.212µs |             ::1 | DELETE   /users
+[GIN] 2019/07/28 - 20:53:40 | 404 |      12.576µs |             ::1 | DELETE   /users
+[GIN] 2019/07/28 - 20:54:47 | 404 |       5.658µs |             ::1 | DELETE   /users
+2019/07/28 21:02:08 Validando schema DB
+2019/07/28 21:02:08 Iniciando base dos agentes publicos
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:user              --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:user              --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/28 21:02:08 Base já populada
+2019/07/28 21:02:55 Iniciando getStatistic
+2019/07/28 21:02:55 sql: Scan error on column index 1, name "salario_total": converting driver.Value type <nil> ("<nil>") to a float64: invalid syntax
+[GIN] 2019/07/28 - 21:02:55 | 500 |  685.659759ms |             ::1 | GET      /dashboard
+2019/07/28 21:04:28 Iniciando getUsers
+2019/07/28 21:04:28 Consultando usuários
+2019/07/28 21:04:28 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 21:04:28 | 200 |    22.14821ms |             ::1 | GET      /users
+[GIN-debug] redirecting request 301: /users/ --> /users
+2019/07/28 21:44:16 Iniciando getUsers
+2019/07/28 21:44:16 Consultando usuários
+2019/07/28 21:44:16 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 21:44:16 | 200 |   27.040585ms |             ::1 | GET      /users
+[GIN] 2019/07/28 - 21:44:40 | 200 |  114.628254ms |             ::1 | DELETE   /users/11
+[GIN] 2019/07/28 - 21:44:46 | 200 |   51.904433ms |             ::1 | DELETE   /users/9
+[GIN] 2019/07/28 - 21:44:51 | 200 |   21.957433ms |             ::1 | DELETE   /users/8
+[GIN-debug] redirecting request 301: /users/ --> /users
+2019/07/28 21:44:59 Iniciando getUsers
+2019/07/28 21:44:59 Consultando usuários
+2019/07/28 21:44:59 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 21:44:59 | 200 |    84.98081ms |             ::1 | GET      /users
+2019/07/28 21:51:34 Iniciando getUsers
+2019/07/28 21:51:34 Consultando usuários
+2019/07/28 21:51:35 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 21:51:35 | 200 |  101.560194ms |             ::1 | GET      /users
+[GIN] 2019/07/28 - 21:51:37 | 404 |       2.663µs |             ::1 | GET      /delete/undefined
+2019/07/28 22:17:50 Iniciando getUsers
+2019/07/28 22:17:50 Consultando usuários
+2019/07/28 22:17:50 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 22:17:50 | 200 |  123.897391ms |             ::1 | GET      /users
+2019/07/28 22:22:50 Iniciando getUsers
+2019/07/28 22:22:50 Consultando usuários
+2019/07/28 22:22:50 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 22:22:50 | 200 |  100.444252ms |             ::1 | GET      /users
+2019/07/28 22:27:19 Iniciando getUsers
+2019/07/28 22:27:19 Consultando usuários
+2019/07/28 22:27:19 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 22:27:19 | 200 |  180.712773ms |             ::1 | GET      /users
+2019/07/28 22:28:57 Iniciando getUsers
+2019/07/28 22:28:57 Consultando usuários
+2019/07/28 22:28:57 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 22:28:57 | 200 |    49.72731ms |             ::1 | GET      /users
+2019/07/28 22:34:11 Iniciando getUsers
+2019/07/28 22:34:11 Consultando usuários
+2019/07/28 22:34:11 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 22:34:11 | 200 |   60.092177ms |             ::1 | GET      /users
+2019/07/28 22:35:38 Iniciando getUsers
+2019/07/28 22:35:38 Consultando usuários
+2019/07/28 22:35:39 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 22:35:39 | 200 |   91.749514ms |             ::1 | GET      /users
+[GIN] 2019/07/28 - 22:35:41 | 404 |       2.549µs |             ::1 | GET      /delete/6
+2019/07/28 22:35:53 Iniciando getUsers
+2019/07/28 22:35:53 Consultando usuários
+2019/07/28 22:35:53 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 22:35:53 | 200 |   74.336343ms |             ::1 | GET      /users
+[GIN] 2019/07/28 - 22:35:55 | 404 |       2.359µs |             ::1 | GET      /delete/10
+2019/07/28 22:36:29 Iniciando getUsers
+2019/07/28 22:36:29 Consultando usuários
+2019/07/28 22:36:29 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 22:36:29 | 200 |   53.890823ms |             ::1 | GET      /users
+[GIN] 2019/07/28 - 22:36:30 | 404 |        2.08µs |             ::1 | GET      /users/delete/10
+2019/07/28 22:37:12 Iniciando getUsers
+2019/07/28 22:37:12 Consultando usuários
+2019/07/28 22:37:12 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 22:37:12 | 200 |    98.84798ms |             ::1 | GET      /users
+[GIN] 2019/07/28 - 22:37:14 | 200 |   21.251784ms |             ::1 | DELETE   /users/10
+[GIN] 2019/07/28 - 22:39:26 | 200 |   32.632693ms |             ::1 | DELETE   /users/12
+2019/07/28 22:39:33 Iniciando getUsers
+2019/07/28 22:39:33 Consultando usuários
+2019/07/28 22:39:33 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 22:39:33 | 200 |   26.232554ms |             ::1 | GET      /users
+2019/07/28 22:43:27 Iniciando getUsers
+2019/07/28 22:43:27 Consultando usuários
+2019/07/28 22:43:27 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 22:43:27 | 200 |    35.82279ms |             ::1 | GET      /users
+[GIN] 2019/07/28 - 22:43:30 | 200 |   17.809671ms |             ::1 | DELETE   /users/6
+2019/07/28 22:43:34 Iniciando getUsers
+2019/07/28 22:43:34 Consultando usuários
+2019/07/28 22:43:34 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 22:43:34 | 200 |   32.155202ms |             ::1 | GET      /users
+2019/07/28 22:44:08 Iniciando getUsers
+2019/07/28 22:44:08 Consultando usuários
+2019/07/28 22:44:08 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 22:44:08 | 200 |   29.077274ms |             ::1 | GET      /users
+[GIN] 2019/07/28 - 22:44:11 | 200 |   61.013962ms |             ::1 | DELETE   /users/7
+2019/07/28 22:44:14 Iniciando getUsers
+2019/07/28 22:44:14 Consultando usuários
+2019/07/28 22:44:14 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 22:44:14 | 200 |  187.825255ms |             ::1 | GET      /users
+2019/07/28 22:56:15 Iniciando getUsers
+2019/07/28 22:56:15 Consultando usuários
+2019/07/28 22:56:15 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 22:56:15 | 200 |   94.071853ms |             ::1 | GET      /users
+2019/07/28 22:57:51 Iniciando getUsers
+2019/07/28 22:57:51 Consultando usuários
+2019/07/28 22:57:51 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 22:57:51 | 200 |   24.359134ms |             ::1 | GET      /users
+2019/07/28 22:59:41 Iniciando getUsers
+2019/07/28 22:59:41 Consultando usuários
+2019/07/28 22:59:41 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 22:59:41 | 200 |   26.375604ms |             ::1 | GET      /users
+2019/07/28 22:59:54 Registrando usuário
+2019/07/28 22:59:54 Validando se o e-mail foi recebido
+2019/07/28 22:59:54 Abrindo conexão com o banco
+2019/07/28 22:59:54 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 22:59:54 Inserindo usuário
+2019/07/28 22:59:54 Usuário inserido com sucesso
+[GIN] 2019/07/28 - 22:59:54 | 201 |   30.864277ms |             ::1 | POST     /users
+2019/07/28 23:00:33 Iniciando getUsers
+2019/07/28 23:00:33 Consultando usuários
+2019/07/28 23:00:33 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 23:00:33 | 200 |   39.600759ms |             ::1 | GET      /users
+2019/07/28 23:01:37 Iniciando getUsers
+2019/07/28 23:01:37 Consultando usuários
+2019/07/28 23:01:37 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 23:01:37 | 200 |   36.756857ms |             ::1 | GET      /users
+2019/07/28 23:01:53 Registrando usuário
+2019/07/28 23:01:53 Validando se o e-mail foi recebido
+2019/07/28 23:01:53 Abrindo conexão com o banco
+2019/07/28 23:01:53 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 23:01:53 Inserindo usuário
+2019/07/28 23:01:53 Usuário inserido com sucesso
+[GIN] 2019/07/28 - 23:01:53 | 201 |   17.810464ms |             ::1 | POST     /users
+2019/07/28 23:04:22 Iniciando getUsers
+2019/07/28 23:04:22 Consultando usuários
+2019/07/28 23:04:22 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 23:04:22 | 200 |   87.454398ms |             ::1 | GET      /users
+2019/07/28 23:04:35 Registrando usuário
+2019/07/28 23:04:35 Validando se o e-mail foi recebido
+2019/07/28 23:04:35 Abrindo conexão com o banco
+2019/07/28 23:04:35 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 23:04:35 Inserindo usuário
+2019/07/28 23:04:35 Usuário inserido com sucesso
+[GIN] 2019/07/28 - 23:04:35 | 201 |   16.323696ms |             ::1 | POST     /users
+2019/07/28 23:04:39 Registrando usuário
+2019/07/28 23:04:39 Validando se o e-mail foi recebido
+2019/07/28 23:04:39 Abrindo conexão com o banco
+2019/07/28 23:04:39 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 23:04:39 Email já cadastrado
+[GIN] 2019/07/28 - 23:04:39 | 400 |   13.826585ms |             ::1 | POST     /users
+2019/07/28 23:04:41 Iniciando getUsers
+2019/07/28 23:04:41 Consultando usuários
+2019/07/28 23:04:41 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 23:04:41 | 200 |  107.356094ms |             ::1 | GET      /users
+2019/07/28 23:04:57 Iniciando getUsers
+2019/07/28 23:04:57 Consultando usuários
+2019/07/28 23:04:57 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 23:04:57 | 200 |   22.776139ms |             ::1 | GET      /users
+2019/07/28 23:05:12 Iniciando getUsers
+2019/07/28 23:05:12 Consultando usuários
+2019/07/28 23:05:12 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 23:05:12 | 200 |   81.486375ms |             ::1 | GET      /users
+2019/07/28 23:09:21 Iniciando getUsers
+2019/07/28 23:09:21 Consultando usuários
+2019/07/28 23:09:21 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 23:09:21 | 200 |   65.845559ms |             ::1 | GET      /users
+[GIN] 2019/07/28 - 23:09:26 | 200 |   22.892044ms |             ::1 | DELETE   /users/15
+2019/07/28 23:10:10 Registrando usuário
+2019/07/28 23:10:10 Validando se o e-mail foi recebido
+2019/07/28 23:10:10 Abrindo conexão com o banco
+2019/07/28 23:10:10 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/28 23:10:10 Inserindo usuário
+2019/07/28 23:10:10 Usuário inserido com sucesso
+[GIN] 2019/07/28 - 23:10:10 | 201 |   18.171553ms |             ::1 | POST     /users
+2019/07/28 23:10:19 Iniciando getUsers
+2019/07/28 23:10:19 Consultando usuários
+2019/07/28 23:10:19 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 23:10:19 | 200 |   76.480761ms |             ::1 | GET      /users
+2019/07/28 23:59:41 Validando schema DB
+2019/07/28 23:59:41 Iniciando base dos agentes publicos
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:user              --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:user              --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/28 23:59:41 Base já populada
+2019/07/28 23:59:48 Iniciando getUsers
+2019/07/28 23:59:48 Consultando usuários
+2019/07/28 23:59:48 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 23:59:48 | 200 |   46.164592ms |             ::1 | GET      /users
+[GIN] 2019/07/28 - 23:59:55 | 200 |   20.841862ms |             ::1 | DELETE   /users/5
+2019/07/28 23:59:57 Iniciando getUsers
+2019/07/28 23:59:57 Consultando usuários
+2019/07/28 23:59:57 Consulta finalizando, retornando
+[GIN] 2019/07/28 - 23:59:57 | 200 |   37.273995ms |             ::1 | GET      /users
+[GIN] 2019/07/29 - 00:00:02 | 200 |   19.924556ms |             ::1 | DELETE   /users/14
+2019/07/29 00:00:04 Iniciando getUsers
+2019/07/29 00:00:04 Consultando usuários
+2019/07/29 00:00:04 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 00:00:04 | 200 |   43.429257ms |             ::1 | GET      /users
+2019/07/29 00:04:26 Iniciando getUsers
+2019/07/29 00:04:26 Consultando usuários
+2019/07/29 00:04:26 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 00:04:26 | 200 |   68.702083ms |             ::1 | GET      /users
+2019/07/29 00:07:16 Iniciando getUsers
+2019/07/29 00:07:16 Consultando usuários
+2019/07/29 00:07:16 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 00:07:16 | 200 |   65.592359ms |             ::1 | GET      /users
+2019/07/29 00:08:57 Iniciando getUsers
+2019/07/29 00:08:57 Consultando usuários
+2019/07/29 00:08:57 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 00:08:57 | 200 |   33.104795ms |             ::1 | GET      /users
+2019/07/29 00:10:30 Iniciando getUsers
+2019/07/29 00:10:30 Consultando usuários
+2019/07/29 00:10:30 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 00:10:30 | 200 |   44.954659ms |             ::1 | GET      /users
+2019/07/29 00:12:03 Iniciando getUsers
+2019/07/29 00:12:03 Consultando usuários
+2019/07/29 00:12:03 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 00:12:03 | 200 |   42.908061ms |             ::1 | GET      /users
+2019/07/29 00:12:09 Iniciando getUsers
+2019/07/29 00:12:09 Consultando usuários
+2019/07/29 00:12:09 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 00:12:09 | 200 |   51.051125ms |             ::1 | GET      /users
+2019/07/29 00:17:58 Iniciando getUsers
+2019/07/29 00:17:58 Consultando usuários
+2019/07/29 00:17:58 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 00:17:58 | 200 |   30.134924ms |             ::1 | GET      /users
+2019/07/29 00:57:30 Iniciando getUsers
+2019/07/29 00:57:30 Consultando usuários
+2019/07/29 00:57:30 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 00:57:30 | 200 |  187.206221ms |             ::1 | GET      /users
+2019/07/29 00:57:56 Iniciando getUsers
+2019/07/29 00:57:56 Consultando usuários
+2019/07/29 00:57:56 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 00:57:56 | 200 |  102.169436ms |             ::1 | GET      /users
+2019/07/29 01:35:45 Iniciando getUsers
+2019/07/29 01:35:45 Consultando usuários
+2019/07/29 01:35:45 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 01:35:45 | 200 |   64.355731ms |             ::1 | GET      /users
+2019/07/29 01:37:03 Iniciando getUsers
+2019/07/29 01:37:03 Consultando usuários
+2019/07/29 01:37:03 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 01:37:03 | 200 |   67.937761ms |             ::1 | GET      /users
