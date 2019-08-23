@@ -1,0 +1,113 @@
+2019/07/27 11:45:45 Validando schema DB
+2019/07/27 11:45:45 Schema inexistente, criando
+2019/07/27 11:45:45 Abrindo arquivo
+2019/07/27 11:45:45 Separando
+2019/07/27 11:45:45 Executanto
+2019/07/27 12:07:51 Validando schema DB
+2019/07/27 12:07:51 Schema inexistente, criando
+2019/07/27 12:07:51 Abrindo arquivo
+2019/07/27 12:07:51 Separando
+2019/07/27 12:07:51 Executanto
+2019/07/27 12:07:51 Executanto
+2019/07/27 12:07:51 Executanto
+2019/07/27 12:07:51 Executanto
+2019/07/27 12:07:51 Executanto
+2019/07/27 12:07:51 Executanto
+2019/07/27 12:07:51 Executanto
+2019/07/27 12:07:51 Executanto
+2019/07/27 12:07:51 Executanto
+2019/07/27 12:07:51 Executanto
+2019/07/27 12:07:51 Executanto
+2019/07/27 12:07:51 Executanto
+2019/07/27 12:07:51 pq: unterminated dollar-quoted string at or near "$$
+   SELECT AVG(val)
+   FROM (
+     SELECT val
+     FROM unnest($1) val
+     ORDER BY 1
+     LIMIT  2 - MOD(array_upper($1, 1), 2)
+     OFFSET CEIL(array_upper($1, 1) / 2.0) - 1
+   ) sub"
+2019/07/27 12:07:51 pq: unterminated dollar-quoted string at or near "$$
+   SELECT AVG(val)
+   FROM (
+     SELECT val
+     FROM unnest($1) val
+     ORDER BY 1
+     LIMIT  2 - MOD(array_upper($1, 1), 2)
+     OFFSET CEIL(array_upper($1, 1) / 2.0) - 1
+   ) sub"
+2019/07/27 15:09:10 Validando schema DB
+2019/07/27 15:09:10 Schema inexistente, criando
+2019/07/27 15:09:10 Abrindo arquivo
+2019/07/27 15:09:10 Separando
+2019/07/27 15:09:10 Executanto
+2019/07/27 15:09:10 Executanto
+2019/07/27 15:09:10 Executanto
+2019/07/27 15:09:10 Executanto
+2019/07/27 15:09:10 Executanto
+2019/07/27 15:09:10 Executanto
+2019/07/27 15:09:10 Executanto
+2019/07/27 15:09:10 Executanto
+2019/07/27 15:09:10 Executanto
+2019/07/27 15:09:10 Executanto
+2019/07/27 15:09:10 Executanto
+2019/07/27 15:09:10 Executanto
+2019/07/27 15:09:10 pq: unterminated dollar-quoted string at or near "$$
+   SELECT AVG(val)
+   FROM (
+     SELECT val
+     FROM unnest($1) val
+     ORDER BY 1
+     LIMIT  2 - MOD(array_upper($1, 1), 2)
+     OFFSET CEIL(array_upper($1, 1) / 2.0) - 1
+   ) sub"
+2019/07/27 15:09:10 pq: unterminated dollar-quoted string at or near "$$
+   SELECT AVG(val)
+   FROM (
+     SELECT val
+     FROM unnest($1) val
+     ORDER BY 1
+     LIMIT  2 - MOD(array_upper($1, 1), 2)
+     OFFSET CEIL(array_upper($1, 1) / 2.0) - 1
+   ) sub"
+2019/07/27 15:09:52 Validando schema DB
+2019/07/27 15:09:52 Schema inexistente, criando
+2019/07/27 15:09:52 Abrindo arquivo
+2019/07/27 15:09:52 Separando
+2019/07/27 15:09:52 Executanto
+2019/07/27 15:09:52 Executanto
+2019/07/27 15:09:52 Executanto
+2019/07/27 15:09:53 Executanto
+2019/07/27 15:09:53 Executanto
+2019/07/27 15:09:53 Executanto
+2019/07/27 15:09:53 Executanto
+2019/07/27 15:09:53 Executanto
+2019/07/27 15:09:53 Executanto
+2019/07/27 15:09:53 Executanto
+2019/07/27 15:09:53 Executanto
+2019/07/27 15:09:53 Executanto
+2019/07/27 15:09:53 Executanto
+2019/07/27 15:09:53 Executanto
+2019/07/27 15:09:53 Schema criado
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:id                --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:id                --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080

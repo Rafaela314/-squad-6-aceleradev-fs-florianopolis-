@@ -1,0 +1,765 @@
+2019/07/29 02:01:43 Validando schema DB
+2019/07/29 02:01:43 Iniciando base dos agentes publicos
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:user              --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:user              --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/29 02:01:43 Base já populada
+2019/07/29 02:02:07 Iniciando getUsers
+2019/07/29 02:02:07 Consultando usuários
+2019/07/29 02:02:07 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 02:02:07 | 200 |  120.221515ms |             ::1 | GET      /users
+2019/07/29 02:03:15 Iniciando getUsers
+2019/07/29 02:03:15 Consultando usuários
+2019/07/29 02:03:15 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 02:03:15 | 200 |   67.265067ms |             ::1 | GET      /users
+2019/07/29 02:04:39 Iniciando getUsers
+2019/07/29 02:04:39 Consultando usuários
+2019/07/29 02:04:39 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 02:04:39 | 200 |   48.704783ms |             ::1 | GET      /users
+2019/07/29 02:13:01 Iniciando getUsers
+2019/07/29 02:13:01 Consultando usuários
+2019/07/29 02:13:01 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 02:13:01 | 200 |   60.583248ms |             ::1 | GET      /users
+2019/07/29 02:13:35 Iniciando getUsers
+2019/07/29 02:13:35 Consultando usuários
+2019/07/29 02:13:35 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 02:13:35 | 200 |   65.946824ms |             ::1 | GET      /users
+2019/07/29 02:17:35 Iniciando rotina de atualização dos funcionários publicos
+2019/07/29 02:17:35 Iniciando BaixarCSV
+2019/07/29 02:17:35 Iniciando download
+[GIN] 2019/07/29 - 02:17:35 | 200 |     669.043µs |             ::1 | POST     /publicagents
+2019/07/29 02:17:53 Iniciando getEvents
+2019/07/29 02:17:53 Abrindo conexão com o banco
+2019/07/29 02:17:53 Verificando se existe algum evento
+2019/07/29 02:17:54 Nenhum evento encontrado
+[GIN] 2019/07/29 - 02:17:54 | 204 |   99.926045ms |             ::1 | GET      /events
+2019/07/29 02:18:05 Download finalizado
+2019/07/29 02:18:05 Salvando localmente
+2019/07/29 02:18:28 Descompactando arquivo remuneracao.rar
+2019/07/29 02:18:29 Abrindo conexão com o banco para importar
+2019/07/29 02:18:29 Limpando tabela public_agent
+2019/07/29 02:18:36 Iniciando leitura do arquivo
+2019/07/29 02:18:38 1076487
+2019/07/29 02:18:38 Aguardando
+2019/07/29 02:18:38 Iniciando transação
+2019/07/29 02:18:38 Iniciando transação
+2019/07/29 02:18:38 Iniciando transação
+2019/07/29 02:18:38 Iniciando transação
+2019/07/29 02:18:38 Iniciando transação
+2019/07/29 02:18:38 Iniciando transação
+2019/07/29 02:18:38 Iniciando transação
+2019/07/29 02:18:38 Iniciando transação
+2019/07/29 02:18:38 Iniciando transação
+2019/07/29 02:18:38 Iniciando transação
+2019/07/29 02:18:38 Iniciando transação
+2019/07/29 02:23:57 Commit efetuado
+2019/07/29 02:25:25 Commit efetuado
+2019/07/29 02:25:25 Commit efetuado
+2019/07/29 02:25:26 Commit efetuado
+2019/07/29 02:25:26 Commit efetuado
+2019/07/29 02:25:27 Commit efetuado
+2019/07/29 02:25:27 Commit efetuado
+2019/07/29 02:25:27 Commit efetuado
+2019/07/29 02:25:27 Commit efetuado
+2019/07/29 02:25:28 Commit efetuado
+2019/07/29 02:25:28 Commit efetuado
+2019/07/29 02:25:28 Finalizado
+2019/07/29 02:25:28 remuneracao.csv remuneracao.rar
+2019/07/29 02:25:28 Finalizando BaixarCSV
+2019/07/29 02:42:50 Iniciando getStatistic
+2019/07/29 02:42:51 sql: Scan error on column index 1, name "salario_total": converting driver.Value type <nil> ("<nil>") to a float64: invalid syntax
+[GIN] 2019/07/29 - 02:42:51 | 500 |  808.174534ms |             ::1 | GET      /dashboard
+2019/07/29 02:43:09 Iniciando uploadCliente
+2019/07/29 02:43:09 Capturando arquivo 'file'
+2019/07/29 02:43:09 Arquivo não localizado
+2019/07/29 02:43:09 multipart: NextPart: EOF
+[GIN] 2019/07/29 - 02:43:09 | 500 |     615.712µs |             ::1 | POST     /clients?uploadClientes.csv=
+2019/07/29 02:43:15 Iniciando uploadCliente
+2019/07/29 02:43:15 Capturando arquivo 'file'
+2019/07/29 02:43:15 Arquivo não localizado
+2019/07/29 02:43:15 multipart: NextPart: EOF
+[GIN] 2019/07/29 - 02:43:15 | 500 |     616.743µs |             ::1 | POST     /clients
+2019/07/29 11:16:16 Validando schema DB
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+2019/07/29 11:16:16 Iniciando base dos agentes publicos
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:user              --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:user              --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/29 11:16:17 Base já populada
+2019/07/29 11:23:29 Iniciando getLeads
+2019/07/29 11:23:29 Abrindo conexão com o banco
+2019/07/29 11:23:29 Verificando se existe algum lead
+2019/07/29 11:23:29 Recuperando Leads
+2019/07/29 11:23:30 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 11:23:30 | 200 |  884.150427ms |             ::1 | GET      /leads
+2019/07/29 11:55:58 Iniciando getLeads
+2019/07/29 11:55:58 Abrindo conexão com o banco
+2019/07/29 11:55:58 Verificando se existe algum lead
+2019/07/29 11:55:58 Recuperando Leads
+2019/07/29 11:55:59 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 11:55:59 | 200 |  1.242432038s |             ::1 | GET      /leads
+2019/07/29 11:56:30 Iniciando getLeads
+2019/07/29 11:56:30 Abrindo conexão com o banco
+2019/07/29 11:56:30 Verificando se existe algum lead
+2019/07/29 11:56:30 Recuperando Leads
+2019/07/29 11:56:31 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 11:56:31 | 200 |  1.298820877s |             ::1 | GET      /leads
+2019/07/29 11:57:44 Iniciando getLeads
+2019/07/29 11:57:44 Abrindo conexão com o banco
+2019/07/29 11:57:44 Verificando se existe algum lead
+2019/07/29 11:57:44 Recuperando Leads
+2019/07/29 11:57:45 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 11:57:45 | 200 |  969.816265ms |             ::1 | GET      /leads
+2019/07/29 11:59:07 Iniciando getUsers
+2019/07/29 11:59:07 Consultando usuários
+2019/07/29 11:59:07 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 11:59:07 | 200 |   41.945262ms |             ::1 | GET      /users
+2019/07/29 11:59:18 Iniciando getLeads
+2019/07/29 11:59:18 Abrindo conexão com o banco
+2019/07/29 11:59:18 Verificando se existe algum lead
+2019/07/29 11:59:18 Recuperando Leads
+2019/07/29 11:59:19 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 11:59:19 | 200 |  757.292618ms |             ::1 | GET      /leads
+2019/07/29 12:04:05 Iniciando getLeads
+2019/07/29 12:04:05 Abrindo conexão com o banco
+2019/07/29 12:04:05 Verificando se existe algum lead
+2019/07/29 12:04:05 Recuperando Leads
+2019/07/29 12:04:06 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 12:04:06 | 200 |  938.969351ms |             ::1 | GET      /leads
+2019/07/29 12:07:33 Iniciando getLeads
+2019/07/29 12:07:33 Abrindo conexão com o banco
+2019/07/29 12:07:33 Verificando se existe algum lead
+2019/07/29 12:07:33 Recuperando Leads
+2019/07/29 12:07:34 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 12:07:34 | 200 |  946.761596ms |             ::1 | GET      /leads
+2019/07/29 12:07:52 Iniciando getLeads
+2019/07/29 12:07:52 Abrindo conexão com o banco
+2019/07/29 12:07:52 Verificando se existe algum lead
+2019/07/29 12:07:52 Recuperando Leads
+2019/07/29 12:07:53 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 12:07:53 | 200 |  945.774814ms |             ::1 | GET      /leads
+2019/07/29 12:39:52 Iniciando getLeads
+2019/07/29 12:39:52 Abrindo conexão com o banco
+2019/07/29 12:39:52 Verificando se existe algum lead
+2019/07/29 12:39:52 Recuperando Leads
+2019/07/29 12:39:53 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 12:39:53 | 200 |  1.181156073s |             ::1 | GET      /leads
+2019/07/29 12:52:24 Iniciando getLeads
+2019/07/29 12:52:24 Abrindo conexão com o banco
+2019/07/29 12:52:24 Verificando se existe algum lead
+2019/07/29 12:52:24 Recuperando Leads
+2019/07/29 12:52:26 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 12:52:26 | 200 |  1.616321578s |             ::1 | GET      /leads
+2019/07/29 12:56:03 Iniciando getLeads
+2019/07/29 12:56:03 Abrindo conexão com o banco
+2019/07/29 12:56:03 Verificando se existe algum lead
+2019/07/29 12:56:03 Recuperando Leads
+2019/07/29 12:56:05 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 12:56:05 | 200 |  2.071873107s |             ::1 | GET      /leads
+2019/07/29 12:56:28 Iniciando getLeads
+2019/07/29 12:56:28 Abrindo conexão com o banco
+2019/07/29 12:56:28 Verificando se existe algum lead
+2019/07/29 12:56:28 Recuperando Leads
+2019/07/29 12:56:30 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 12:56:30 | 200 |  1.857568833s |             ::1 | GET      /leads
+2019/07/29 12:59:15 Iniciando getLeads
+2019/07/29 12:59:15 Abrindo conexão com o banco
+2019/07/29 12:59:15 Verificando se existe algum lead
+2019/07/29 12:59:16 Recuperando Leads
+2019/07/29 12:59:18 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 12:59:18 | 200 |  2.091509261s |             ::1 | GET      /leads
+2019/07/29 13:03:03 Iniciando getLeads
+2019/07/29 13:03:03 Abrindo conexão com o banco
+2019/07/29 13:03:03 Verificando se existe algum lead
+2019/07/29 13:03:03 Recuperando Leads
+2019/07/29 13:03:06 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 13:03:06 | 200 |  2.899082777s |             ::1 | GET      /leads
+2019/07/29 13:04:43 Iniciando getLeads
+2019/07/29 13:04:43 Abrindo conexão com o banco
+2019/07/29 13:04:43 Verificando se existe algum lead
+2019/07/29 13:04:43 Recuperando Leads
+2019/07/29 13:04:45 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 13:04:45 | 200 |  1.878918069s |             ::1 | GET      /leads
+2019/07/29 13:12:56 Iniciando getLeads
+2019/07/29 13:12:56 Abrindo conexão com o banco
+2019/07/29 13:12:56 Verificando se existe algum lead
+2019/07/29 13:12:56 Recuperando Leads
+2019/07/29 13:12:59 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 13:12:59 | 200 |  3.319382501s |             ::1 | GET      /leads
+2019/07/29 14:02:20 Validando schema DB
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+2019/07/29 14:02:20 Iniciando base dos agentes publicos
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:user              --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:user              --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/29 14:02:20 Base já populada
+2019/07/29 14:04:31 Iniciando getLeads
+2019/07/29 14:04:31 Abrindo conexão com o banco
+2019/07/29 14:04:31 Verificando se existe algum lead
+2019/07/29 14:04:31 Recuperando Leads
+2019/07/29 14:04:32 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 14:04:32 | 200 |  826.990104ms |             ::1 | GET      /leads
+2019/07/29 14:04:49 Iniciando getUsers
+2019/07/29 14:04:49 Consultando usuários
+2019/07/29 14:04:49 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 14:04:49 | 200 |   63.705328ms |             ::1 | GET      /users
+2019/07/29 14:19:09 Iniciando getUsers
+2019/07/29 14:19:09 Consultando usuários
+2019/07/29 14:19:09 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 14:19:09 | 200 |    60.03327ms |             ::1 | GET      /users
+2019/07/29 14:19:36 Iniciando getStatistic
+2019/07/29 14:19:36 Sem informações para o dashboard
+[GIN] 2019/07/29 - 14:19:36 | 400 |   65.211373ms |             ::1 | GET      /dashboard
+2019/07/29 14:23:21 Iniciando uploadCliente
+2019/07/29 14:23:21 Capturando arquivo 'file'
+2019/07/29 14:23:21 Arquivo não localizado
+2019/07/29 14:23:21 multipart: NextPart: EOF
+[GIN] 2019/07/29 - 14:23:21 | 500 |    1.112292ms |             ::1 | POST     /clients
+2019/07/29 14:28:57 Iniciando getLeads
+2019/07/29 14:28:58 Abrindo conexão com o banco
+2019/07/29 14:28:58 Verificando se existe algum lead
+2019/07/29 14:28:58 Recuperando Leads
+2019/07/29 14:28:59 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 14:28:59 | 200 |  1.826742242s |             ::1 | GET      /leads
+2019/07/29 14:29:15 Iniciando getUsers
+2019/07/29 14:29:15 Consultando usuários
+2019/07/29 14:29:15 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 14:29:15 | 200 |   96.667177ms |             ::1 | GET      /users
+2019/07/29 14:42:49 Iniciando getClients
+2019/07/29 14:42:49 Consultando clientes
+2019/07/29 14:42:49 Retornando clientes
+[GIN] 2019/07/29 - 14:42:49 | 200 |   127.57889ms |             ::1 | GET      /clients
+2019/07/29 14:42:49 Iniciando getClients
+2019/07/29 14:42:49 Consultando clientes
+2019/07/29 14:42:49 Retornando clientes
+[GIN] 2019/07/29 - 14:42:49 | 200 |   44.450159ms |             ::1 | GET      /clients
+2019/07/29 14:43:29 Iniciando getLeads
+2019/07/29 14:43:29 Abrindo conexão com o banco
+2019/07/29 14:43:29 Verificando se existe algum lead
+2019/07/29 14:43:29 Recuperando Leads
+2019/07/29 14:43:31 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 14:43:31 | 200 |  1.993356781s |             ::1 | GET      /leads
+2019/07/29 14:43:58 Iniciando getClients
+2019/07/29 14:43:58 Consultando clientes
+2019/07/29 14:43:58 Retornando clientes
+[GIN] 2019/07/29 - 14:43:58 | 200 |   95.873448ms |             ::1 | GET      /clients
+2019/07/29 14:43:58 Iniciando getClients
+2019/07/29 14:43:58 Consultando clientes
+2019/07/29 14:43:58 Retornando clientes
+[GIN] 2019/07/29 - 14:43:58 | 200 |   49.552044ms |             ::1 | GET      /clients
+2019/07/29 14:44:21 Iniciando uploadCliente
+2019/07/29 14:44:21 Capturando arquivo 'file'
+2019/07/29 14:44:21 Salvando arquivo localmento uploadClients.csv
+2019/07/29 14:44:21 Carregando arquivo salvo
+2019/07/29 14:44:21 Iniciando leitura CSV
+2019/07/29 14:44:21 Inserindo clientes
+2019/07/29 14:44:21 Clientes inseridos
+[GIN] 2019/07/29 - 14:44:21 | 201 |  162.416766ms |             ::1 | POST     /clients
+2019/07/29 14:44:45 Iniciando getUsers
+2019/07/29 14:44:45 Consultando usuários
+2019/07/29 14:44:45 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 14:44:45 | 200 |  109.739897ms |             ::1 | GET      /users
+[GIN] 2019/07/29 - 14:45:02 | 200 |    64.06647ms |             ::1 | DELETE   /users/16
+2019/07/29 14:45:07 Iniciando getUsers
+2019/07/29 14:45:07 Consultando usuários
+2019/07/29 14:45:08 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 14:45:08 | 200 |  164.879181ms |             ::1 | GET      /users
+2019/07/29 14:53:04 Iniciando getClients
+2019/07/29 14:53:04 Consultando clientes
+2019/07/29 14:53:04 Retornando clientes
+[GIN] 2019/07/29 - 14:53:04 | 200 |   162.24058ms |             ::1 | GET      /clients
+2019/07/29 14:53:04 Iniciando getClients
+2019/07/29 14:53:04 Consultando clientes
+2019/07/29 14:53:04 Retornando clientes
+[GIN] 2019/07/29 - 14:53:04 | 200 |   44.799387ms |             ::1 | GET      /clients
+2019/07/29 14:53:20 Iniciando uploadCliente
+2019/07/29 14:53:20 Capturando arquivo 'file'
+2019/07/29 14:53:20 Salvando arquivo localmento uploadClients.csv
+2019/07/29 14:53:20 Carregando arquivo salvo
+2019/07/29 14:53:20 Iniciando leitura CSV
+2019/07/29 14:53:20 Inserindo clientes
+2019/07/29 14:53:21 Clientes inseridos
+[GIN] 2019/07/29 - 14:53:21 | 201 |    87.15703ms |             ::1 | POST     /clients
+2019/07/29 14:53:33 Iniciando getClients
+2019/07/29 14:53:33 Consultando clientes
+2019/07/29 14:53:33 Retornando clientes
+[GIN] 2019/07/29 - 14:53:33 | 200 |  147.494803ms |             ::1 | GET      /clients
+2019/07/29 14:53:33 Iniciando getClients
+2019/07/29 14:53:33 Consultando clientes
+2019/07/29 14:53:33 Retornando clientes
+[GIN] 2019/07/29 - 14:53:33 | 200 |   43.869343ms |             ::1 | GET      /clients
+2019/07/29 15:05:44 Validando schema DB
+2019/07/29 15:05:45 Iniciando base dos agentes publicos
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:user              --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:user              --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/29 15:05:45 Base já populada
+2019/07/29 15:09:21 Validando schema DB
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+2019/07/29 15:09:21 Iniciando base dos agentes publicos
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:user              --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:user              --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /fastleads                --> main.getLeadsFast (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/29 15:09:21 Base já populada
+2019/07/29 15:12:33 Iniciando getUsers
+2019/07/29 15:12:33 Consultando usuários
+2019/07/29 15:12:33 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 15:12:33 | 200 |   31.447927ms |             ::1 | GET      /users
+2019/07/29 16:35:54 Validando schema DB
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+2019/07/29 16:35:54 Iniciando base dos agentes publicos
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:user              --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:user              --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /fastleads                --> main.getLeadsFast (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/29 16:35:54 Base já populada
+2019/07/29 16:37:18 Iniciando getUsers
+2019/07/29 16:37:18 Consultando usuários
+2019/07/29 16:37:18 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 16:37:18 | 200 |   53.164405ms |             ::1 | GET      /users
+2019/07/29 16:53:18 Iniciando getStatistic
+2019/07/29 16:53:18 Trazendo statistics
+2019/07/29 16:53:20 sql: Scan error on column index 1, name "salario_total": converting driver.Value type <nil> ("<nil>") to a float64: invalid syntax
+[GIN] 2019/07/29 - 16:53:20 | 500 |  2.065267531s |             ::1 | GET      /dashboard
+2019/07/29 17:10:59 Validando schema DB
+2019/07/29 17:10:59 Iniciando base dos agentes publicos
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:user              --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:user              --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /fastleads                --> main.getLeadsFast (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/29 17:10:59 Base já populada
+2019/07/29 17:15:19 Iniciando getLeads
+2019/07/29 17:15:19 Abrindo conexão com o banco
+2019/07/29 17:15:19 Verificando se existe algum lead
+2019/07/29 17:15:19 Recuperando Leads
+2019/07/29 17:15:21 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 17:15:21 | 200 |  2.067881514s |             ::1 | GET      /leads
+2019/07/29 17:15:42 Iniciando getClients
+2019/07/29 17:15:42 Consultando clientes
+2019/07/29 17:15:42 Retornando clientes
+[GIN] 2019/07/29 - 17:15:42 | 200 |   19.449736ms |             ::1 | GET      /clients
+2019/07/29 17:15:42 Iniciando getClients
+2019/07/29 17:15:42 Consultando clientes
+2019/07/29 17:15:42 Retornando clientes
+[GIN] 2019/07/29 - 17:15:42 | 200 |   45.560875ms |             ::1 | GET      /clients
+2019/07/29 17:15:46 Iniciando getUsers
+2019/07/29 17:15:46 Consultando usuários
+2019/07/29 17:15:46 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 17:15:46 | 200 |   25.174473ms |             ::1 | GET      /users
+2019/07/29 17:21:16 Iniciando getStatistic
+2019/07/29 17:21:16 Trazendo statistics dos Prospects
+2019/07/29 17:21:17 Trazendo statistics dos Clientes
+2019/07/29 17:21:17 sql: Scan error on column index 1, name "salario_total": converting driver.Value type <nil> ("<nil>") to a float64: invalid syntax
+[GIN] 2019/07/29 - 17:21:17 | 500 |  1.071371869s |             ::1 | GET      /dashboard
+2019/07/29 17:28:06 Iniciando getStatistic
+2019/07/29 17:28:06 Trazendo statistics dos Prospects
+2019/07/29 17:28:06 Trazendo statistics dos Clientes
+2019/07/29 17:28:06 sql: Scan error on column index 1, name "salario_total": converting driver.Value type <nil> ("<nil>") to a float64: invalid syntax
+[GIN] 2019/07/29 - 17:28:06 | 500 |  769.377407ms |             ::1 | GET      /dashboard
+2019/07/29 17:31:43 Validando schema DB
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+2019/07/29 17:31:43 Iniciando base dos agentes publicos
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:user              --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:user              --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /fastleads                --> main.getLeadsFast (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/29 17:31:43 Base já populada
+2019/07/29 17:36:47 Iniciando getLeads
+2019/07/29 17:36:47 Abrindo conexão com o banco
+2019/07/29 17:36:47 Verificando se existe algum lead
+2019/07/29 17:36:47 Recuperando Leads
+2019/07/29 17:36:48 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 17:36:48 | 200 |  1.030449038s |             ::1 | GET      /leads
+2019/07/29 17:37:14 Iniciando getClients
+2019/07/29 17:37:14 Consultando clientes
+2019/07/29 17:37:14 Retornando clientes
+[GIN] 2019/07/29 - 17:37:14 | 200 |   29.076116ms |             ::1 | GET      /clients
+2019/07/29 17:37:14 Iniciando getClients
+2019/07/29 17:37:14 Consultando clientes
+2019/07/29 17:37:14 Retornando clientes
+[GIN] 2019/07/29 - 17:37:14 | 200 |   43.820663ms |             ::1 | GET      /clients
+2019/07/29 17:37:21 Iniciando uploadCliente
+2019/07/29 17:37:21 Capturando arquivo 'file'
+2019/07/29 17:37:21 Salvando arquivo localmento uploadClients.csv
+2019/07/29 17:37:21 Carregando arquivo salvo
+2019/07/29 17:37:21 Iniciando leitura CSV
+2019/07/29 17:37:21 Inserindo clientes
+2019/07/29 17:37:21 Clientes inseridos
+[GIN] 2019/07/29 - 17:37:21 | 201 |   31.781152ms |             ::1 | POST     /clients
+2019/07/29 17:37:29 Iniciando getClients
+2019/07/29 17:37:29 Consultando clientes
+2019/07/29 17:37:29 Retornando clientes
+[GIN] 2019/07/29 - 17:37:29 | 200 |   19.883804ms |             ::1 | GET      /clients
+2019/07/29 17:37:29 Iniciando getClients
+2019/07/29 17:37:29 Consultando clientes
+2019/07/29 17:37:29 Retornando clientes
+[GIN] 2019/07/29 - 17:37:29 | 200 |    66.81673ms |             ::1 | GET      /clients
+2019/07/29 17:38:09 Iniciando uploadCliente
+2019/07/29 17:38:09 Capturando arquivo 'file'
+2019/07/29 17:38:09 Salvando arquivo localmento uploadClients.csv
+2019/07/29 17:38:09 Carregando arquivo salvo
+2019/07/29 17:38:09 Iniciando leitura CSV
+2019/07/29 17:38:09 Inserindo clientes
+2019/07/29 17:38:09 Clientes inseridos
+[GIN] 2019/07/29 - 17:38:09 | 201 |   31.655178ms |             ::1 | POST     /clients
+2019/07/29 17:38:47 Iniciando getStatistic
+2019/07/29 17:38:47 Trazendo statistics dos Prospects
+2019/07/29 17:38:47 Trazendo statistics dos Clientes
+2019/07/29 17:38:47 sql: Scan error on column index 1, name "salario_total": converting driver.Value type <nil> ("<nil>") to a float64: invalid syntax
+[GIN] 2019/07/29 - 17:38:47 | 500 |  588.814125ms |             ::1 | GET      /dashboard
+2019/07/29 17:51:19 Validando schema DB
+2019/07/29 17:51:20 Iniciando base dos agentes publicos
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:user              --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:user              --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /fastleads                --> main.getLeadsFast (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/29 17:51:20 Base já populada
+2019/07/29 17:51:59 Iniciando getClients
+2019/07/29 17:51:59 Consultando clientes
+2019/07/29 17:51:59 Retornando clientes
+[GIN] 2019/07/29 - 17:51:59 | 200 |   20.940777ms |             ::1 | GET      /clients
+2019/07/29 17:51:59 Iniciando getClients
+2019/07/29 17:51:59 Consultando clientes
+2019/07/29 17:51:59 Retornando clientes
+[GIN] 2019/07/29 - 17:51:59 | 200 |   14.269803ms |             ::1 | GET      /clients
+2019/07/29 17:55:16 Iniciando uploadCliente
+2019/07/29 17:55:16 Capturando arquivo 'file'
+2019/07/29 17:55:16 Salvando arquivo localmento uploadClients.csv
+2019/07/29 17:55:16 Carregando arquivo salvo
+2019/07/29 17:55:16 Iniciando leitura CSV
+2019/07/29 17:55:16 Inserindo clientes
+2019/07/29 17:55:16 Clientes inseridos
+[GIN] 2019/07/29 - 17:55:16 | 201 |   54.596768ms |             ::1 | POST     /clients
+2019/07/29 17:55:21 Iniciando getClients
+2019/07/29 17:55:21 Consultando clientes
+2019/07/29 17:55:21 Retornando clientes
+[GIN] 2019/07/29 - 17:55:21 | 200 |    21.57419ms |             ::1 | GET      /clients
+2019/07/29 17:55:21 Iniciando getClients
+2019/07/29 17:55:21 Consultando clientes
+2019/07/29 17:55:21 Retornando clientes
+[GIN] 2019/07/29 - 17:55:21 | 200 |   24.949098ms |             ::1 | GET      /clients
+2019/07/29 18:01:43 Iniciando uploadCliente
+2019/07/29 18:01:43 Capturando arquivo 'file'
+2019/07/29 18:01:43 Salvando arquivo localmento uploadClients.csv
+2019/07/29 18:01:43 Carregando arquivo salvo
+2019/07/29 18:01:43 Iniciando leitura CSV
+2019/07/29 18:01:43 Inserindo clientes
+2019/07/29 18:01:43 Clientes inseridos
+[GIN] 2019/07/29 - 18:01:43 | 201 |  462.309314ms |             ::1 | POST     /clients
+2019/07/29 18:01:50 Iniciando getClients
+2019/07/29 18:01:50 Consultando clientes
+2019/07/29 18:01:50 Retornando clientes
+[GIN] 2019/07/29 - 18:01:50 | 200 |   73.152261ms |             ::1 | GET      /clients
+2019/07/29 18:01:50 Iniciando getClients
+2019/07/29 18:01:50 Consultando clientes
+2019/07/29 18:01:50 Retornando clientes
+[GIN] 2019/07/29 - 18:01:50 | 200 |   41.827407ms |             ::1 | GET      /clients
+2019/07/29 18:01:59 Iniciando getStatistic
+2019/07/29 18:01:59 Trazendo statistics dos Prospects
+2019/07/29 18:02:00 Trazendo statistics dos Clientes
+2019/07/29 18:02:00 Trazendo ranks
+2019/07/29 18:02:01 Finalizando
+[GIN] 2019/07/29 - 18:02:01 | 200 |  1.361148942s |             ::1 | GET      /dashboard
+2019/07/29 18:02:51 Iniciando getClients
+2019/07/29 18:02:51 Consultando clientes
+2019/07/29 18:02:51 Retornando clientes
+[GIN] 2019/07/29 - 18:02:51 | 200 |   33.165118ms |             ::1 | GET      /clients
+2019/07/29 18:02:51 Iniciando getClients
+2019/07/29 18:02:51 Consultando clientes
+2019/07/29 18:02:51 Retornando clientes
+[GIN] 2019/07/29 - 18:02:51 | 200 |   25.777143ms |             ::1 | GET      /clients
+2019/07/29 18:03:14 Iniciando getStatistic
+2019/07/29 18:03:14 Trazendo statistics dos Prospects
+2019/07/29 18:03:15 Trazendo statistics dos Clientes
+2019/07/29 18:03:15 Trazendo ranks
+2019/07/29 18:03:15 Finalizando
+[GIN] 2019/07/29 - 18:03:15 | 200 |  1.111534047s |             ::1 | GET      /dashboard
+2019/07/29 18:13:46 Iniciando getStatistic
+2019/07/29 18:13:46 Trazendo statistics dos Prospects
+2019/07/29 18:13:47 Trazendo statistics dos Clientes
+2019/07/29 18:13:47 Trazendo ranks
+2019/07/29 18:13:47 Finalizando
+[GIN] 2019/07/29 - 18:13:47 | 200 |  1.734402847s |             ::1 | GET      /dashboard
+2019/07/29 21:07:34 Validando schema DB
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+2019/07/29 21:07:34 Iniciando base dos agentes publicos
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:user              --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:user              --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /fastleads                --> main.getLeadsFast (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/29 21:07:34 Base já populada
+2019/07/29 21:13:23 Iniciando getStatistic
+2019/07/29 21:13:23 Trazendo statistics dos Prospects
+2019/07/29 21:13:24 Trazendo statistics dos Clientes
+2019/07/29 21:13:24 Trazendo ranks
+2019/07/29 21:13:25 Finalizando
+[GIN] 2019/07/29 - 21:13:25 | 200 |  1.291577641s |             ::1 | GET      /dashboard
+2019/07/29 21:14:37 Iniciando getStatistic
+2019/07/29 21:14:37 Trazendo statistics dos Prospects
+2019/07/29 21:14:38 Trazendo statistics dos Clientes
+2019/07/29 21:14:38 Trazendo ranks
+2019/07/29 21:14:38 Finalizando
+[GIN] 2019/07/29 - 21:14:38 | 200 |  1.155531034s |             ::1 | GET      /dashboard
+2019/07/29 21:19:26 Iniciando getStatistic
+2019/07/29 21:19:26 Trazendo statistics dos Prospects
+2019/07/29 21:19:27 Trazendo statistics dos Clientes
+2019/07/29 21:19:27 Trazendo ranks
+2019/07/29 21:19:28 Finalizando
+[GIN] 2019/07/29 - 21:19:28 | 200 |  1.509126588s |             ::1 | GET      /dashboard
+2019/07/29 21:25:51 Iniciando getStatistic
+2019/07/29 21:25:51 Trazendo statistics dos Prospects
+2019/07/29 21:25:52 Trazendo statistics dos Clientes
+2019/07/29 21:25:52 Trazendo ranks
+2019/07/29 21:25:52 Finalizando
+[GIN] 2019/07/29 - 21:25:52 | 200 |  1.573756277s |             ::1 | GET      /dashboard
+2019/07/29 21:25:56 Iniciando getLeads
+2019/07/29 21:25:56 Abrindo conexão com o banco
+2019/07/29 21:25:56 Verificando se existe algum lead
+2019/07/29 21:25:56 Recuperando Leads
+2019/07/29 21:25:57 Consulta finalizando, retornando
+[GIN] 2019/07/29 - 21:25:57 | 200 |  787.286384ms |             ::1 | GET      /leads
+2019/07/29 21:31:19 Iniciando getStatistic
+2019/07/29 21:31:19 Trazendo statistics dos Prospects
+2019/07/29 21:31:20 Trazendo statistics dos Clientes
+2019/07/29 21:31:20 Trazendo ranks
+2019/07/29 21:31:21 Finalizando
+[GIN] 2019/07/29 - 21:31:21 | 200 |  1.272562777s |             ::1 | GET      /dashboard
+2019/07/29 21:52:52 Iniciando getStatistic
+2019/07/29 21:52:52 Trazendo statistics dos Prospects
+2019/07/29 21:52:53 Trazendo statistics dos Clientes
+2019/07/29 21:52:53 Trazendo ranks
+2019/07/29 21:52:53 Finalizando
+[GIN] 2019/07/29 - 21:52:53 | 200 |  1.275254119s |             ::1 | GET      /dashboard
+2019/07/29 21:55:31 Iniciando getStatistic
+2019/07/29 21:55:31 Trazendo statistics dos Prospects
+2019/07/29 21:55:32 Trazendo statistics dos Clientes
+2019/07/29 21:55:32 Trazendo ranks
+2019/07/29 21:55:32 Finalizando
+[GIN] 2019/07/29 - 21:55:32 | 200 |  1.351780679s |             ::1 | GET      /dashboard
+2019/07/29 21:56:09 Iniciando getStatistic
+2019/07/29 21:56:09 Trazendo statistics dos Prospects
+2019/07/29 21:56:10 Trazendo statistics dos Clientes
+2019/07/29 21:56:10 Trazendo ranks
+2019/07/29 21:56:10 Finalizando
+[GIN] 2019/07/29 - 21:56:10 | 200 |  1.488876208s |             ::1 | GET      /dashboard
+2019/07/29 21:59:02 Iniciando getStatistic
+2019/07/29 21:59:03 Trazendo statistics dos Prospects
+2019/07/29 21:59:04 Trazendo statistics dos Clientes
+2019/07/29 21:59:04 Trazendo ranks
+2019/07/29 21:59:04 Finalizando
+[GIN] 2019/07/29 - 21:59:04 | 200 |  1.557698132s |             ::1 | GET      /dashboard
+2019/07/29 22:00:40 Iniciando getStatistic
+2019/07/29 22:00:40 Trazendo statistics dos Prospects
+2019/07/29 22:00:41 Trazendo statistics dos Clientes
+2019/07/29 22:00:41 Trazendo ranks
+2019/07/29 22:00:42 Finalizando
+[GIN] 2019/07/29 - 22:00:42 | 200 |  1.763382195s |             ::1 | GET      /dashboard
+2019/07/29 22:22:37 Iniciando getStatistic
+2019/07/29 22:22:37 Trazendo statistics dos Prospects
+2019/07/29 22:22:38 Trazendo statistics dos Clientes
+2019/07/29 22:22:38 Trazendo ranks
+2019/07/29 22:22:38 Finalizando
+[GIN] 2019/07/29 - 22:22:38 | 200 |  1.411129791s |             ::1 | GET      /dashboard
+2019/07/29 22:58:41 Iniciando getStatistic
+2019/07/29 22:58:41 Trazendo statistics dos Prospects
+2019/07/29 22:58:42 Trazendo statistics dos Clientes
+2019/07/29 22:58:42 Trazendo ranks
+2019/07/29 22:58:42 Finalizando
+[GIN] 2019/07/29 - 22:58:42 | 200 |  1.411389018s |             ::1 | GET      /dashboard
+2019/07/29 23:00:00 Iniciando getStatistic
+2019/07/29 23:00:00 Trazendo statistics dos Prospects
+2019/07/29 23:00:01 Trazendo statistics dos Clientes
+2019/07/29 23:00:01 Trazendo ranks
+2019/07/29 23:00:02 Finalizando
+[GIN] 2019/07/29 - 23:00:02 | 200 |  1.313238201s |             ::1 | GET      /dashboard
+2019/07/29 23:00:02 Iniciando getStatistic
+2019/07/29 23:00:02 Trazendo statistics dos Prospects
+2019/07/29 23:00:02 Trazendo statistics dos Clientes
+2019/07/29 23:00:02 Trazendo ranks
+2019/07/29 23:00:02 Finalizando
+[GIN] 2019/07/29 - 23:00:02 | 200 |  677.618471ms |             ::1 | GET      /dashboard
