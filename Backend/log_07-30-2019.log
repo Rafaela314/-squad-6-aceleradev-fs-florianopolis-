@@ -1,0 +1,1177 @@
+2019/07/30 08:44:28 Validando schema DB
+2019/07/30 08:44:28 Iniciando base dos agentes publicos
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:user              --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:user              --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /fastleads                --> main.getLeadsFast (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/30 08:44:28 Base já populada
+2019/07/30 08:50:47 Iniciando getStatistic
+2019/07/30 08:50:47 Trazendo statistics dos Prospects
+2019/07/30 08:50:48 Trazendo statistics dos Clientes
+2019/07/30 08:50:48 Trazendo ranks
+2019/07/30 08:50:48 Finalizando
+[GIN] 2019/07/30 - 08:50:48 | 200 |   1.53005861s |             ::1 | GET      /dashboard
+2019/07/30 08:58:56 Iniciando getLeads
+2019/07/30 08:58:56 Abrindo conexão com o banco
+2019/07/30 08:58:56 Verificando se existe algum lead
+2019/07/30 08:58:56 Recuperando Leads
+2019/07/30 08:58:58 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 08:58:58 | 200 |  1.808433121s |             ::1 | GET      /leads
+2019/07/30 09:21:42 Iniciando getLeads
+2019/07/30 09:21:42 Abrindo conexão com o banco
+2019/07/30 09:21:42 Verificando se existe algum lead
+2019/07/30 09:21:42 Recuperando Leads
+2019/07/30 09:21:44 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 09:21:44 | 200 |  2.455647197s |             ::1 | GET      /leads
+2019/07/30 09:22:52 Iniciando getLeads
+2019/07/30 09:22:52 Abrindo conexão com o banco
+2019/07/30 09:22:52 Verificando se existe algum lead
+2019/07/30 09:22:52 Recuperando Leads
+2019/07/30 09:22:54 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 09:22:54 | 200 |  1.985247046s |             ::1 | GET      /leads
+2019/07/30 09:24:28 Iniciando getLeads
+2019/07/30 09:24:28 Abrindo conexão com o banco
+2019/07/30 09:24:28 Verificando se existe algum lead
+2019/07/30 09:24:28 Recuperando Leads
+2019/07/30 09:24:31 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 09:24:31 | 200 |   3.01618228s |             ::1 | GET      /leads
+2019/07/30 09:25:35 Iniciando getLeads
+2019/07/30 09:25:35 Abrindo conexão com o banco
+2019/07/30 09:25:35 Verificando se existe algum lead
+2019/07/30 09:25:35 Recuperando Leads
+2019/07/30 09:25:38 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 09:25:38 | 200 |  2.408346161s |             ::1 | GET      /leads
+2019/07/30 09:33:13 Iniciando getLeads
+2019/07/30 09:33:13 Abrindo conexão com o banco
+2019/07/30 09:33:13 Verificando se existe algum lead
+2019/07/30 09:33:13 Recuperando Leads
+2019/07/30 09:33:16 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 09:33:17 | 200 |   3.72842569s |             ::1 | GET      /leads
+2019/07/30 09:34:38 Iniciando getLeads
+2019/07/30 09:34:38 Abrindo conexão com o banco
+2019/07/30 09:34:38 Verificando se existe algum lead
+2019/07/30 09:34:38 Recuperando Leads
+2019/07/30 09:34:43 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 09:34:43 | 200 |  4.580190202s |             ::1 | GET      /leads
+2019/07/30 09:35:27 Iniciando getLeads
+2019/07/30 09:35:27 Abrindo conexão com o banco
+2019/07/30 09:35:27 Verificando se existe algum lead
+2019/07/30 09:35:27 Recuperando Leads
+2019/07/30 09:35:32 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 09:35:32 | 200 |  4.503011606s |             ::1 | GET      /leads
+2019/07/30 09:53:35 Iniciando getLeads
+2019/07/30 09:53:35 Abrindo conexão com o banco
+2019/07/30 09:53:35 Verificando se existe algum lead
+2019/07/30 09:53:35 Recuperando Leads
+2019/07/30 09:53:37 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 09:53:37 | 200 |  2.370964446s |             ::1 | GET      /leads
+2019/07/30 09:56:23 Iniciando getLeads
+2019/07/30 09:56:23 Abrindo conexão com o banco
+2019/07/30 09:56:23 Verificando se existe algum lead
+2019/07/30 09:56:23 Recuperando Leads
+2019/07/30 09:56:28 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 09:56:28 | 200 |  5.362574824s |             ::1 | GET      /leads
+2019/07/30 09:57:29 Iniciando getLeads
+2019/07/30 09:57:29 Abrindo conexão com o banco
+2019/07/30 09:57:29 Verificando se existe algum lead
+2019/07/30 09:57:29 Recuperando Leads
+2019/07/30 09:57:34 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 09:57:34 | 200 |  4.621875183s |             ::1 | GET      /leads
+2019/07/30 09:59:52 Iniciando getLeads
+2019/07/30 09:59:52 Abrindo conexão com o banco
+2019/07/30 09:59:52 Verificando se existe algum lead
+2019/07/30 09:59:52 Recuperando Leads
+2019/07/30 09:59:56 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 09:59:57 | 200 |  4.246965403s |             ::1 | GET      /leads
+2019/07/30 10:00:34 Iniciando getLeads
+2019/07/30 10:00:34 Abrindo conexão com o banco
+2019/07/30 10:00:34 Verificando se existe algum lead
+2019/07/30 10:00:34 Recuperando Leads
+2019/07/30 10:00:38 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:00:38 | 200 |  3.465712207s |             ::1 | GET      /leads
+2019/07/30 10:08:08 Iniciando getClients
+2019/07/30 10:08:08 Consultando clientes
+2019/07/30 10:08:08 Retornando clientes
+[GIN] 2019/07/30 - 10:08:08 | 200 |   29.153796ms |             ::1 | GET      /clients
+2019/07/30 10:08:08 Iniciando getClients
+2019/07/30 10:08:08 Consultando clientes
+2019/07/30 10:08:08 Retornando clientes
+[GIN] 2019/07/30 - 10:08:08 | 200 |   34.814929ms |             ::1 | GET      /clients
+2019/07/30 10:09:37 Iniciando getUsers
+2019/07/30 10:09:37 Consultando usuários
+2019/07/30 10:09:37 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:09:37 | 200 |   30.267106ms |             ::1 | GET      /users
+2019/07/30 10:10:18 Iniciando getLeads
+2019/07/30 10:10:18 Abrindo conexão com o banco
+2019/07/30 10:10:18 Verificando se existe algum lead
+2019/07/30 10:10:18 Recuperando Leads
+2019/07/30 10:10:20 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:10:20 | 200 |  1.999411896s |             ::1 | GET      /leads
+2019/07/30 10:10:38 Iniciando getClients
+2019/07/30 10:10:38 Consultando clientes
+2019/07/30 10:10:38 Retornando clientes
+[GIN] 2019/07/30 - 10:10:38 | 200 |   40.082574ms |             ::1 | GET      /clients
+2019/07/30 10:10:38 Iniciando getClients
+2019/07/30 10:10:38 Consultando clientes
+2019/07/30 10:10:38 Retornando clientes
+[GIN] 2019/07/30 - 10:10:38 | 200 |   32.381848ms |             ::1 | GET      /clients
+2019/07/30 10:10:43 Iniciando getUsers
+2019/07/30 10:10:43 Consultando usuários
+2019/07/30 10:10:43 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:10:43 | 200 |   30.522663ms |             ::1 | GET      /users
+2019/07/30 10:14:40 Iniciando getUsers
+2019/07/30 10:14:40 Consultando usuários
+2019/07/30 10:14:40 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:14:40 | 200 |   68.441217ms |             ::1 | GET      /users
+2019/07/30 10:16:06 Iniciando getUsers
+2019/07/30 10:16:06 Consultando usuários
+2019/07/30 10:16:06 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:16:06 | 200 |    85.15465ms |             ::1 | GET      /users
+2019/07/30 10:16:52 Iniciando getUsers
+2019/07/30 10:16:52 Consultando usuários
+2019/07/30 10:16:52 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:16:52 | 200 |   26.951311ms |             ::1 | GET      /users
+2019/07/30 10:17:14 Iniciando getUsers
+2019/07/30 10:17:14 Consultando usuários
+2019/07/30 10:17:15 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:17:15 | 200 |   34.466451ms |             ::1 | GET      /users
+2019/07/30 10:17:45 Iniciando getUsers
+2019/07/30 10:17:45 Consultando usuários
+2019/07/30 10:17:45 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:17:45 | 200 |   46.112203ms |             ::1 | GET      /users
+2019/07/30 10:18:06 Iniciando getUsers
+2019/07/30 10:18:06 Consultando usuários
+2019/07/30 10:18:06 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:18:06 | 200 |   99.252564ms |             ::1 | GET      /users
+2019/07/30 10:21:30 Iniciando getUsers
+2019/07/30 10:21:30 Consultando usuários
+2019/07/30 10:21:30 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:21:30 | 200 |   28.492556ms |             ::1 | GET      /users
+[GIN] 2019/07/30 - 10:21:37 | 200 |   39.600074ms |             ::1 | DELETE   /users/3
+2019/07/30 10:21:51 Registrando usuário
+2019/07/30 10:21:51 Validando se o e-mail foi recebido
+2019/07/30 10:21:51 Abrindo conexão com o banco
+2019/07/30 10:21:51 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/30 10:21:51 Inserindo usuário
+2019/07/30 10:21:51 Usuário inserido com sucesso
+[GIN] 2019/07/30 - 10:21:51 | 201 |   42.310513ms |             ::1 | POST     /users
+2019/07/30 10:22:00 Iniciando getUsers
+2019/07/30 10:22:00 Consultando usuários
+2019/07/30 10:22:00 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:22:00 | 200 |   23.993971ms |             ::1 | GET      /users
+2019/07/30 10:26:20 Iniciando getUsers
+2019/07/30 10:26:20 Consultando usuários
+2019/07/30 10:26:21 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:26:21 | 200 |   77.681714ms |             ::1 | GET      /users
+[GIN] 2019/07/30 - 10:26:29 | 200 |   54.006353ms |             ::1 | DELETE   /users/17
+[GIN] 2019/07/30 - 10:26:41 | 200 |   18.960232ms |             ::1 | DELETE   /users/13
+2019/07/30 10:28:45 Iniciando getUsers
+2019/07/30 10:28:45 Consultando usuários
+2019/07/30 10:28:45 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:28:45 | 200 |   68.154246ms |             ::1 | GET      /users
+2019/07/30 10:28:58 Iniciando getUsers
+2019/07/30 10:28:58 Consultando usuários
+2019/07/30 10:28:58 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:28:58 | 200 |   79.356496ms |             ::1 | GET      /users
+2019/07/30 10:41:19 Registrando usuário
+2019/07/30 10:41:19 Validando se o e-mail foi recebido
+2019/07/30 10:41:19 Abrindo conexão com o banco
+2019/07/30 10:41:19 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/30 10:41:19 Inserindo usuário
+2019/07/30 10:41:19 Usuário inserido com sucesso
+[GIN] 2019/07/30 - 10:41:19 | 201 |   32.828578ms |             ::1 | POST     /users
+2019/07/30 10:41:59 Iniciando getUsers
+2019/07/30 10:41:59 Consultando usuários
+2019/07/30 10:41:59 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:41:59 | 200 |   89.296384ms |             ::1 | GET      /users
+2019/07/30 10:43:13 Iniciando getUsers
+2019/07/30 10:43:13 Consultando usuários
+2019/07/30 10:43:13 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:43:13 | 200 |   19.435043ms |             ::1 | GET      /users
+2019/07/30 10:45:43 Iniciando getUsers
+2019/07/30 10:45:43 Consultando usuários
+2019/07/30 10:45:43 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:45:43 | 200 |  140.227827ms |             ::1 | GET      /users
+2019/07/30 10:52:14 Iniciando getUsers
+2019/07/30 10:52:14 Consultando usuários
+2019/07/30 10:52:14 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:52:14 | 200 |  138.190772ms |             ::1 | GET      /users
+2019/07/30 10:52:25 Registrando usuário
+2019/07/30 10:52:25 Validando se o e-mail foi recebido
+2019/07/30 10:52:25 Abrindo conexão com o banco
+2019/07/30 10:52:25 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/30 10:52:25 Inserindo usuário
+2019/07/30 10:52:25 Usuário inserido com sucesso
+[GIN] 2019/07/30 - 10:52:25 | 201 |   43.865409ms |             ::1 | POST     /users
+2019/07/30 10:52:49 Iniciando getUsers
+2019/07/30 10:52:49 Consultando usuários
+2019/07/30 10:52:49 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:52:49 | 200 |   74.171275ms |             ::1 | GET      /users
+2019/07/30 10:53:17 Registrando usuário
+2019/07/30 10:53:17 Validando se o e-mail foi recebido
+2019/07/30 10:53:17 Abrindo conexão com o banco
+2019/07/30 10:53:17 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/30 10:53:17 Inserindo usuário
+2019/07/30 10:53:17 Usuário inserido com sucesso
+[GIN] 2019/07/30 - 10:53:17 | 201 |     29.8171ms |             ::1 | POST     /users
+2019/07/30 10:53:36 Iniciando getUsers
+2019/07/30 10:53:36 Consultando usuários
+2019/07/30 10:53:36 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:53:36 | 200 |   17.017129ms |             ::1 | GET      /users
+2019/07/30 10:54:30 Registrando usuário
+2019/07/30 10:54:30 Validando se o e-mail foi recebido
+2019/07/30 10:54:30 Abrindo conexão com o banco
+2019/07/30 10:54:30 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/30 10:54:30 Email já cadastrado
+[GIN] 2019/07/30 - 10:54:30 | 400 |   19.229806ms |             ::1 | POST     /users
+2019/07/30 10:54:41 Iniciando getClients
+2019/07/30 10:54:41 Consultando clientes
+2019/07/30 10:54:41 Retornando clientes
+[GIN] 2019/07/30 - 10:54:41 | 200 |    48.63288ms |             ::1 | GET      /clients
+2019/07/30 10:54:41 Iniciando getClients
+2019/07/30 10:54:41 Consultando clientes
+2019/07/30 10:54:41 Retornando clientes
+[GIN] 2019/07/30 - 10:54:41 | 200 |   34.408736ms |             ::1 | GET      /clients
+2019/07/30 10:54:46 Iniciando getClients
+2019/07/30 10:54:46 Consultando clientes
+2019/07/30 10:54:46 Retornando clientes
+[GIN] 2019/07/30 - 10:54:46 | 200 |   71.819824ms |             ::1 | GET      /clients
+2019/07/30 10:54:46 Iniciando getClients
+2019/07/30 10:54:46 Consultando clientes
+2019/07/30 10:54:46 Retornando clientes
+[GIN] 2019/07/30 - 10:54:46 | 200 |      31.304ms |             ::1 | GET      /clients
+2019/07/30 10:54:49 Iniciando getUsers
+2019/07/30 10:54:49 Consultando usuários
+2019/07/30 10:54:49 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:54:49 | 200 |   89.424328ms |             ::1 | GET      /users
+[GIN] 2019/07/30 - 10:54:56 | 200 |   34.471647ms |             ::1 | DELETE   /users/20
+[GIN] 2019/07/30 - 10:54:59 | 200 |   14.830188ms |             ::1 | DELETE   /users/19
+2019/07/30 10:55:31 Iniciando getUsers
+2019/07/30 10:55:31 Consultando usuários
+2019/07/30 10:55:31 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:55:31 | 200 |   86.794395ms |             ::1 | GET      /users
+2019/07/30 10:56:33 Iniciando getUsers
+2019/07/30 10:56:33 Consultando usuários
+2019/07/30 10:56:33 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:56:33 | 200 |   29.257527ms |             ::1 | GET      /users
+2019/07/30 10:56:51 Iniciando getUsers
+2019/07/30 10:56:51 Consultando usuários
+2019/07/30 10:56:51 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 10:56:51 | 200 |    25.26771ms |             ::1 | GET      /users
+2019/07/30 11:30:20 Iniciando getUsers
+2019/07/30 11:30:20 Consultando usuários
+2019/07/30 11:30:20 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 11:30:20 | 200 |  119.005491ms |             ::1 | GET      /users
+2019/07/30 11:35:32 Iniciando getUsers
+2019/07/30 11:35:32 Consultando usuários
+2019/07/30 11:35:33 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 11:35:33 | 200 |   63.899107ms |             ::1 | GET      /users
+2019/07/30 11:36:04 Iniciando getLeads
+2019/07/30 11:36:04 Abrindo conexão com o banco
+2019/07/30 11:36:04 Verificando se existe algum lead
+2019/07/30 11:36:04 Recuperando Leads
+2019/07/30 11:36:09 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 11:36:09 | 200 |  5.164236614s |             ::1 | GET      /leads
+2019/07/30 11:36:30 Iniciando getUsers
+2019/07/30 11:36:30 Consultando usuários
+2019/07/30 11:36:30 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 11:36:30 | 200 |   39.530433ms |             ::1 | GET      /users
+2019/07/30 11:37:12 Iniciando getUsers
+2019/07/30 11:37:12 Consultando usuários
+2019/07/30 11:37:12 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 11:37:12 | 200 |   65.599739ms |             ::1 | GET      /users
+2019/07/30 11:38:17 Iniciando getUsers
+2019/07/30 11:38:17 Consultando usuários
+2019/07/30 11:38:17 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 11:38:17 | 200 |   62.074297ms |             ::1 | GET      /users
+2019/07/30 11:40:50 Iniciando getStatistic
+2019/07/30 11:40:50 Trazendo statistics dos Prospects
+2019/07/30 11:40:52 Trazendo statistics dos Clientes
+2019/07/30 11:40:52 Trazendo ranks
+2019/07/30 11:40:53 Finalizando
+[GIN] 2019/07/30 - 11:40:53 | 200 |  2.643807193s |             ::1 | GET      /dashboard
+2019/07/30 11:40:57 Iniciando getClients
+2019/07/30 11:40:57 Consultando clientes
+2019/07/30 11:40:57 Retornando clientes
+[GIN] 2019/07/30 - 11:40:57 | 200 |   52.583256ms |             ::1 | GET      /clients
+2019/07/30 11:40:57 Iniciando getClients
+2019/07/30 11:40:57 Consultando clientes
+2019/07/30 11:40:57 Retornando clientes
+[GIN] 2019/07/30 - 11:40:57 | 200 |   52.602183ms |             ::1 | GET      /clients
+2019/07/30 11:43:04 Iniciando getUsers
+2019/07/30 11:43:04 Consultando usuários
+2019/07/30 11:43:04 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 11:43:04 | 200 |   86.260199ms |             ::1 | GET      /users
+2019/07/30 11:45:06 Registrando usuário
+2019/07/30 11:45:06 Validando se o e-mail foi recebido
+2019/07/30 11:45:06 Abrindo conexão com o banco
+2019/07/30 11:45:06 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/30 11:45:06 Inserindo usuário
+2019/07/30 11:45:06 Usuário inserido com sucesso
+[GIN] 2019/07/30 - 11:45:06 | 201 |   24.227592ms |             ::1 | POST     /users
+2019/07/30 11:45:54 Iniciando getClients
+2019/07/30 11:45:54 Consultando clientes
+2019/07/30 11:45:54 Retornando clientes
+[GIN] 2019/07/30 - 11:45:54 | 200 |   21.734817ms |             ::1 | GET      /clients
+2019/07/30 11:45:54 Iniciando getClients
+2019/07/30 11:45:54 Consultando clientes
+2019/07/30 11:45:54 Retornando clientes
+[GIN] 2019/07/30 - 11:45:54 | 200 |   43.252061ms |             ::1 | GET      /clients
+2019/07/30 11:46:36 Iniciando getUsers
+2019/07/30 11:46:36 Consultando usuários
+2019/07/30 11:46:36 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 11:46:36 | 200 |   77.808487ms |             ::1 | GET      /users
+2019/07/30 11:48:28 Iniciando getUsers
+2019/07/30 11:48:28 Consultando usuários
+2019/07/30 11:48:28 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 11:48:28 | 200 |  115.221047ms |             ::1 | GET      /users
+2019/07/30 11:51:58 Iniciando getUsers
+2019/07/30 11:51:58 Consultando usuários
+2019/07/30 11:51:58 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 11:51:58 | 200 |   76.600255ms |             ::1 | GET      /users
+2019/07/30 12:01:03 Iniciando getUsers
+2019/07/30 12:01:03 Consultando usuários
+2019/07/30 12:01:03 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 12:01:03 | 200 |  112.360668ms |             ::1 | GET      /users
+2019/07/30 12:01:16 Registrando usuário
+2019/07/30 12:01:16 Validando se o e-mail foi recebido
+2019/07/30 12:01:16 Abrindo conexão com o banco
+2019/07/30 12:01:16 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/30 12:01:16 Inserindo usuário
+2019/07/30 12:01:17 Usuário inserido com sucesso
+[GIN] 2019/07/30 - 12:01:17 | 201 |   48.032674ms |             ::1 | POST     /users
+2019/07/30 12:01:21 Iniciando getUsers
+2019/07/30 12:01:21 Consultando usuários
+2019/07/30 12:01:21 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 12:01:21 | 200 |  101.785254ms |             ::1 | GET      /users
+2019/07/30 12:13:33 Iniciando getUsers
+2019/07/30 12:13:33 Consultando usuários
+2019/07/30 12:13:34 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 12:13:34 | 200 |  247.302413ms |             ::1 | GET      /users
+2019/07/30 12:14:04 Iniciando getUsers
+2019/07/30 12:14:04 Consultando usuários
+2019/07/30 12:14:04 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 12:14:04 | 200 |   97.611354ms |             ::1 | GET      /users
+[GIN] 2019/07/30 - 12:14:07 | 200 |   99.859034ms |             ::1 | DELETE   /users/21
+[GIN] 2019/07/30 - 12:14:14 | 200 |    77.99663ms |             ::1 | DELETE   /users/21
+[GIN] 2019/07/30 - 12:14:19 | 200 |  179.625282ms |             ::1 | DELETE   /users/22
+2019/07/30 12:14:31 Iniciando getUsers
+2019/07/30 12:14:31 Consultando usuários
+2019/07/30 12:14:31 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 12:14:31 | 200 |  155.665723ms |             ::1 | GET      /users
+[GIN] 2019/07/30 - 12:15:52 | 200 |   95.043654ms |             ::1 | DELETE   /users/18
+2019/07/30 12:15:58 Iniciando getUsers
+2019/07/30 12:15:58 Consultando usuários
+2019/07/30 12:15:58 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 12:15:58 | 200 |   42.368892ms |             ::1 | GET      /users
+2019/07/30 12:16:34 Iniciando getUsers
+2019/07/30 12:16:34 Consultando usuários
+2019/07/30 12:16:34 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 12:16:34 | 200 |  143.233712ms |             ::1 | GET      /users
+2019/07/30 12:18:08 Iniciando getUsers
+2019/07/30 12:18:08 Consultando usuários
+2019/07/30 12:18:08 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 12:18:08 | 200 |   53.879613ms |             ::1 | GET      /users
+[GIN] 2019/07/30 - 12:18:14 | 200 |   59.140782ms |             ::1 | DELETE   /users/4
+2019/07/30 12:23:15 Registrando usuário
+2019/07/30 12:23:15 Validando se o e-mail foi recebido
+2019/07/30 12:23:15 Abrindo conexão com o banco
+2019/07/30 12:23:15 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/30 12:23:15 Inserindo usuário
+2019/07/30 12:23:15 Usuário inserido com sucesso
+[GIN] 2019/07/30 - 12:23:15 | 201 |   32.103201ms |             ::1 | POST     /users
+2019/07/30 12:25:50 Iniciando getUsers
+2019/07/30 12:25:50 Consultando usuários
+2019/07/30 12:25:51 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 12:25:51 | 200 |  228.212154ms |             ::1 | GET      /users
+2019/07/30 12:26:03 Registrando usuário
+2019/07/30 12:26:03 Validando se o e-mail foi recebido
+2019/07/30 12:26:03 Abrindo conexão com o banco
+2019/07/30 12:26:03 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/30 12:26:03 Inserindo usuário
+2019/07/30 12:26:03 Usuário inserido com sucesso
+[GIN] 2019/07/30 - 12:26:03 | 201 |   17.611889ms |             ::1 | POST     /users
+2019/07/30 12:27:02 Iniciando getUsers
+2019/07/30 12:27:02 Consultando usuários
+2019/07/30 12:27:02 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 12:27:02 | 200 |   19.326364ms |             ::1 | GET      /users
+2019/07/30 12:27:14 Registrando usuário
+2019/07/30 12:27:14 Validando se o e-mail foi recebido
+2019/07/30 12:27:14 Abrindo conexão com o banco
+2019/07/30 12:27:14 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/30 12:27:14 Inserindo usuário
+2019/07/30 12:27:14 Usuário inserido com sucesso
+[GIN] 2019/07/30 - 12:27:14 | 201 |   42.535255ms |             ::1 | POST     /users
+2019/07/30 12:27:27 Iniciando getUsers
+2019/07/30 12:27:27 Consultando usuários
+2019/07/30 12:27:27 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 12:27:27 | 200 |  116.765094ms |             ::1 | GET      /users
+2019/07/30 12:27:40 Registrando usuário
+2019/07/30 12:27:40 Validando se o e-mail foi recebido
+2019/07/30 12:27:40 Abrindo conexão com o banco
+2019/07/30 12:27:40 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/30 12:27:40 Inserindo usuário
+2019/07/30 12:27:40 Usuário inserido com sucesso
+[GIN] 2019/07/30 - 12:27:40 | 201 |   22.431801ms |             ::1 | POST     /users
+2019/07/30 12:27:53 Iniciando getUsers
+2019/07/30 12:27:53 Consultando usuários
+2019/07/30 12:27:53 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 12:27:53 | 200 |   57.783444ms |             ::1 | GET      /users
+2019/07/30 12:28:46 Iniciando getUsers
+2019/07/30 12:28:46 Consultando usuários
+2019/07/30 12:28:46 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 12:28:46 | 200 |  150.359546ms |             ::1 | GET      /users
+2019/07/30 12:29:02 Registrando usuário
+2019/07/30 12:29:02 Validando se o e-mail foi recebido
+2019/07/30 12:29:02 Abrindo conexão com o banco
+2019/07/30 12:29:02 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/30 12:29:02 Inserindo usuário
+2019/07/30 12:29:02 Usuário inserido com sucesso
+[GIN] 2019/07/30 - 12:29:02 | 201 |   29.955076ms |             ::1 | POST     /users
+2019/07/30 12:29:10 Iniciando getUsers
+2019/07/30 12:29:10 Consultando usuários
+2019/07/30 12:29:10 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 12:29:10 | 200 |  133.469064ms |             ::1 | GET      /users
+2019/07/30 13:05:30 Iniciando getClients
+2019/07/30 13:05:30 Consultando clientes
+2019/07/30 13:05:30 Retornando clientes
+[GIN] 2019/07/30 - 13:05:30 | 200 |    26.56817ms |             ::1 | GET      /clients
+2019/07/30 13:05:30 Iniciando getClients
+2019/07/30 13:05:30 Consultando clientes
+2019/07/30 13:05:30 Retornando clientes
+[GIN] 2019/07/30 - 13:05:30 | 200 |   19.449898ms |             ::1 | GET      /clients
+2019/07/30 13:13:23 Iniciando getClients
+2019/07/30 13:13:23 Consultando clientes
+2019/07/30 13:13:24 Retornando clientes
+[GIN] 2019/07/30 - 13:13:24 | 200 |   39.724092ms |             ::1 | GET      /clients
+2019/07/30 13:13:24 Iniciando getClients
+2019/07/30 13:13:24 Consultando clientes
+2019/07/30 13:13:24 Retornando clientes
+[GIN] 2019/07/30 - 13:13:24 | 200 |   31.661451ms |             ::1 | GET      /clients
+2019/07/30 13:36:12 Validando schema DB
+2019/07/30 13:36:12 Iniciando base dos agentes publicos
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:user              --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:user              --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /fastleads                --> main.getLeadsFast (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/30 13:36:12 Base já populada
+2019/07/30 13:39:15 Iniciando getLeads
+2019/07/30 13:39:15 Abrindo conexão com o banco
+2019/07/30 13:39:15 Verificando se existe algum lead
+2019/07/30 13:39:15 Recuperando Leads
+2019/07/30 13:39:21 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 13:39:21 | 200 |  5.534452563s |             ::1 | GET      /leads
+2019/07/30 13:51:33 Iniciando getUsers
+2019/07/30 13:51:33 Consultando usuários
+2019/07/30 13:51:33 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 13:51:33 | 200 |   70.052631ms |             ::1 | GET      /users
+2019/07/30 13:53:14 Iniciando getUsers
+2019/07/30 13:53:14 Consultando usuários
+2019/07/30 13:53:14 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 13:53:14 | 200 |  166.740035ms |             ::1 | GET      /users
+2019/07/30 13:54:29 Iniciando getUsers
+2019/07/30 13:54:29 Consultando usuários
+2019/07/30 13:54:29 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 13:54:29 | 200 |  149.470042ms |             ::1 | GET      /users
+2019/07/30 13:54:54 Iniciando getUsers
+2019/07/30 13:54:54 Consultando usuários
+2019/07/30 13:54:54 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 13:54:54 | 200 |    82.48737ms |             ::1 | GET      /users
+2019/07/30 13:56:35 Iniciando getUsers
+2019/07/30 13:56:35 Consultando usuários
+2019/07/30 13:56:35 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 13:56:35 | 200 |   83.778944ms |             ::1 | GET      /users
+2019/07/30 13:58:35 Iniciando getUsers
+2019/07/30 13:58:35 Consultando usuários
+2019/07/30 13:58:35 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 13:58:35 | 200 |   79.367989ms |             ::1 | GET      /users
+2019/07/30 13:59:05 Iniciando getUsers
+2019/07/30 13:59:05 Consultando usuários
+2019/07/30 13:59:05 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 13:59:05 | 200 |  125.070229ms |             ::1 | GET      /users
+2019/07/30 13:59:24 Iniciando getUsers
+2019/07/30 13:59:24 Consultando usuários
+2019/07/30 13:59:24 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 13:59:24 | 200 |  117.524621ms |             ::1 | GET      /users
+2019/07/30 14:01:45 Iniciando getUsers
+2019/07/30 14:01:45 Consultando usuários
+2019/07/30 14:01:45 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 14:01:45 | 200 |  131.289067ms |             ::1 | GET      /users
+2019/07/30 14:03:26 Iniciando getUsers
+2019/07/30 14:03:26 Consultando usuários
+2019/07/30 14:03:26 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 14:03:26 | 200 |  111.512194ms |             ::1 | GET      /users
+2019/07/30 14:03:53 Iniciando getUsers
+2019/07/30 14:03:53 Consultando usuários
+2019/07/30 14:03:54 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 14:03:54 | 200 |  169.878148ms |             ::1 | GET      /users
+2019/07/30 14:04:06 Iniciando getUsers
+2019/07/30 14:04:06 Consultando usuários
+2019/07/30 14:04:06 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 14:04:06 | 200 |   63.617172ms |             ::1 | GET      /users
+[GIN] 2019/07/30 - 14:06:30 | 200 |   58.830184ms |             ::1 | DELETE   /users/26
+2019/07/30 14:06:41 Iniciando getUsers
+2019/07/30 14:06:41 Consultando usuários
+2019/07/30 14:06:41 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 14:06:41 | 200 |   105.08641ms |             ::1 | GET      /users
+2019/07/30 14:15:43 Iniciando getUsers
+2019/07/30 14:15:43 Consultando usuários
+2019/07/30 14:15:43 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 14:15:43 | 200 |   70.325468ms |             ::1 | GET      /users
+2019/07/30 14:15:52 Iniciando getUsers
+2019/07/30 14:15:52 Consultando usuários
+2019/07/30 14:15:52 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 14:15:52 | 200 |  129.839748ms |             ::1 | GET      /users
+[GIN] 2019/07/30 - 14:15:55 | 200 |   37.953884ms |             ::1 | DELETE   /users/24
+[GIN] 2019/07/30 - 14:15:58 | 200 |   55.294493ms |             ::1 | DELETE   /users/27
+[GIN] 2019/07/30 - 14:16:01 | 200 |   48.460659ms |             ::1 | DELETE   /users/23
+[GIN] 2019/07/30 - 14:16:03 | 200 |   27.000967ms |             ::1 | DELETE   /users/25
+2019/07/30 14:16:40 Registrando usuário
+2019/07/30 14:16:40 Validando se o e-mail foi recebido
+2019/07/30 14:16:40 Abrindo conexão com o banco
+2019/07/30 14:16:40 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/30 14:16:40 Inserindo usuário
+2019/07/30 14:16:40 Usuário inserido com sucesso
+[GIN] 2019/07/30 - 14:16:40 | 201 |   40.483746ms |             ::1 | POST     /users
+2019/07/30 14:17:25 Registrando usuário
+2019/07/30 14:17:25 Validando se o e-mail foi recebido
+2019/07/30 14:17:25 Abrindo conexão com o banco
+2019/07/30 14:17:25 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/30 14:17:25 Inserindo usuário
+2019/07/30 14:17:25 Usuário inserido com sucesso
+[GIN] 2019/07/30 - 14:17:25 | 201 |   45.183424ms |             ::1 | POST     /users
+2019/07/30 14:18:00 Registrando usuário
+2019/07/30 14:18:00 Validando se o e-mail foi recebido
+2019/07/30 14:18:00 Abrindo conexão com o banco
+2019/07/30 14:18:00 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/30 14:18:00 Inserindo usuário
+2019/07/30 14:18:00 Usuário inserido com sucesso
+[GIN] 2019/07/30 - 14:18:00 | 201 |   48.125636ms |             ::1 | POST     /users
+2019/07/30 14:18:05 Iniciando getUsers
+2019/07/30 14:18:05 Consultando usuários
+2019/07/30 14:18:05 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 14:18:05 | 200 |   60.805922ms |             ::1 | GET      /users
+2019/07/30 14:18:08 Iniciando rotina para criação e envio de eventos
+[GIN] 2019/07/30 - 14:18:08 | 201 |     114.896µs |             ::1 | POST     /events
+2019/07/30 14:18:08 Iniciando createEvents
+2019/07/30 14:18:08 Abrindo conexão com o banco
+2019/07/30 14:18:08 Criando cSV
+2019/07/30 14:18:08 Registrando leads no arquivo
+2019/07/30 14:18:12 Abrindo transação
+2019/07/30 14:18:12 Registrando evento
+2019/07/30 14:18:12 Registrando leads
+2019/07/30 14:18:15 Commitando transação
+2019/07/30 14:18:15 Montando e-mail
+2019/07/30 14:18:15 Anexando arquivo
+2019/07/30 14:18:15 Enviando e-mail
+2019/07/30 14:18:29 E-mail enviado com sucesso
+2019/07/30 14:18:29 Apagando arquivo
+2019/07/30 14:18:29 Rotina finalizada
+2019/07/30 14:45:01 Iniciando getLeads
+2019/07/30 14:45:01 Abrindo conexão com o banco
+2019/07/30 14:45:01 Verificando se existe algum lead
+2019/07/30 14:45:02 Recuperando Leads
+2019/07/30 14:45:05 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 14:45:05 | 200 |  3.976926485s |             ::1 | GET      /leads
+2019/07/30 14:45:41 Iniciando getUsers
+2019/07/30 14:45:41 Consultando usuários
+2019/07/30 14:45:41 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 14:45:41 | 200 |   26.584684ms |             ::1 | GET      /users
+2019/07/30 14:46:23 Iniciando getClients
+2019/07/30 14:46:23 Consultando clientes
+2019/07/30 14:46:23 Retornando clientes
+[GIN] 2019/07/30 - 14:46:23 | 200 |   82.745792ms |             ::1 | GET      /clients
+2019/07/30 14:46:23 Iniciando getClients
+2019/07/30 14:46:23 Consultando clientes
+2019/07/30 14:46:23 Retornando clientes
+[GIN] 2019/07/30 - 14:46:23 | 200 |   41.630288ms |             ::1 | GET      /clients
+2019/07/30 14:49:50 Iniciando getClients
+2019/07/30 14:49:50 Consultando clientes
+2019/07/30 14:49:50 Retornando clientes
+[GIN] 2019/07/30 - 14:49:50 | 200 |  193.859672ms |             ::1 | GET      /clients
+2019/07/30 14:49:50 Iniciando getClients
+2019/07/30 14:49:50 Consultando clientes
+2019/07/30 14:49:50 Retornando clientes
+[GIN] 2019/07/30 - 14:49:50 | 200 |   16.947939ms |             ::1 | GET      /clients
+2019/07/30 14:50:43 Iniciando getClients
+2019/07/30 14:50:43 Consultando clientes
+2019/07/30 14:50:44 Retornando clientes
+[GIN] 2019/07/30 - 14:50:44 | 200 |   71.363085ms |             ::1 | GET      /clients
+2019/07/30 14:50:44 Iniciando getClients
+2019/07/30 14:50:44 Consultando clientes
+2019/07/30 14:50:44 Retornando clientes
+[GIN] 2019/07/30 - 14:50:44 | 200 |   62.288126ms |             ::1 | GET      /clients
+2019/07/30 14:53:20 Iniciando getClients
+2019/07/30 14:53:20 Consultando clientes
+2019/07/30 14:53:20 Retornando clientes
+[GIN] 2019/07/30 - 14:53:20 | 200 |   83.832151ms |             ::1 | GET      /clients
+2019/07/30 14:53:20 Iniciando getClients
+2019/07/30 14:53:20 Consultando clientes
+2019/07/30 14:53:20 Retornando clientes
+[GIN] 2019/07/30 - 14:53:20 | 200 |   38.027875ms |             ::1 | GET      /clients
+2019/07/30 14:54:33 Iniciando getEvents
+2019/07/30 14:54:33 Abrindo conexão com o banco
+2019/07/30 14:54:33 Verificando se existe algum evento
+2019/07/30 14:54:33 Recuperando eventos
+2019/07/30 14:54:34 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 14:54:34 | 200 |  101.518511ms |             ::1 | GET      /events
+2019/07/30 14:54:40 Iniciando getEvents
+2019/07/30 14:54:40 Abrindo conexão com o banco
+2019/07/30 14:54:40 Verificando se existe algum evento
+2019/07/30 14:54:40 Recuperando eventos
+2019/07/30 14:54:40 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 14:54:40 | 200 |  138.633865ms |             ::1 | GET      /events
+2019/07/30 14:56:03 Iniciando getEvents
+2019/07/30 14:56:03 Abrindo conexão com o banco
+2019/07/30 14:56:03 Verificando se existe algum evento
+2019/07/30 14:56:03 Recuperando eventos
+2019/07/30 14:56:03 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 14:56:03 | 200 |   97.591254ms |             ::1 | GET      /events
+2019/07/30 14:57:14 Iniciando getEvents
+2019/07/30 14:57:14 Abrindo conexão com o banco
+2019/07/30 14:57:14 Verificando se existe algum evento
+2019/07/30 14:57:14 Recuperando eventos
+2019/07/30 14:57:14 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 14:57:14 | 200 |   72.927369ms |             ::1 | GET      /events
+2019/07/30 15:01:53 Iniciando getUsers
+2019/07/30 15:01:53 Consultando usuários
+2019/07/30 15:01:54 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 15:01:54 | 200 |  131.847458ms |             ::1 | GET      /users
+[GIN] 2019/07/30 - 15:03:54 | 200 |   38.423083ms |             ::1 | DELETE   /users/1
+2019/07/30 15:04:35 Registrando usuário
+2019/07/30 15:04:35 Validando se o e-mail foi recebido
+2019/07/30 15:04:35 Abrindo conexão com o banco
+2019/07/30 15:04:35 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/30 15:04:35 Inserindo usuário
+2019/07/30 15:04:35 Usuário inserido com sucesso
+[GIN] 2019/07/30 - 15:04:35 | 201 |   60.863921ms |             ::1 | POST     /users
+2019/07/30 15:04:39 Iniciando getUsers
+2019/07/30 15:04:39 Consultando usuários
+2019/07/30 15:04:39 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 15:04:39 | 200 |  146.889121ms |             ::1 | GET      /users
+2019/07/30 15:22:55 Validando schema DB
+2019/07/30 15:22:56 Iniciando base dos agentes publicos
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:user              --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:user              --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /fastleads                --> main.getLeadsFast (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/30 15:22:56 Base já populada
+2019/07/30 15:24:02 Iniciando getUsers
+2019/07/30 15:24:02 Consultando usuários
+2019/07/30 15:24:02 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 15:24:02 | 200 |  146.223831ms |             ::1 | GET      /users
+2019/07/30 15:25:53 Iniciando getUsers
+2019/07/30 15:25:53 Consultando usuários
+2019/07/30 15:25:53 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 15:25:53 | 200 |  133.601433ms |             ::1 | GET      /users
+2019/07/30 15:26:00 Iniciando getEvents
+2019/07/30 15:26:00 Abrindo conexão com o banco
+2019/07/30 15:26:00 Verificando se existe algum evento
+2019/07/30 15:26:01 Recuperando eventos
+2019/07/30 15:26:01 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 15:26:01 | 200 |   259.04396ms |             ::1 | GET      /events
+2019/07/30 15:26:46 Iniciando getEvents
+2019/07/30 15:26:46 Abrindo conexão com o banco
+2019/07/30 15:26:46 Verificando se existe algum evento
+2019/07/30 15:26:46 Recuperando eventos
+2019/07/30 15:26:46 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 15:26:46 | 200 |   102.63039ms |             ::1 | GET      /events
+2019/07/30 15:27:03 Iniciando getEvents
+2019/07/30 15:27:03 Abrindo conexão com o banco
+2019/07/30 15:27:03 Verificando se existe algum evento
+2019/07/30 15:27:03 Recuperando eventos
+2019/07/30 15:27:03 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 15:27:03 | 200 |  128.992277ms |             ::1 | GET      /events
+2019/07/30 15:28:25 Iniciando getEvents
+2019/07/30 15:28:25 Abrindo conexão com o banco
+2019/07/30 15:28:25 Verificando se existe algum evento
+2019/07/30 15:28:25 Recuperando eventos
+2019/07/30 15:28:25 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 15:28:25 | 200 |   90.947812ms |             ::1 | GET      /events
+2019/07/30 15:37:06 Iniciando getUsers
+2019/07/30 15:37:06 Consultando usuários
+2019/07/30 15:37:06 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 15:37:06 | 200 |   68.754223ms |             ::1 | GET      /users
+2019/07/30 15:37:49 Iniciando rotina para criação e envio de eventos
+[GIN] 2019/07/30 - 15:37:49 | 201 |     257.199µs |             ::1 | POST     /events
+2019/07/30 15:37:49 Iniciando createEvents
+2019/07/30 15:37:49 Abrindo conexão com o banco
+2019/07/30 15:37:49 Criando cSV
+2019/07/30 15:37:49 Registrando leads no arquivo
+2019/07/30 15:37:53 Abrindo transação
+2019/07/30 15:37:53 Registrando evento
+2019/07/30 15:37:53 Registrando leads
+2019/07/30 15:37:56 Commitando transação
+2019/07/30 15:37:56 Montando e-mail
+2019/07/30 15:37:56 Anexando arquivo
+2019/07/30 15:37:56 Enviando e-mail
+2019/07/30 15:38:10 E-mail enviado com sucesso
+2019/07/30 15:38:10 Apagando arquivo
+2019/07/30 15:38:10 Rotina finalizada
+2019/07/30 15:38:49 Iniciando getUsers
+2019/07/30 15:38:49 Consultando usuários
+2019/07/30 15:38:49 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 15:38:49 | 200 |  142.472899ms |             ::1 | GET      /users
+2019/07/30 15:38:55 Iniciando rotina para criação e envio de eventos
+[GIN] 2019/07/30 - 15:38:55 | 201 |     232.107µs |             ::1 | POST     /events
+2019/07/30 15:38:55 Iniciando createEvents
+2019/07/30 15:38:55 Abrindo conexão com o banco
+2019/07/30 15:38:55 Criando cSV
+2019/07/30 15:38:55 Registrando leads no arquivo
+2019/07/30 15:38:57 Iniciando rotina para criação e envio de eventos
+2019/07/30 15:38:57 Iniciando createEvents
+[GIN] 2019/07/30 - 15:38:57 | 201 |     279.779µs |             ::1 | POST     /events
+2019/07/30 15:38:57 Abrindo conexão com o banco
+2019/07/30 15:38:58 Criando cSV
+2019/07/30 15:38:58 Registrando leads no arquivo
+2019/07/30 15:38:58 Abrindo transação
+2019/07/30 15:38:58 Registrando evento
+2019/07/30 15:38:58 Registrando leads
+2019/07/30 15:38:59 Abrindo transação
+2019/07/30 15:38:59 Registrando evento
+2019/07/30 15:38:59 Registrando leads
+2019/07/30 15:39:02 Commitando transação
+2019/07/30 15:39:02 Montando e-mail
+2019/07/30 15:39:02 Anexando arquivo
+2019/07/30 15:39:02 Enviando e-mail
+2019/07/30 15:39:03 Commitando transação
+2019/07/30 15:39:03 Montando e-mail
+2019/07/30 15:39:03 Anexando arquivo
+2019/07/30 15:39:03 Enviando e-mail
+2019/07/30 15:39:16 E-mail enviado com sucesso
+2019/07/30 15:39:16 Apagando arquivo
+2019/07/30 15:39:16 Rotina finalizada
+2019/07/30 15:39:17 E-mail enviado com sucesso
+2019/07/30 15:39:17 Apagando arquivo
+2019/07/30 15:39:17 remove Leads.csv: no such file or directory
+2019/07/30 15:42:33 Validando schema DB
+2019/07/30 15:42:33 Iniciando base dos agentes publicos
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:user              --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:user              --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /fastleads                --> main.getLeadsFast (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/30 15:42:33 Base já populada
+2019/07/30 15:42:40 Iniciando getUsers
+2019/07/30 15:42:40 Consultando usuários
+2019/07/30 15:42:40 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 15:42:40 | 200 |    126.2854ms |             ::1 | GET      /users
+2019/07/30 15:42:46 Iniciando getEvents
+2019/07/30 15:42:46 Abrindo conexão com o banco
+2019/07/30 15:42:46 Verificando se existe algum evento
+2019/07/30 15:42:46 Recuperando eventos
+2019/07/30 15:42:46 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 15:42:46 | 200 |  151.060487ms |             ::1 | GET      /events
+2019/07/30 15:48:35 Iniciando getEvents
+2019/07/30 15:48:35 Abrindo conexão com o banco
+2019/07/30 15:48:35 Verificando se existe algum evento
+2019/07/30 15:48:35 Recuperando eventos
+2019/07/30 15:48:35 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 15:48:35 | 200 |  201.952537ms |             ::1 | GET      /events
+2019/07/30 16:02:03 Iniciando getEvents
+2019/07/30 16:02:03 Abrindo conexão com o banco
+2019/07/30 16:02:03 Verificando se existe algum evento
+2019/07/30 16:02:03 Recuperando eventos
+2019/07/30 16:02:03 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 16:02:03 | 200 |  122.961557ms |             ::1 | GET      /events
+2019/07/30 16:05:02 Iniciando getEvents
+2019/07/30 16:05:02 Abrindo conexão com o banco
+2019/07/30 16:05:02 Verificando se existe algum evento
+2019/07/30 16:05:02 Recuperando eventos
+2019/07/30 16:05:02 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 16:05:02 | 200 |  214.694511ms |             ::1 | GET      /events
+2019/07/30 16:09:51 Iniciando getEvents
+2019/07/30 16:09:51 Abrindo conexão com o banco
+2019/07/30 16:09:51 Verificando se existe algum evento
+2019/07/30 16:09:51 Recuperando eventos
+2019/07/30 16:09:51 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 16:09:51 | 200 |  232.285877ms |             ::1 | GET      /events
+2019/07/30 16:10:29 Iniciando getEvents
+2019/07/30 16:10:29 Abrindo conexão com o banco
+2019/07/30 16:10:29 Verificando se existe algum evento
+2019/07/30 16:10:29 Recuperando eventos
+2019/07/30 16:10:29 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 16:10:29 | 200 |  195.319308ms |             ::1 | GET      /events
+2019/07/30 16:10:40 Iniciando getEvents
+2019/07/30 16:10:40 Abrindo conexão com o banco
+2019/07/30 16:10:40 Verificando se existe algum evento
+2019/07/30 16:10:40 Recuperando eventos
+2019/07/30 16:10:40 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 16:10:40 | 200 |     103.139ms |             ::1 | GET      /events
+2019/07/30 16:11:25 Iniciando getEvents
+2019/07/30 16:11:25 Abrindo conexão com o banco
+2019/07/30 16:11:25 Verificando se existe algum evento
+2019/07/30 16:11:25 Recuperando eventos
+2019/07/30 16:11:25 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 16:11:25 | 200 |  176.438203ms |             ::1 | GET      /events
+2019/07/30 16:46:52 Iniciando getEvents
+2019/07/30 16:46:52 Abrindo conexão com o banco
+2019/07/30 16:46:52 Verificando se existe algum evento
+2019/07/30 16:46:52 Recuperando eventos
+2019/07/30 16:46:52 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 16:46:52 | 200 |  324.683143ms |             ::1 | GET      /events
+[GIN] 2019/07/30 - 16:46:58 | 401 |      28.509µs |             ::1 | GET      /leads
+[GIN] 2019/07/30 - 16:47:47 | 401 |      65.859µs |             ::1 | GET      /leads
+[GIN] 2019/07/30 - 16:47:53 | 401 |      18.127µs |             ::1 | GET      /leads
+[GIN] 2019/07/30 - 16:48:33 | 401 |      11.246µs |             ::1 | GET      /leads
+2019/07/30 16:55:12 Iniciando uploadCliente
+2019/07/30 16:55:12 Capturando arquivo 'file'
+2019/07/30 16:55:12 Arquivo não localizado
+2019/07/30 16:55:12 multipart: NextPart: EOF
+[GIN] 2019/07/30 - 16:55:12 | 500 |     1.19517ms |             ::1 | POST     /clients
+2019/07/30 16:55:17 Iniciando getStatistic
+2019/07/30 16:55:17 Trazendo statistics dos Prospects
+2019/07/30 16:55:20 Trazendo statistics dos Clientes
+2019/07/30 16:55:20 Trazendo ranks
+2019/07/30 16:55:21 Finalizando
+[GIN] 2019/07/30 - 16:55:21 | 200 |   3.68598751s |             ::1 | GET      /dashboard
+2019/07/30 19:09:39 Validando schema DB
+2019/07/30 19:09:39 Iniciando base dos agentes publicos
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> main.Login (4 handlers)
+[GIN-debug] GET    /users                    --> main.getUsers (5 handlers)
+[GIN-debug] POST   /users                    --> main.registerUser (5 handlers)
+[GIN-debug] PUT    /users/:user              --> main.updateUser (5 handlers)
+[GIN-debug] DELETE /users/:user              --> main.inactiveUser (5 handlers)
+[GIN-debug] POST   /clients                  --> main.uploadCliente (5 handlers)
+[GIN-debug] GET    /clients                  --> main.getClientes (5 handlers)
+[GIN-debug] POST   /publicagents             --> main.updatePublicAgents (5 handlers)
+[GIN-debug] POST   /events                   --> main.sentEmail (5 handlers)
+[GIN-debug] GET    /events                   --> main.getEvents (5 handlers)
+[GIN-debug] GET    /events/:id               --> main.getEventsID (5 handlers)
+[GIN-debug] GET    /leads/:id                --> main.getLeadsID (5 handlers)
+[GIN-debug] GET    /leads                    --> main.getLeads (5 handlers)
+[GIN-debug] GET    /fastleads                --> main.getLeadsFast (5 handlers)
+[GIN-debug] GET    /dashboard                --> main.getStatistic (5 handlers)
+[GIN-debug] POST   /admin                    --> main.registerAdministrator (5 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+2019/07/30 19:09:39 Base já populada
+2019/07/30 19:10:05 Iniciando login
+2019/07/30 19:10:05 Consulta no banco de dados
+2019/07/30 19:10:05 Comparando senha
+2019/07/30 19:10:05 Autenticado
+[GIN] 2019/07/30 - 19:10:05 | 200 |  142.633951ms |             ::1 | POST     /login
+[GIN-debug] redirecting request 301: /users/ --> /users
+2019/07/30 19:10:10 Iniciando getUsers
+2019/07/30 19:10:10 Consultando usuários
+2019/07/30 19:10:10 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 19:10:10 | 200 |   82.541521ms |             ::1 | GET      /users
+2019/07/30 19:10:16 Iniciando uploadCliente
+2019/07/30 19:10:16 Capturando arquivo 'file'
+2019/07/30 19:10:16 Arquivo não localizado
+2019/07/30 19:10:16 multipart: NextPart: EOF
+[GIN] 2019/07/30 - 19:10:16 | 500 |    2.247947ms |             ::1 | POST     /clients
+2019/07/30 19:10:30 Iniciando getClients
+2019/07/30 19:10:30 Consultando clientes
+2019/07/30 19:10:30 Retornando clientes
+[GIN] 2019/07/30 - 19:10:30 | 200 |   63.976255ms |             ::1 | GET      /clients
+2019/07/30 19:10:38 Iniciando rotina para criação e envio de eventos
+[GIN] 2019/07/30 - 19:10:38 | 201 |     699.516µs |             ::1 | POST     /events
+2019/07/30 19:10:38 Iniciando createEvents
+2019/07/30 19:10:38 Abrindo conexão com o banco
+2019/07/30 19:10:38 Criando cSV
+2019/07/30 19:10:38 Registrando leads no arquivo
+2019/07/30 19:10:40 Abrindo transação
+2019/07/30 19:10:40 Registrando evento
+2019/07/30 19:10:40 Registrando leads
+2019/07/30 19:10:41 Commitando transação
+2019/07/30 19:10:41 Montando e-mail
+2019/07/30 19:10:41 Anexando arquivo
+2019/07/30 19:10:41 Enviando e-mail
+2019/07/30 19:10:42 Iniciando getEvents
+2019/07/30 19:10:42 Abrindo conexão com o banco
+2019/07/30 19:10:42 Verificando se existe algum evento
+2019/07/30 19:10:43 Recuperando eventos
+2019/07/30 19:10:43 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 19:10:43 | 200 |  103.609083ms |             ::1 | GET      /events
+2019/07/30 19:10:47 Iniciando getStatistic
+2019/07/30 19:10:47 Trazendo statistics dos Prospects
+2019/07/30 19:10:48 Trazendo statistics dos Clientes
+2019/07/30 19:10:48 Trazendo ranks
+2019/07/30 19:10:49 Finalizando
+[GIN] 2019/07/30 - 19:10:49 | 200 |  1.725002248s |             ::1 | GET      /dashboard
+2019/07/30 19:10:51 E-mail enviado com sucesso
+2019/07/30 19:10:51 Apagando arquivo
+2019/07/30 19:10:51 Rotina finalizada
+[GIN] 2019/07/30 - 19:11:01 | 401 |        9.44µs |             ::1 | GET      /clients
+[GIN] 2019/07/30 - 19:11:03 | 401 |       8.928µs |             ::1 | GET      /clients
+[GIN] 2019/07/30 - 19:14:40 | 401 |       9.692µs |             ::1 | GET      /leads
+[GIN] 2019/07/30 - 19:15:02 | 401 |       8.772µs |             ::1 | GET      /leads
+[GIN] 2019/07/30 - 19:15:03 | 401 |      10.453µs |             ::1 | GET      /leads
+2019/07/30 19:15:28 Iniciando login
+2019/07/30 19:15:28 Consulta no banco de dados
+2019/07/30 19:15:29 Comparando senha
+2019/07/30 19:15:29 Autenticado
+[GIN] 2019/07/30 - 19:15:29 | 200 |    44.41279ms |             ::1 | POST     /login
+2019/07/30 19:15:38 Iniciando getStatistic
+2019/07/30 19:15:38 Trazendo statistics dos Prospects
+2019/07/30 19:15:39 Trazendo statistics dos Clientes
+2019/07/30 19:15:39 Trazendo ranks
+2019/07/30 19:15:40 Finalizando
+[GIN] 2019/07/30 - 19:15:40 | 200 |  1.076613757s |             ::1 | GET      /dashboard
+2019/07/30 19:16:16 Iniciando getLeads
+2019/07/30 19:16:16 Abrindo conexão com o banco
+2019/07/30 19:16:16 Verificando se existe algum lead
+2019/07/30 19:16:16 Recuperando Leads
+2019/07/30 19:16:17 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 19:16:17 | 200 |  1.373223818s |             ::1 | GET      /leads
+2019/07/30 19:17:20 Iniciando getClients
+2019/07/30 19:17:20 Consultando clientes
+2019/07/30 19:17:20 Retornando clientes
+[GIN] 2019/07/30 - 19:17:20 | 200 |   41.492975ms |             ::1 | GET      /clients
+2019/07/30 19:17:30 Iniciando getUsers
+2019/07/30 19:17:30 Consultando usuários
+2019/07/30 19:17:30 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 19:17:30 | 200 |   24.195797ms |             ::1 | GET      /users
+[GIN] 2019/07/30 - 19:17:35 | 401 |       9.997µs |             ::1 | POST     /events
+2019/07/30 19:18:00 Iniciando rotina para criação e envio de eventos
+2019/07/30 19:18:00 Iniciando createEvents
+2019/07/30 19:18:00 Abrindo conexão com o banco
+[GIN] 2019/07/30 - 19:18:00 | 201 |      139.62µs |             ::1 | POST     /events
+2019/07/30 19:18:01 Criando cSV
+2019/07/30 19:18:01 Registrando leads no arquivo
+2019/07/30 19:18:02 Abrindo transação
+2019/07/30 19:18:02 Registrando evento
+2019/07/30 19:18:02 Registrando leads
+2019/07/30 19:18:03 Commitando transação
+2019/07/30 19:18:03 Montando e-mail
+2019/07/30 19:18:03 Anexando arquivo
+2019/07/30 19:18:03 Enviando e-mail
+2019/07/30 19:18:07 Iniciando getEvents
+2019/07/30 19:18:07 Abrindo conexão com o banco
+2019/07/30 19:18:07 Verificando se existe algum evento
+2019/07/30 19:18:07 Recuperando eventos
+2019/07/30 19:18:07 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 19:18:07 | 200 |   86.344742ms |             ::1 | GET      /events
+2019/07/30 19:18:12 E-mail enviado com sucesso
+2019/07/30 19:18:12 Apagando arquivo
+2019/07/30 19:18:12 Rotina finalizada
+2019/07/30 19:18:21 Iniciando getUsers
+2019/07/30 19:18:21 Consultando usuários
+2019/07/30 19:18:21 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 19:18:21 | 200 |   22.726399ms |             ::1 | GET      /users
+[GIN] 2019/07/30 - 19:18:24 | 200 |   23.751481ms |             ::1 | DELETE   /users/30
+2019/07/30 19:18:32 Iniciando getClients
+2019/07/30 19:18:32 Consultando clientes
+2019/07/30 19:18:32 Retornando clientes
+[GIN] 2019/07/30 - 19:18:32 | 200 |   18.268105ms |             ::1 | GET      /clients
+2019/07/30 19:18:34 Iniciando getUsers
+2019/07/30 19:18:34 Consultando usuários
+2019/07/30 19:18:34 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 19:18:34 | 200 |   15.490158ms |             ::1 | GET      /users
+2019/07/30 19:20:09 Iniciando getUsers
+2019/07/30 19:20:09 Consultando usuários
+2019/07/30 19:20:09 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 19:20:09 | 200 |   40.472466ms |             ::1 | GET      /users
+2019/07/30 19:20:21 Iniciando getLeads
+2019/07/30 19:20:21 Abrindo conexão com o banco
+2019/07/30 19:20:21 Verificando se existe algum lead
+2019/07/30 19:20:21 Recuperando Leads
+2019/07/30 19:20:23 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 19:20:23 | 200 |   1.76051227s |             ::1 | GET      /leads
+2019/07/30 19:23:01 Iniciando getUsers
+2019/07/30 19:23:01 Consultando usuários
+2019/07/30 19:23:01 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 19:23:01 | 200 |    54.12425ms |             ::1 | GET      /users
+2019/07/30 19:23:13 Registrando usuário
+2019/07/30 19:23:13 Validando se o e-mail foi recebido
+2019/07/30 19:23:13 Abrindo conexão com o banco
+2019/07/30 19:23:13 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/30 19:23:13 Inserindo usuário
+2019/07/30 19:23:13 Usuário inserido com sucesso
+[GIN] 2019/07/30 - 19:23:13 | 201 |   13.970719ms |             ::1 | POST     /users
+2019/07/30 19:23:17 Iniciando getUsers
+2019/07/30 19:23:17 Consultando usuários
+2019/07/30 19:23:17 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 19:23:17 | 200 |   27.119429ms |             ::1 | GET      /users
+[GIN] 2019/07/30 - 19:23:21 | 200 |   24.654718ms |             ::1 | DELETE   /users/32
+2019/07/30 19:27:36 Iniciando getUsers
+2019/07/30 19:27:36 Consultando usuários
+2019/07/30 19:27:36 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 19:27:36 | 200 |  118.592098ms |             ::1 | GET      /users
+2019/07/30 19:28:06 Registrando usuário
+2019/07/30 19:28:06 Validando se o e-mail foi recebido
+2019/07/30 19:28:06 Abrindo conexão com o banco
+2019/07/30 19:28:06 Verificando se existe outro usuário ativo com esse e-mail
+2019/07/30 19:28:06 Inserindo usuário
+2019/07/30 19:28:06 Usuário inserido com sucesso
+[GIN] 2019/07/30 - 19:28:06 | 201 |   22.291823ms |             ::1 | POST     /users
+2019/07/30 19:28:14 Iniciando getUsers
+2019/07/30 19:28:14 Consultando usuários
+2019/07/30 19:28:14 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 19:28:14 | 200 |   35.101276ms |             ::1 | GET      /users
+[GIN] 2019/07/30 - 19:28:20 | 200 |   22.756926ms |             ::1 | DELETE   /users/33
+2019/07/30 19:33:45 Iniciando getUsers
+2019/07/30 19:33:45 Consultando usuários
+2019/07/30 19:33:45 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 19:33:45 | 200 |  119.086159ms |             ::1 | GET      /users
+2019/07/30 19:52:04 Iniciando login
+2019/07/30 19:52:04 Consulta no banco de dados
+2019/07/30 19:52:04 Comparando senha
+2019/07/30 19:52:04 Autenticado
+[GIN] 2019/07/30 - 19:52:04 | 200 |   47.377679ms |             ::1 | POST     /login
+2019/07/30 19:52:15 Iniciando getStatistic
+2019/07/30 19:52:15 Trazendo statistics dos Prospects
+2019/07/30 19:52:16 Trazendo statistics dos Clientes
+2019/07/30 19:52:16 Trazendo ranks
+2019/07/30 19:52:16 Finalizando
+[GIN] 2019/07/30 - 19:52:16 | 200 |  1.100603463s |             ::1 | GET      /dashboard
+2019/07/30 19:53:28 Iniciando getLeads
+2019/07/30 19:53:28 Abrindo conexão com o banco
+2019/07/30 19:53:28 Verificando se existe algum lead
+2019/07/30 19:53:28 Recuperando Leads
+2019/07/30 19:53:30 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 19:53:30 | 200 |  1.397596418s |             ::1 | GET      /leads
+2019/07/30 19:53:41 Iniciando getLeads
+2019/07/30 19:53:41 Abrindo conexão com o banco
+2019/07/30 19:53:41 Verificando se existe algum lead
+2019/07/30 19:53:41 Recuperando Leads
+2019/07/30 19:53:43 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 19:53:43 | 200 |  1.765064383s |             ::1 | GET      /leads
+2019/07/30 19:54:07 Iniciando getClients
+2019/07/30 19:54:07 Consultando clientes
+2019/07/30 19:54:07 Retornando clientes
+[GIN] 2019/07/30 - 19:54:07 | 200 |    27.33014ms |             ::1 | GET      /clients
+2019/07/30 19:54:40 Iniciando getUsers
+2019/07/30 19:54:40 Consultando usuários
+2019/07/30 19:54:40 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 19:54:40 | 200 |   21.540915ms |             ::1 | GET      /users
+2019/07/30 19:55:08 Iniciando getEvents
+2019/07/30 19:55:08 Abrindo conexão com o banco
+2019/07/30 19:55:08 Verificando se existe algum evento
+2019/07/30 19:55:08 Recuperando eventos
+2019/07/30 19:55:08 Consulta finalizando, retornando
+[GIN] 2019/07/30 - 19:55:08 | 200 |   33.287964ms |             ::1 | GET      /events
+2019/07/31 08:48:11 Iniciando getStatistic
+2019/07/31 08:48:11 Trazendo statistics dos Prospects
+2019/07/31 08:48:13 Trazendo statistics dos Clientes
+2019/07/31 08:48:13 Trazendo ranks
+2019/07/31 08:48:13 Finalizando
+[GIN] 2019/07/31 - 08:48:13 | 200 |  1.923312168s |             ::1 | GET      /dashboard
+2019/07/31 08:48:20 Iniciando getStatistic
+2019/07/31 08:48:20 Trazendo statistics dos Prospects
+2019/07/31 08:48:20 Trazendo statistics dos Clientes
+2019/07/31 08:48:21 Trazendo ranks
+2019/07/31 08:48:21 Finalizando
+[GIN] 2019/07/31 - 08:48:21 | 200 |  916.249554ms |             ::1 | GET      /dashboard
+2019/07/31 08:48:21 Iniciando getLeads
+2019/07/31 08:48:21 Abrindo conexão com o banco
+2019/07/31 08:48:21 Verificando se existe algum lead
+2019/07/31 08:48:21 Recuperando Leads
+2019/07/31 08:48:22 Consulta finalizando, retornando
+[GIN] 2019/07/31 - 08:48:22 | 200 |  672.660398ms |             ::1 | GET      /leads
+2019/07/31 08:48:44 Iniciando getUsers
+2019/07/31 08:48:44 Consultando usuários
+2019/07/31 08:48:44 Consulta finalizando, retornando
+[GIN] 2019/07/31 - 08:48:44 | 200 |   27.167268ms |             ::1 | GET      /users
+[GIN] 2019/07/31 - 08:48:50 | 200 |   22.126402ms |             ::1 | DELETE   /users/31
+2019/07/31 08:48:54 Iniciando getEvents
+2019/07/31 08:48:54 Abrindo conexão com o banco
+2019/07/31 08:48:54 Verificando se existe algum evento
+2019/07/31 08:48:54 Recuperando eventos
+2019/07/31 08:48:54 Consulta finalizando, retornando
+[GIN] 2019/07/31 - 08:48:54 | 200 |   48.673114ms |             ::1 | GET      /events
+2019/07/31 08:49:07 Iniciando getStatistic
+2019/07/31 08:49:07 Trazendo statistics dos Prospects
+2019/07/31 08:49:08 Trazendo statistics dos Clientes
+2019/07/31 08:49:08 Trazendo ranks
+2019/07/31 08:49:08 Finalizando
+[GIN] 2019/07/31 - 08:49:08 | 200 |  616.765457ms |             ::1 | GET      /dashboard
+2019/07/31 08:51:20 Iniciando getStatistic
+2019/07/31 08:51:20 Trazendo statistics dos Prospects
+2019/07/31 08:51:21 Trazendo statistics dos Clientes
+2019/07/31 08:51:21 Trazendo ranks
+2019/07/31 08:51:21 Finalizando
+[GIN] 2019/07/31 - 08:51:21 | 200 |  1.262297635s |             ::1 | GET      /dashboard
+2019/07/31 08:51:21 Iniciando getLeads
+2019/07/31 08:51:21 Abrindo conexão com o banco
+2019/07/31 08:51:21 Verificando se existe algum lead
+2019/07/31 08:51:21 Recuperando Leads
+2019/07/31 08:51:22 Consulta finalizando, retornando
+[GIN] 2019/07/31 - 08:51:22 | 200 |  719.629355ms |             ::1 | GET      /leads
+2019/07/31 08:52:44 Iniciando getLeads
+2019/07/31 08:52:44 Abrindo conexão com o banco
+2019/07/31 08:52:44 Verificando se existe algum lead
+2019/07/31 08:52:44 Recuperando Leads
+2019/07/31 08:52:46 Consulta finalizando, retornando
+[GIN] 2019/07/31 - 08:52:46 | 200 |  1.583466244s |             ::1 | GET      /leads
